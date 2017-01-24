@@ -1,1 +1,31 @@
-fddff
+<form name="ctrl.createRide" ng-submit="ctrl.Add()">
+  <h2>Personal Details</h2></br>
+
+  <label for="fname"><b>First Name </b></label></br>
+  <input id="fname" name="fname" type="text" placeholder="First Name" maxlength="15"
+   ng-model="ctrl.formData.firstName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+  <span class="alert"
+   ng-show="ctrl.createRide.fname.$dirty && ctrl.createRide.fname.$error.required">First Name required.</span>
+  <span ng-show="ctrl.createRide.fname.$error.pattern"> Alphabets only</span></br>
+
+  <label for="lname"><b>Last Name </b></label></br>
+  <input id="lname" name="lname" type="text" placeholder="Last Name" maxlength="15"
+   ng-model="ctrl.formData.lastName" ng-pattern="/^[a-z A-Z]*$/"ng-required="true">
+  <span class="alert"
+   ng-show="ctrl.createRide.lname.$dirty && ctrl.createRide.lname.$error.required">Last Name required.</span>
+  <span ng-show="ctrl.createRide.lname.$error.pattern"> Alphabets only</span></br>
+
+  <label for="ph"><b>Mobile</b></label></br>
+  <input id="ph" name="ph" type="text" placeholder="Mobile"
+   ng-model="ctrl.formData.phone" ng-pattern="/^(\d)+$/" ng-required="true">
+  <span class="alert"
+   ng-show="ctrl.createRide.ph.$dirty && ctrl.createRide.ph.$error.required">Mobile number required.</span>
+  <span ng-show="ctrl.createRide.ph.$error.pattern"> Numbers only</span></br></br>
+      
+  <button type="submit" ng-disabled="!ctrl.createRide.$valid">Add</button>
+  <button type="button" ng-click="ctrl.Reset()">Reset</button>&nbsp;
+  <button ng-show="ctrl.formData.id >= 0 " ng-disabled="!ctrl.createRide.$valid" 
+   ng-click="ctrl.update()">Update</button>&nbsp;
+  <button ng-show="ctrl.history.length > 0" ng-click="ctrl.Undo()">Undo Delete</button></br></br>
+
+</form>
