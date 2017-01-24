@@ -1,7 +1,7 @@
 angular
   .module('app')
   .component('searchRide', {
-    templateUrl: '/app/searchRide/searchRide.html',
+    templateUrl: 'searchRide/searchRide.html',
     controller: 'SearchRideController',
 	controllerAs:'ctrl',
     bindings: {
