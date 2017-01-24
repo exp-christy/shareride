@@ -8,10 +8,6 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('app', {
-      url: '/',
-      component: 'app'
-    })
     .state('createride', {
       url: '/createride',
       component: 'createRide'
@@ -20,8 +16,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/searchRide',
       component: 'searchRide'
     })
-    .state('viewride',{
-      url:'/viewride',
+    .state('viewride', {
+      url: '/viewride',
       component: 'viewRide'
     });
 }

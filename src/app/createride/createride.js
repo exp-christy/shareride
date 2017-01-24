@@ -5,7 +5,6 @@ angular
     controller: 'crController',
     controllerAs: 'ctrl',
     bindings: {
-    
-
     }
   });
+  
