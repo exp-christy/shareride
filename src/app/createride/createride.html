@@ -1,19 +1,35 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    
+
 <form name="ctrl.createRide" ng-submit="ctrl.Add()">
-  <h2>Personal Details</h2></br>
+  <h2>Ride Details</h2></br>
+    <div class="form-group">
+        <label for="fname"><b>First Name </b></label></br>
+        <input id="fname" name="fname" type="text" class="form-control" placeholder="First Name" maxlength="15"
+         ng-model="ctrl.formData.firstName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+        <span class="alert"
+         ng-show="ctrl.createRide.fname.$dirty && ctrl.createRide.fname.$error.required">First Name required.</span>
+        <span ng-show="ctrl.createRide.fname.$error.pattern"> Alphabets only</span></br>
+    </div>
 
-  <label for="fname"><b>First Name </b></label></br>
-  <input id="fname" name="fname" type="text" placeholder="First Name" maxlength="15"
-   ng-model="ctrl.formData.firstName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
-  <span class="alert"
-   ng-show="ctrl.createRide.fname.$dirty && ctrl.createRide.fname.$error.required">First Name required.</span>
-  <span ng-show="ctrl.createRide.fname.$error.pattern"> Alphabets only</span></br>
-
+    <div class="form-group">
   <label for="lname"><b>Last Name </b></label></br>
-  <input id="lname" name="lname" type="text" placeholder="Last Name" maxlength="15"
+  <input id="lname" name="lname" type="text"class="form-control" placeholder="Last Name" maxlength="15"
    ng-model="ctrl.formData.lastName" ng-pattern="/^[a-z A-Z]*$/"ng-required="true">
   <span class="alert"
    ng-show="ctrl.createRide.lname.$dirty && ctrl.createRide.lname.$error.required">Last Name required.</span>
   <span ng-show="ctrl.createRide.lname.$error.pattern"> Alphabets only</span></br>
+</div>
+
 
   <label for="ph"><b>Mobile</b></label></br>
   <input id="ph" name="ph" type="text" placeholder="Mobile"
@@ -29,3 +45,5 @@
   <button ng-show="ctrl.history.length > 0" ng-click="ctrl.Undo()">Undo Delete</button></br></br>
 
 </form>
+
+</body>

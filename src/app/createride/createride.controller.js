@@ -1,6 +1,6 @@
 angular.module("app")
-  .controller("crController", crController);
+  .controller("CreateRideCtrl", CreateRideCtrl);
 
-function crController() {
+function CreateRideCtrl() {
   var ctrl = this;
 }
