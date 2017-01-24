@@ -1,3 +1,3 @@
 angular
-.module("app")
-.controller("SearchRideController", SearchRideController);
+.module('app')
+.controller('SearchRideController', SearchRideController);
