@@ -20,8 +20,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/searchRide',
       component: 'searchRide'
     })
-    .state('viewRide',{
-      url:'/createRide',
-      component: 'createRide'
+    .state('viewride',{
+      url:'/viewride',
+      component: 'viewRide'
     });
 }
