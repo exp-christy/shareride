@@ -9,7 +9,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('app', {
-      url: '/',
-      component: 'app'
+      url: '/app/searchRide/searchRide.html',
+      component: 'SearchRide'
     });
 }
