@@ -2,11 +2,7 @@ angular
   .module('app')
   .component('viewRide', {
     templateUrl: 'app/viewride/viewride.html',
-    controller: 'viewrideController',
+    controller: 'ViewRideController',
     controllerAs: 'ctrl',
-    bindings: {
-     // list: "=?",
-      //formData: '=?'   
-    }
-    
+    bindings: {}  
   });
