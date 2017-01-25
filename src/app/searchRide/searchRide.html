@@ -1,3 +1,17 @@
   <form name="frmSearchRide" ng-model="ctrl.formdata">
-    <p>Place<input name="frmSearchRide.place" type="text" ng-model="ctrl.formdata.place"></p>
+    <div class="container">
+      <p><h2>SEARCH RIDE</h2></p>
+      <div class="table-responsive">
+        <table class="table" name="frmSearchRide.detailTable">
+          <tr>
+            <td>
+              Place
+            </td>
+            <td>
+              <input name="frmSearchRide.place" type="text" ng-model="ctrl.formdata.place">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </form>
