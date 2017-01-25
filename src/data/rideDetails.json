@@ -1,0 +1,59 @@
+{
+  "rides": [
+
+    {
+      "rideId": 1,
+      "from": "Piravom",
+      "stopPoints": "Arakunnam,Chottanikara",
+      "startDate": "12/02/2017",
+      "endDate": "17/02/2017",
+      "startHour": 8,
+      "startMinute": 15,
+      "endHour": 18,
+      "endMinute": 15,
+      "vacantSeats": 4,
+      "fare": "100",
+      "driver": {
+          "driverId": 1,
+          "driverName": "Ram",
+          "company": "Experion",
+          "contactNumber": "9546241919",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-3302",
+          "vehicleModel": "Swift",
+          "seatCapacity": 5
+      }
+    },
+    {
+      "rideId": 2,
+      "from": "Pala",
+      "stopPoints": "Piravom,Arakunnam,Chottanikara",
+      "startDate": "12/02/2017",
+      "endDate": "17/02/2017",
+      "startHour": 6,
+      "startMinute": 15,
+      "endHour": 18,
+      "endMinute": 15,
+      "vacantSeats": 4,
+      "fare": "150",
+      "driver": {
+          "driverId": 2,
+          "driverName": "Siva",
+          "company": "Experion",
+          "contactNumber": "9546241920",
+          "licenseNumber": "KL/2012/099"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-3399",
+          "vehicleModel": "Honda City",
+          "seatCapacity": 5
+      }
+    }
+
+
+  ]
+}
