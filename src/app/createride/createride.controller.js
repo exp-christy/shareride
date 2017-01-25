@@ -4,83 +4,50 @@ angular.module("app")
 function CreateRideCtrl() {
   var ctrl = this;
 
-ctrl.$onInit = function () {
+  ctrl.$onInit = function () {
     console.log(ctrl.formData)
   }
+  ctrl.data = [];
+  ctrl.count = 11;
+  //add 
 
-  ctrl.count = 121;
+  ctrl.addRideDetails = addRideDetails;
 
-
-  //update
-
-  ctrl.update = function () {
-    var x = ctrl.list.length;
-    for (var i = 0; i < x; i++) {
-      if (ctrl.list[i].id === ctrl.formData.id) {
-        var index = i;
-        break;
+  function addRideDetails() {
+    var sdate = ctrl.formData.startDate;
+    var edate = ctrl.formData.endDate;
+    var stime = ctrl.formData.startTime;
+    var etime = ctrl.formData.endTime
+    var shr = stime.getHours();
+    var smm = stime.getMinutes();
+    var ehr = etime.getHours();
+    var emm = etime.getMinutes();
+    ctrl.data = {
+      "rideId": ctrl.count++,
+      "from": "ctrl.formData.From",
+      "stopPoints": "ctrl.formData.stopPoints",
+      "startDate": "ctrl.formData.startDate",
+      "endDate": "ctrl.formData.endDate",
+      "startHour": shr,
+      "startMinute": smm,
+      "endHour": ehr,
+      "endMinute": emm,
+      "vacantSeats": "ctrl.formData.Seat",
+      "fare": "ctrl.formData.Fare",
+      "driver": {
+        "driverId": 1,
+        "driverName": "Ram",
+        "company": "Experion",
+        "contactNumber": "9546241919",
+        "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+        "vehicleId": 1,
+        "VehicleNumber": "KL-39K-3302",
+        "vehicleModel": "Swift",
+        "seatCapacity": 5
       }
     }
-    
-    ctrl.list.splice(index, 1, {
-      id: ctrl.formData.id,
-      firstName: ctrl.formData.firstName,
-      lastName: ctrl.formData.lastName,
-      phone: ctrl.formData.phone,
 
-    });
-    ctrl.formData = {};
-    ctrl.Reset();
-  }
-
-
-
-  // reset
-
-  ctrl.Reset = function () {
-    ctrl.formData.firstName = '';
-    ctrl.formData.lastName = '';
-    ctrl.formData.phone = '';
-    ctrl.formData.id = -1 ;
-    ctrl.addForm.$setPristine();
-  }
-
-
-
-  // add data
-
-  ctrl.Add = function () {
-
-      
-    var index = -1;
-    for (var i = 0; i < ctrl.list.length; i++) {
-      if ((ctrl.list[i].firstName === ctrl.formData.firstName) &&
-        (ctrl.list[i].lastName === ctrl.formData.lastName) &&
-        (ctrl.list[i].phone === ctrl.formData.phone)) {
-        index = i;
-        break;
-      }
-    }
-    if (index >= 0) {
-      ctrl.formData = {};
-      alert("Person already exists");
-    }
-     else {
-      ctrl.formData.id = ctrl.count++;
-      ctrl.list.push(angular.copy(ctrl.formData));
-      ctrl.formData = {};
-      ctrl.Reset();
-    }
-      
-  }
-
-  //undo
-
-  ctrl.Undo = function () {
-    ctrl.Reset();
-    // Add last / most recent historical record to the main records
-    ctrl.list.push(ctrl.history[ctrl.history.length - 1]);
-    // Remove last / most recent historical record
-    ctrl.history.pop();
   }
 }
