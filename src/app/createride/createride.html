@@ -1,35 +1,93 @@
 <form name="ctrl.createRide" ng-submit="ctrl.Add()">
-  <h2>Ride Details</h2></br>
-    <div class="form-group">
-        <label for="fname"><b>First Name </b></label></br>
-        <input id="fname" name="fname" type="text" class="form-control" placeholder="First Name" maxlength="15"
-         ng-model="ctrl.formData.firstName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+  
+
+  <div class="container ">
+  <h2>Ride Details</h2></br>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><h5>Driver Name</h5></th>
+      </tr>
+      <tr>
+        <th><h5>Company Name</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><label for="from"><b>From </b></label></td><div class="col-md-8">
+        <td><input id="from" name="from" type="text"  placeholder="From" maxlength="15"
+         ng-model="ctrl.formData.From"ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
         <span class="alert"
-         ng-show="ctrl.createRide.fname.$dirty && ctrl.createRide.fname.$error.required">First Name required.</span>
-        <span ng-show="ctrl.createRide.fname.$error.pattern"> Alphabets only</span></br>
-    </div>
+         ng-show="ctrl.createRide.from.$dirty && ctrl.createRide.from.$error.required"> Enter a place.</span>
+        <span ng-show="ctrl.createRide.from.$error.pattern"> Alphabets only</span></div></td>
+      </tr>
+      <tr>
+        <td><label for="spoints"><b>Stop Points </b></label></br></td>
+    <td><input id="spoints" name="spoints" type="text" placeholder="Stop Point 1, Stop Point 2"
+      ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+    <span class="alert"
+        ng-show="ctrl.createRide.spoints.$dirty && ctrl.createRide.spoints.$error.required">Atleast one stop point required.</span>
+    <span ng-show="ctrl.createRide.spoints.$error.pattern"> Alphabets only</span></br></td>
+  </tr>
 
-    <div class="form-group">
-  <label for="lname"><b>Last Name </b></label></br>
-  <input id="lname" name="lname" type="text"class="form-control" placeholder="Last Name" maxlength="15"
-   ng-model="ctrl.formData.lastName" ng-pattern="/^[a-z A-Z]*$/"ng-required="true">
-  <span class="alert"
-   ng-show="ctrl.createRide.lname.$dirty && ctrl.createRide.lname.$error.required">Last Name required.</span>
-  <span ng-show="ctrl.createRide.lname.$error.pattern"> Alphabets only</span></br>
+  <tr>
+    <td><label for="sdate"><b>Start Date</b></label></br></td>
+    <td><input id="sdate" name="sdate" type="date" placeholder="Start Date" ng-model="ctrl.formData.startDate"
+     class="col-sm-3" ng-required="true">
+    <span class="alert"
+       ng-show="ctrl.createRide.sdate.$dirty && ctrl.createRide.sdate.$error.required">Start date required.</span>    
+  </td></tr>
+
+  <tr>
+    <td><label for="edate"><b>End Date</b></label></br></td>
+    <td><input id="edate" name="edate" type="date" placeholder="End Date" ng-model="ctrl.formData.endDate"
+     class="col-sm-3" ng-required="true">
+    <span class="alert"
+       ng-show="ctrl.createRide.edate.$dirty && ctrl.createRide.edate.$error.required">End date required.</span>
+  </td></tr>
+
+  <tr>
+    <td><label for="stime"><b>Start Time </b></label></td>
+    <td><input type="time"  name="stime" ng-model="ctrl.createRide.startTime"
+       placeholder="HH:mm:ss" min="00:00:00" max="23:00:00" ng-required="true" ></br>
+    <span class="alert"
+       ng-show="ctrl.createRide.stime.$dirty && ctrl.createRide.stime.$error.required">Start time required.</span>
+ </td> </tr>
+
+  <tr>
+   <td> <label for="etime"><b>End Time </b></label></td>
+    <td><input type="time"  name="etime" ng-model="ctrl.createRide.endTime"
+       placeholder="HH:mm:ss" min="00:00:00" max="23:00:00" ng-required="true" >
+    <span class="alert"
+       ng-show="ctrl.createRide.etime.$dirty && ctrl.createRide.etime.$error.required">End time required.</span></br>
+ </td> </tr>
+   
+  <tr>
+    <td><label for="seat"><b>Seats </b></label></td>
+    <td><input id="seat" name="seat" type="text" placeholder="Seat" ng-model="ctrl.formData.Seat"
+     ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true">
+    <span class="alert"
+      ng-show="ctrl.createRide.seat.$dirty && ctrl.createRide.seat.$error.required">Number of seats required.</span>
+    <span ng-show="ctrl.createRide.seat.$error.pattern"> Numbers only</span>
+  </td></tr>
+
+  <tr>
+    <td><label for="fare"><b>Fare </b></label></td>
+    <td><input id="fare" name="fare" type="text" placeholder="Fare" ng-model="ctrl.formData.Fare" 
+     ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true"><b> per ride.</b>
+    <span class="alert"
+     ng-show="ctrl.createRide.fare.$dirty && ctrl.createRide.fare.$error.required">Fare required.</span>
+    <span ng-show="ctrl.createRide.fare.$error.pattern"> Numbers only</span></br></br>
+  </td></tr>
+
+  <tr>
+    <td><button type="submit" ng-disabled="ctrl.createRide.$invalid">Add</button>
+    <button type="button" ng-click="ctrl.cancel()">Cancel</button>&nbsp;
+    <button ng-show="ctrl.formData.id >= 0 " ng-disabled="!ctrl.createRide.$valid"
+     ng-click="ctrl.update()">Update</button>&nbsp;
+    <button ng-show="ctrl.history.length > 0" ng-click="ctrl.Undo()">Undo Delete</button></br></br></td>
+  </tr>
+   </tbody>
+  </table>
 </div>
-
-
-  <label for="ph"><b>Mobile</b></label></br>
-  <input id="ph" name="ph" type="text" placeholder="Mobile"
-   ng-model="ctrl.formData.phone" ng-pattern="/^(\d)+$/" ng-required="true">
-  <span class="alert"
-   ng-show="ctrl.createRide.ph.$dirty && ctrl.createRide.ph.$error.required">Mobile number required.</span>
-  <span ng-show="ctrl.createRide.ph.$error.pattern"> Numbers only</span></br></br>
-      
-  <button type="submit" ng-disabled="!ctrl.createRide.$valid">Add</button>
-  <button type="button" ng-click="ctrl.Reset()">Reset</button>&nbsp;
-  <button ng-show="ctrl.formData.id >= 0 " ng-disabled="!ctrl.createRide.$valid" 
-   ng-click="ctrl.update()">Update</button>&nbsp;
-  <button ng-show="ctrl.history.length > 0" ng-click="ctrl.Undo()">Undo Delete</button></br></br>
-
 </form>
