@@ -1,0 +1,79 @@
+<form name="viewForm">
+	<div class="row">
+		<div class="col-sm-6">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td><b><u>Driver Details</u></b></td>
+					</tr>
+					<tr>
+						<td><label name="name" ng-model="ctrl.formData.from">{{"JOEY TRIBBIANI"}}</label></td>
+					</tr>
+					<tr>
+						<td><label name="mobilenumber" ng-model="ctrl.formData.from">{{"+91 98950 98950"}}</label></td>
+					</tr>
+					<tr>
+						<td><b><u>Car Details</u></b></td>
+					</tr>
+					<tr>
+						<td><label name="vehiclenumber" ng-model="ctrl.formData.from">{{"KL - 07 - F1 "}}</label></td>
+					</tr>
+					<tr>
+						<td><label name="vehiclename" ng-model="ctrl.formData.from">{{"FERRARI ITALIA"}}</label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-6">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td> <label for="from">FROM:</label></td>
+						<td><label name="from" ng-model="ctrl.formData.from">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="stoppoints">STOP POINTS:</label></td>
+						<td><label name="stoppoints" ng-model="ctrl.formData.stoppoints">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="company">COMPANY:</label></td>
+						<td><label name="company" ng-model="ctrl.formData.company">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="startdate">START DATE:</label></td>
+						<td><label name="startdate" ng-model="ctrl.formData.startdate">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="enddate">END DATE:</label></td>
+						<td><label name="enddate" ng-model="ctrl.formData.enddate">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="starttime">START TIME:</label></td>
+						<td><label name="enddate" ng-model="ctrl.formData.enddate">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="returntime">RETURN TIME:</label></td>
+						<td><label name="returntime" ng-model="ctrl.formData.returntime">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="seats">SEATS:</label></td>
+						<td><label name="seats" ng-model="ctrl.formData.seats">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td><label for="fare">FARE:</label></td>
+						<td><label name="fare" ng-model="ctrl.formData.fare">{{"Pala "}}</label></td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" ng-click="ctrl.openComponentModal()">Next</button> &nbsp&nbsp&nbsp&nbsp
+							<button type="button" ng-click="ctrl.update()">Cancel</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>	
+</form>
