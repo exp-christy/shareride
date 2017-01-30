@@ -11,6 +11,7 @@
       "startMinute": 15,
       "endHour": 18,
       "endMinute": 15,
+      "vacantSeats":3,
       "fare": "100",
       "driver": {
           "driverId": 1,
@@ -38,6 +39,7 @@
       "startMinute": 15,
       "endHour": 18,
       "endMinute": 15,
+      "vacantSeats":3,
       "fare": "150",
       "driver": {
           "driverId": 2,
@@ -66,6 +68,7 @@
       "endHour": 18,
       "endMinute": 15,
       "fare": "110",
+      "vacantSeats":3,
       "driver": {
           "driverId": 1,
           "driverFirstName": "Ram",
@@ -93,6 +96,7 @@
       "endHour": 19,
       "endMinute": 15,
       "fare": "110",
+      "vacantSeats":3,
       "driver": {
           "driverId": 1,
           "driverFirstName": "Ram",

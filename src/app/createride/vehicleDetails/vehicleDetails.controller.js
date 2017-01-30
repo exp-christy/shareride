@@ -41,7 +41,7 @@ console.log(ctrl.contact2)
       vehicleMake: " ";
       vehicleModel: " ";
       seatCapacity: " ";
-     
+      location.href = '/createride/rideDetails';
     };
 
     // When the delete button is pressed, it will find the corresponding item's index from localStorage and splice it
