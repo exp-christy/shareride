@@ -6,7 +6,7 @@
 		<div class="col-lg-10">
 			<div class="input-group">
 				<input type="text" name="txtPlace" class="form-control" ng-model="ctrl.formdata.place" placeholder="Search for place..."
-					ng-required="true">
+				  ng-pattern="/^[a-z A-Z]*$/"	ng-required="true">
 				<span class="input-group-btn">
         <button class="btn btn-secondary" name="frmSearchRide.btnSearch" ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
         </span>
@@ -14,6 +14,7 @@
 					<span ng-show="frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required" class="help-block">
                 Enter the place
             </span>
+            <span ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
 				</div>
 			</div>
 		</div>
