@@ -12,6 +12,18 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/createride',
       component: 'createRide'
     })
+    .state('driverDetails', {
+      url: '/createride/driverDetails',
+      component: 'driverDetails'
+    })
+    .state('vehicleDetails', {
+      url: '/createride/vehicleDetails',
+      component: 'vehicleDetails'
+    })
+    .state('rideDetails', {
+      url: '/createride/rideDetails',
+      component: 'rideDetails'
+    })
     .state('searchRide', {
       url: '/searchRide',
       component: 'searchRide'
