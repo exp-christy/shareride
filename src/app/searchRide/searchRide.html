@@ -1,43 +1,61 @@
-
-  <div class="container">
-    <p>
-      <h2 align="center">SEARCH RIDE</h2>
-    </p>
-    <form name="frmSearchRide" ng-model="ctrl.formdata" novalidate="true">
-    <table class="table table-condensed && table-responsive">
-      <tr>
-        <td>
-          Place</br>
-          <input name="txtPlace" type="text" ng-model="ctrl.formdata.place" ng-required="true">
-          <span ng-show="frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required" class="help-block">
+<div class="container">
+	<p>
+		<h2 align="center">SEARCH RIDE</h2>
+	</p>
+	<form name="frmSearchRide" ng-model="ctrl.formdata" novalidate="true">
+		<div class="col-lg-10">
+			<div class="input-group">
+				<input type="text" name="txtPlace" class="form-control" ng-model="ctrl.formdata.place" placeholder="Search for place..."
+					ng-required="true">
+				<span class="input-group-btn">
+        <button class="btn btn-secondary" name="frmSearchRide.btnSearch" ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
+        </span>
+				<div class="col-lg-6">
+					<span ng-show="frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required" class="help-block">
                 Enter the place
-              </span>
-          </br>
-          </br>
-          <button name="frmSearchRide.btnSearch" ng-model="ctrl.formdata.search" ng-click="ctrl.searchRideDetails(ctrl.formdata.place)">
-                Search
-              </button>
-        </td>
-      </tr>
-    </table>
-    </form>
-    <div class="row">
-      <div class="col-sm-2" style="background-color:lavenderblush;">Start Date</div>
-      <div class="col-sm-2" style="background-color:lavenderblush;">End Date</div>
-      <div class="col-sm-2" style="background-color:lavenderblush;">Start Time</div>
-      <div class="col-sm-2" style="background-color:lavenderblush;">End Time</div>
-      <div class="col-sm-2" style="background-color:lavenderblush;">Vacant Seats</div>
-      <div class="col-sm-2" style="background-color:lavenderblush;">Action</div>
-    </div>
-    <div class="row" ng-repeat="record in ctrl.searchResult">
-      <div class="col-sm-2" style="background-color:lavender;">{{record.startDate}}</div>
-      <div class="col-sm-2" style="background-color:lavender;">{{record.endDate}}</div>
-      <div class="col-sm-2" style="background-color:lavender;">{{record.startHour}}:{{record.startMinute}}</div>
-      <div class="col-sm-2" style="background-color:lavender;">{{record.endHour}}:{{record.endMinute}}</div>
-      <div class="col-sm-2" style="background-color:lavender;">{{record.vacantSeats}}</div>
-      <div class="col-sm-2" style="background-color:lavender;"><button name="lstSearchRide.btnView" ng-model="ctrl.list.search">
-                View
-              </button></div>
-    </div>
-  </div>
-
+            </span>
+				</div>
+			</div>
+		</div>
+</form>
+</br>
+</br>
+</br>
+<table class="table table-bordered table-hover table-condensed">
+	<thead class="thead-inverse">
+    <tr>
+		<th>Start Date</th>
+		<th>End Date </th>
+		<th>Start Time </th>
+		<th>End Time </th>
+		<th>Seat Capacity </th>
+		<th>Action</th>
+    </tr>
+	</thead>
+	<tbody>
+    <tr>
+      <td><input type="text" name="lstSearchRide.txtStartDate" ng-model="searchDetail.startDate"></td>
+      <td><input type="text" name="lstSearchRide.txtEndDate" ng-model="searchDetail.endDate"></td>
+      <td><input type="text" name="lstSearchRide.txtStartTime" ng-model="searchDetail.startHour"></td>
+      <td><input type="text" name="lstSearchRide.txtEndTime" ng-model="searchDetail.endHour"></td>
+      <td><input type="text" name="lstSearchRide.txtVacantSeats" ng-model="searchDetail.vacantSeats"></td>
+      <td></td>
+    </tr>
+		<tr ng-repeat="record in ctrl.searchResult | filter:searchDetail">
+			<td>{{record.startDate}}</td>
+			<td>{{record.endDate}}</td>
+			<td>
+        {{record.startHour}}:{{record.startMinute}}
+        <span ng-show="record.startHour <= 12 ?ctrl.ampm='AM' : ctrl.ampm='PM'">{{ctrl.ampm}}</span>
+        <span></span>
+      </td>
+			<td>
+        {{record.endHour}}:{{record.endMinute}}
+        <span ng-show="record.endHour <= 12 ?ctrl.ampm='AM' : ctrl.ampm='PM'">{{ctrl.ampm}}</span>
+      </td>
+			<td>{{record.vacantSeats}}</td>
+			<td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search">View</button></td>
+		</tr>
+	</tbody>
+</table>
+</div>

@@ -52,8 +52,59 @@
           "vehicleModel": "Honda City",
           "seatCapacity": 5
       }
+    },
+    {
+      "rideId": 3,
+      "from": "Piravom",
+      "stopPoints": "Arakunnam,Chottanikara",
+      "startDate": "14/02/2017",
+      "endDate": "19/02/2017",
+      "startHour": 7,
+      "startMinute": 15,
+      "endHour": 18,
+      "endMinute": 15,
+      "vacantSeats": 5,
+      "fare": "110",
+      "driver": {
+          "driverId": 1,
+          "driverName": "Ram",
+          "company": "Exp",
+          "contactNumber": "9546241719",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-3302",
+          "vehicleModel": "Swift",
+          "seatCapacity": 5
+      }
+    },
+    {
+      "rideId": 4,
+      "from": "Piravom",
+      "stopPoints": "Arakunnam,Chottanikara,Thiruvankulam",
+      "startDate": "24/02/2017",
+      "endDate": "29/02/2017",
+      "startHour": 9,
+      "startMinute": 15,
+      "endHour": 19,
+      "endMinute": 15,
+      "vacantSeats": 2,
+      "fare": "110",
+      "driver": {
+          "driverId": 1,
+          "driverName": "Ram",
+          "company": "Exp",
+          "contactNumber": "9546241719",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-3302",
+          "vehicleModel": "Swift",
+          "seatCapacity": 5
+      }
     }
-
 
   ]
 }
