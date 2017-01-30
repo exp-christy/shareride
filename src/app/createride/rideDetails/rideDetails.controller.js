@@ -47,7 +47,7 @@ function RideDetailsCtrl() {
       startMinute: stime.getMinutes(),
       endHour: etime.getHours(),
       endMinute: etime.getMinutes(),
-      vacantSeats: ctrl.formData.Seat,
+      vacantSeats: ctrl.formData.vacantSeats,
       fare: ctrl.formData.Fare, });
 console.log(ctrl.contact3)
       rideId:" ";

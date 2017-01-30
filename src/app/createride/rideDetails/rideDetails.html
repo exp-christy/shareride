@@ -64,8 +64,8 @@
  </td> </tr>
    
   <tr>
-    <td><label for="seat"><b>Seats </b></label></td>
-    <td><input id="seat" name="seat" type="text" placeholder="Seat" ng-model="ctrl.formData.Seat"
+    <td><label for="seat"><b>Vacant Seats </b></label></td>
+    <td><input id="seat" name="seat" type="text" placeholder="Seat" ng-model="ctrl.formData.vacantSeats"
      ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true">
     <span class="alert"
       ng-show="ctrl.rideDetails.seat.$dirty && ctrl.rideDetails.seat.$error.required">Number of seats required.</span>
@@ -91,13 +91,4 @@
   </table>
   
 </div>
-<body>
-
-<div class="container">            
-  <ul class="pager">
-     <li><a href="/createride/vehicleDetails">Previous</a></li> 
-  </ul>
-</div>
-
-</body>
 </form>
