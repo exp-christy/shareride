@@ -1,0 +1,83 @@
+<div class="container">
+    <p>
+		<h2 align="center">DRIVER DETAILS</h2>
+	</p>
+    <form name="frmDriverDetails" ng-model="ctrl.formdata" novalidate="true">
+        <div class="form-group">
+        <div class="col-sm-10" >
+            <div class="col-sm-6">
+                <label for="firstName">First Name</label>
+                <input class="form-control" type="text" name="firstName" ng-model="ctrl.formdata.firstName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true" placeholder="Enter first name">
+            </div>
+             </br></br>
+            <div class="col-sm-4">
+                <span style="color:red" ng-show="frmDriverDetails.firstName.$touched && frmDriverDetails.firstName.$error.required">First name required</span>
+                <span style="color:red" ng-show="frmDriverDetails.firstName.$error.pattern">Alphabets only</span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-sm-10" >
+            <div class="col-sm-6">
+                <label for="lastName">Last Name</label>
+                <input class="form-control" type="text" name="lastName" ng-model="ctrl.formdata.lastName" ng-pattern="/^[a-z A-Z]*$/"	ng-required="true" placeholder="Enter last name">
+            </div>
+            </br></br>
+            <div class="col-sm-4">
+                <span style="color:red" ng-show="frmDriverDetails.lastName.$touched && frmDriverDetails.lastName.$error.required">Last name required</span>
+                <span style="color:red" ng-show="frmDriverDetails.lastName.$error.pattern">Alphabets only</span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-sm-10" >
+            <div class="col-sm-6">
+                <label for="company">Company</label>
+                <input class="form-control" type="text" name="company" ng-model="ctrl.formdata.company" ng-pattern="/^[a-z A-Z 0-9]*$/"	ng-required="true" placeholder="Enter company ">
+            </div>
+            </br></br>
+            <div class="col-sm-4">
+                <span style="color:red" ng-show="frmDriverDetails.company.$touched && frmDriverDetails.company.$error.required">Company required</span>
+                <span style="color:red" ng-show="frmDriverDetails.company.$error.pattern">Alphabet and number only</span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-sm-10" >
+            <div class="col-sm-6">
+                <label for="company">Contact Number</label>
+                <input class="form-control" type="text" name="contactNumber" ng-model="ctrl.formdata.contactNumber" ng-pattern="/^[0-9]*$/"	ng-required="true" placeholder="Enter contact detail ">
+            </div>
+            </br></br>
+            <div class="col-sm-4">
+                <span style="color:red" ng-show="frmDriverDetails.contactNumber.$touched && frmDriverDetails.contactNumber.$error.required">Contact number required</span>
+                <span style="color:red" ng-show="frmDriverDetails.contactNumber.$error.pattern">Digits only</span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-sm-10" >
+            <div class="col-sm-6">
+                <label for="licenseNumber">License Number</label>
+                <input class="form-control" type="text" name="licenseNumber" ng-model="ctrl.formdata.licenseNumber" ng-required="true" placeholder="Enter license number">
+            </div>
+            </br></br>
+            <div class="col-sm-4">
+                <span style="color:red" ng-show="frmDriverDetails.licenseNumber.$touched && frmDriverDetails.licenseNumber.$error.required">License number required</span>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="col-sm-7" >
+            <div class="col-sm-4">
+                </br>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Next</button>
+            </div>
+            <div class="col-sm-4">
+                </br>
+                <input class="btn btn-primary btn-lg btn-block btn-danger" type="reset" value="Cancel">
+            </div>
+        </div>
+        </div>
+    </form>
+</div>
