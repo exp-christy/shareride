@@ -1,0 +1,95 @@
+<form name="ctrl.rideDetails" ng-submit="ctrl.addRideDetails()">
+  
+
+  <div class="container ">
+    
+  <h2>Ride Details</h2></br>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><h5>Driver Name</h5></th>
+      </tr>
+      <tr>
+        <th><h5>Company Name</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><label for="from"><b>From </b></label></td><div class="col-md-8">
+        <td><input id="from" name="from" type="text"  placeholder="From" maxlength="15"
+         ng-model="ctrl.formData.From"ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+        <span class="alert"
+         ng-show="ctrl.rideDetails.from.$dirty && ctrl.rideDetails.from.$error.required"> Enter a place.</span>
+        <span ng-show="ctrl.rideDetails.from.$error.pattern"> Alphabets only</span></div></td>
+      </tr>
+      <tr>
+        <td><label for="spoints"><b>Stop Points </b></label></br></td>
+    <td><input id="spoints" name="spoints" type="text" placeholder="Stop Point 1, Stop Point 2"
+      ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+    <span class="alert"
+        ng-show="ctrl.rideDetails.spoints.$dirty && ctrl.rideDetails.spoints.$error.required">Atleast one stop point required.</span>
+    <span ng-show="ctrl.rideDetails.spoints.$error.pattern"> Alphabets only</span></br></td>
+  </tr>
+
+  <tr>
+    <td><label for="sdate"><b>Start Date</b></label></br></td>
+    <td><input id="sdate" name="sdate" type="date" placeholder="Start Date" ng-model="ctrl.formData.startDate"
+     class="col-sm-3" ng-required="true">
+    <span class="alert"
+       ng-show="ctrl.rideDetails.sdate.$dirty && ctrl.rideDetails.sdate.$error.required">Start date required.</span>    
+  </td></tr>
+
+  <tr>
+    <td><label for="edate"><b>End Date</b></label></br></td>
+    <td><input id="edate" name="edate" type="date" placeholder="End Date" ng-model="ctrl.formData.endDate"
+     class="col-sm-3" ng-required="true">
+    <span class="alert"
+       ng-show="ctrl.rideDetails.edate.$dirty && ctrl.rideDetails.edate.$error.required">End date required.</span>
+  </td></tr>
+
+  <tr>
+    <td><label for="stime"><b>Start Time </b></label></td>
+    <td><input type="time"  name="stime" ng-model="ctrl.formData.startTime"
+       placeholder="HH:mm:ss"  ng-required="true" ></br>
+    <span class="alert"
+       ng-show="ctrl.rideDetails.stime.$dirty && ctrl.rideDetails.stime.$error.required">Start time required.</span>
+ </td> </tr>
+
+  <tr>
+   <td> <label for="etime"><b>End Time </b></label></td>
+    <td><input type="time"  name="etime" ng-model="ctrl.formData.endTime"
+       placeholder="HH:mm:ss"  ng-required="true" >
+    <span class="alert"
+       ng-show="ctrl.rideDetails.etime.$dirty && ctrl.rideDetails.etime.$error.required">End time required.</span></br>
+ </td> </tr>
+   
+  <tr>
+    <td><label for="seat"><b>Seats </b></label></td>
+    <td><input id="seat" name="seat" type="text" placeholder="Seat" ng-model="ctrl.formData.Seat"
+     ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true">
+    <span class="alert"
+      ng-show="ctrl.rideDetails.seat.$dirty && ctrl.rideDetails.seat.$error.required">Number of seats required.</span>
+    <span ng-show="ctrl.rideDetails.seat.$error.pattern"> Numbers only</span>
+  </td></tr>
+
+  <tr>
+    <td><label for="fare"><b>Fare </b></label></td>
+    <td><input id="fare" name="fare" type="text" placeholder="Fare" ng-model="ctrl.formData.Fare" 
+     ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true"><b> per ride.</b>
+    <span class="alert"
+     ng-show="ctrl.rideDetails.fare.$dirty && ctrl.rideDetails.fare.$error.required">Fare required.</span>
+    <span ng-show="ctrl.rideDetails.fare.$error.pattern"> Numbers only</span></br></br>
+  </td></tr>
+
+  <tr>
+    <td><button type="submit" ng-disabled="ctrl.rideDetails.$invalid">Add</button>
+    <button type="button" ng-click="ctrl.cancel()">Cancel</button>&nbsp;
+    <ion-item ng-repeat="contact in contacts" item="item">
+  </tr>
+  
+   </tbody>
+  </table>
+  
+</div>
+
+</form>
