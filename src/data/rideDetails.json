@@ -11,11 +11,11 @@
       "startMinute": 15,
       "endHour": 18,
       "endMinute": 15,
-      "vacantSeats": 4,
       "fare": "100",
       "driver": {
           "driverId": 1,
-          "driverName": "Ram",
+          "driverFirstName": "Ram",
+          "driverLastName": "Sharma",
           "company": "Experion",
           "contactNumber": "9546241919",
           "licenseNumber": "KL/2016/039"
@@ -23,6 +23,7 @@
       "vehicle": {
           "vehicleId": 1,
           "VehicleNumber": "KL-39K-3302",
+          "vehicleMake": "Suzuki",
           "vehicleModel": "Swift",
           "seatCapacity": 5
       }
@@ -37,11 +38,11 @@
       "startMinute": 15,
       "endHour": 18,
       "endMinute": 15,
-      "vacantSeats": 4,
       "fare": "150",
       "driver": {
           "driverId": 2,
-          "driverName": "Siva",
+          "driverFirstName": "Siva",
+           "driverLastName": "Ram",
           "company": "Experion",
           "contactNumber": "9546241920",
           "licenseNumber": "KL/2012/099"
@@ -49,7 +50,8 @@
       "vehicle": {
           "vehicleId": 1,
           "VehicleNumber": "KL-39K-3399",
-          "vehicleModel": "Honda City",
+          "vehicleMake": "Honda",
+          "vehicleModel": "City",
           "seatCapacity": 5
       }
     },
@@ -63,11 +65,11 @@
       "startMinute": 15,
       "endHour": 18,
       "endMinute": 15,
-      "vacantSeats": 5,
       "fare": "110",
       "driver": {
           "driverId": 1,
-          "driverName": "Ram",
+          "driverFirstName": "Ram",
+          "driverLastName": "Varma",
           "company": "Exp",
           "contactNumber": "9546241719",
           "licenseNumber": "KL/2016/039"
@@ -75,7 +77,8 @@
       "vehicle": {
           "vehicleId": 1,
           "VehicleNumber": "KL-39K-3302",
-          "vehicleModel": "Swift",
+          "vehicleMake": "Suzuki",
+           "vehicleModel": "Swift",
           "seatCapacity": 5
       }
     },
@@ -89,11 +92,11 @@
       "startMinute": 15,
       "endHour": 19,
       "endMinute": 15,
-      "vacantSeats": 2,
       "fare": "110",
       "driver": {
           "driverId": 1,
-          "driverName": "Ram",
+          "driverFirstName": "Ram",
+          "driverLastName": "Sharma",
           "company": "Exp",
           "contactNumber": "9546241719",
           "licenseNumber": "KL/2016/039"
@@ -101,6 +104,7 @@
       "vehicle": {
           "vehicleId": 1,
           "VehicleNumber": "KL-39K-3302",
+          "vehicleMake": "Suzuki",
           "vehicleModel": "Swift",
           "seatCapacity": 5
       }

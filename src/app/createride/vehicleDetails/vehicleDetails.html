@@ -1,0 +1,72 @@
+<form name="ctrl.vehicleDetails" ng-submit="ctrl.addRideDetails()">
+  
+
+  <div class="container ">
+    
+  <h2>Vehicle Details</h2></br>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><h5>Driver Name</h5></th>
+      </tr>
+      <tr>
+        <th><h5>Company Name</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><label for="vehicleNo"><b>Vehicle Number</b></label></td><div class="col-md-8">
+        <td><input id="vehicleNo" name="vehicleNo" type="text"  placeholder="vehicle Number" maxlength="20"
+         ng-model="ctrl.formData.vehicleNo"ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true">
+        <span class="alert"
+         ng-show="ctrl.vehicleDetails.vehicleNo.$dirty && ctrl.vehicleDetails.vehicleNo.$error.required"> Vehicle number required</span>
+        <span ng-show="ctrl.vehicleDetails.vehicleNo.$error.pattern"> Alphanumeric only</span></div></td>
+      </tr>
+      <tr>
+        <td><label for="vehicleMake"><b>Vehicle Make </b></label></br></td>
+    <td><input id="vehicleMake" name="vehicleMake" type="text" placeholder="Make"
+      ng-model="ctrl.formData.vehicleMake" ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+    <span class="alert"
+        ng-show="ctrl.vehicleDetails.vehicleMake.$dirty && ctrl.vehicleDetails.vehicleMake.$error.required">Vehicle make required.</span>
+    <span ng-show="ctrl.vehicleDetails.vehicleMake.$error.pattern"> Alphabets only</span></br></td>
+    </tr>
+    <tr>
+        <td><label for="vehicleModel"><b>Vehicle Model</b></label></td><div class="col-md-8">
+        <td><input id="vehicleModel" name="vehicleModel" type="text"  placeholder="Model" maxlength="15"
+         ng-model="ctrl.formData.vehicleModel"ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true">
+        <span class="alert"
+         ng-show="ctrl.vehicleDetails.vehicleModel.$dirty && ctrl.vehicleDetails.vehicleModel.$error.required"> Vehicle model required</span>
+        <span ng-show="ctrl.vehicleDetails.vehicleModel.$error.pattern"> Alphanumeric only</span></div></td>
+      </tr>
+    <tr>
+    <td><label for="seatCapacity"><b>Seat Capacity </b></label></td>
+    <td><input id="seatCapacity" name="seatCapacity" type="text" placeholder="Seat" ng-model="ctrl.formData.seatCapacity"
+     ng-pattern="/^(\d)+$/" class="col-sm-2" ng-required="true">
+    <span class="alert"
+      ng-show="ctrl.vehicleDetails.seatCapacity.$dirty && ctrl.vehicleDetails.seatCapacity.$error.required">Number of seats required.</span>
+    <span ng-show="ctrl.vehicleDetails.seatCapacity.$error.pattern"> Numbers only</span>
+  </td></tr>
+
+  
+
+  <tr>
+    <td><button type="submit" ng-disabled="ctrl.vehicleDetails.$invalid">Save</button>
+    <button type="button" ng-click="ctrl.cancel()">Cancel</button>&nbsp;
+    <ion-item ng-repeat="contact in contact2" item2="item">
+  </tr>
+  
+   </tbody>
+  </table>
+  
+</div>
+<body>
+
+<div class="container">            
+  <ul class="pager">
+    <li><a href="/createride/driverDetails">Previous</a></li>
+    <li><a href="/createride/rideDetails">Next</a></li> 
+  </ul>
+</div>
+
+</body>
+</form>

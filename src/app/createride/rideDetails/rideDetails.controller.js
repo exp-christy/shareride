@@ -11,7 +11,7 @@ function RideDetailsCtrl() {
   //add 
 
     // Creating a key for localStorage and initialising it to an array of object/s which will be the first list item when the app loads which will act as an example
-    window.localStorage['items'] = JSON.stringify([{ 
+    window.localStorage['items3'] = JSON.stringify([{ 
       
       rideId: 11,
       from: "Piravom",
@@ -26,8 +26,8 @@ function RideDetailsCtrl() {
       fare: 100
      }]);
 
-    // Cache the JSON object in [items] to call later
-    ctrl.contacts = JSON.parse(localStorage.getItem('items')) || [];
+    // Cache the JSON object in [items3] to call later
+    ctrl.contact3 = JSON.parse(localStorage.getItem('items3')) || [];
 
     // When submit button is pressed it will push the object to the array in localStorage
     ctrl.addRideDetails = function() {  
@@ -38,7 +38,7 @@ function RideDetailsCtrl() {
     var stime = ctrl.formData.startTime;
     var etime = ctrl.formData.endTime;
     
-      ctrl.contacts.push({ rideId: ctrl.count++,
+      ctrl.contact3.push({ rideId: ctrl.count++,
       from: ctrl.formData.From,
       stopPoints: ctrl.formData.stopPoints,
       startDate: sdate.toLocaleDateString(),
@@ -49,7 +49,7 @@ function RideDetailsCtrl() {
       endMinute: etime.getMinutes(),
       vacantSeats: ctrl.formData.Seat,
       fare: ctrl.formData.Fare, });
-console.log(ctrl.contacts)
+console.log(ctrl.contact3)
       rideId:" ";
       from: " ";
       stopPoints: " ";
@@ -66,6 +66,6 @@ console.log(ctrl.contacts)
 
     // When the delete button is pressed, it will find the corresponding item's index from localStorage and splice it
     ctrl.itemDelete = function(item) {
-      ctrl.contacts.splice(ctrl.contacts.indexOf(item), 1);
+      ctrl.contact3.splice(ctrl.contact3.indexOf(item), 1);
     };
   }
