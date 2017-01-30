@@ -1,4 +1,4 @@
-<form name="ctrl.createRide" ng-submit="ctrl.Add()">
+<form name="ctrl.createRide" ng-submit="ctrl.addRideDetails()">
   
 
   <div class="container ">
@@ -48,16 +48,16 @@
 
   <tr>
     <td><label for="stime"><b>Start Time </b></label></td>
-    <td><input type="time"  name="stime" ng-model="ctrl.createRide.startTime"
-       placeholder="HH:mm:ss" min="00:00:00" max="23:00:00" ng-required="true" ></br>
+    <td><input type="time"  name="stime" ng-model="ctrl.formData.startTime"
+       placeholder="HH:mm:ss"  ng-required="true" ></br>
     <span class="alert"
        ng-show="ctrl.createRide.stime.$dirty && ctrl.createRide.stime.$error.required">Start time required.</span>
  </td> </tr>
 
   <tr>
    <td> <label for="etime"><b>End Time </b></label></td>
-    <td><input type="time"  name="etime" ng-model="ctrl.createRide.endTime"
-       placeholder="HH:mm:ss" min="00:00:00" max="23:00:00" ng-required="true" >
+    <td><input type="time"  name="etime" ng-model="ctrl.formData.endTime"
+       placeholder="HH:mm:ss"  ng-required="true" >
     <span class="alert"
        ng-show="ctrl.createRide.etime.$dirty && ctrl.createRide.etime.$error.required">End time required.</span></br>
  </td> </tr>
