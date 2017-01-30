@@ -47,12 +47,12 @@
 			<td>{{record.endDate}}</td>
 			<td>
         {{record.startHour}}:{{record.startMinute}}
-        <span ng-show="record.startHour <= 12 ?ctrl.ampm='AM' : ctrl.ampm='PM'">{{ctrl.ampm}}</span>
+        <span ng-show="record.startHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
         <span></span>
       </td>
 			<td>
         {{record.endHour}}:{{record.endMinute}}
-        <span ng-show="record.endHour <= 12 ?ctrl.ampm='AM' : ctrl.ampm='PM'">{{ctrl.ampm}}</span>
+        <span ng-show="record.endHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
       </td>
 			<td>{{record.vacantSeats}}</td>
 			<td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search">View</button></td>
