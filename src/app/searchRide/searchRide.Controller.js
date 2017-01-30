@@ -6,10 +6,9 @@ function SearchRideController($http) {
   var ctrl = this;
   ctrl.searchResult = [];
   ctrl.searchRideDetails = searchRideDetails;
-
+  ctrl.ampm;
   //Function searches ride details for the place from JSON file
-  function searchRideDetails(place) {
-    if( typeof place === 'undefined'){
+  function searchRideDetails(place) { 
       $http.get("/data/rideDetails.json")
       .then(function (response) {
         var res = response.data.rides;
@@ -22,6 +21,5 @@ function SearchRideController($http) {
         }
         res=[];
       });
-    }
   };
 }
