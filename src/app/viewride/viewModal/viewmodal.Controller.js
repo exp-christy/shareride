@@ -24,4 +24,8 @@
        $value: 'cancel'
      });
    };
+   ctrl.psssengerDetails= function() {
+     console.log("Hello...");
+     
+   }
  }
