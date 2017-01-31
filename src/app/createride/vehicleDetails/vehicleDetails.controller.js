@@ -45,6 +45,6 @@ console.log(ctrl.contact2)
     };
 
     ctrl.cancel = function() {
-         location.href = '/home';
+         location.href = '/myHome';
      }
   }

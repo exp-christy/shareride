@@ -11,6 +11,6 @@ function DriverDetailController(){
     }
 
      ctrl.cancel = function() {
-         location.href = '/home';
+         location.href = '/myHome';
      }
 }
