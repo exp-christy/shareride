@@ -4,7 +4,6 @@
  function ViewModalController($uibModal) {
    var ctrl = this;
    ctrl.formData = {};
-   
    ctrl.$onInit = function(){
      console.log(angular.copy(ctrl));
    }
@@ -14,6 +13,11 @@
        $value: ctrl.formData
      });
    };
+   $(".btn").on("click", function() {
+    $(".alert").removeClass("in").show();
+	$(".alert").delay(200).addClass("in").fadeIn();
+});
+
 
    ctrl.cancel = function () {
      ctrl.dismiss({
