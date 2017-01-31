@@ -35,14 +35,14 @@
 	</thead>
 	<tbody>
     <tr>
-      <td><input type="text" name="lstSearchRide.txtStartDate" ng-model="searchDetail.startDate"></td>
-      <td><input type="text" name="lstSearchRide.txtEndDate" ng-model="searchDetail.endDate"></td>
-      <td><input type="text" name="lstSearchRide.txtStartTime" ng-model="searchDetail.startHour"></td>
-      <td><input type="text" name="lstSearchRide.txtEndTime" ng-model="searchDetail.endHour"></td>
-      <td><input type="text" name="lstSearchRide.txtVacantSeats" ng-model="searchDetail.vacantSeats"></td>
+      <td><input type="date" name="lstSearchRide.txtStartDate" ng-change="ctrl.changeToString()" ng-model="ctrl.searchDetail.startDate">{{ctrl.searchDetail.startDate}}</td>
+      <td><input type="date" name="lstSearchRide.txtEndDate" ng-model="ctrl.searchDetail.endDate"></td>
+      <td><input type="text" name="lstSearchRide.txtStartTime" ng-model="ctrl.searchDetail.startHour"></td>
+      <td><input type="text" name="lstSearchRide.txtEndTime" ng-model="ctrl.searchDetail.endHour"></td>
+      <td><input type="text" name="lstSearchRide.txtVacantSeats" ng-model="ctrl.searchDetail.vacantSeats"></td>
       <td></td>
     </tr>
-		<tr ng-repeat="record in ctrl.searchResult | filter:searchDetail">
+		<tr ng-repeat="record in ctrl.searchResult | filter:ctrl.searchDetail">
 			<td>{{record.startDate}}</td>
 			<td>{{record.endDate}}</td>
 			<td>

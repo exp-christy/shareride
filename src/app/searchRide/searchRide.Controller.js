@@ -5,6 +5,7 @@ angular
 function SearchRideController($http) {
   var ctrl = this;
   ctrl.searchResult = [];
+  ctrl.changeToString = changeToString;
   ctrl.searchRideDetails = searchRideDetails;
   ctrl.ampm;
   //Function searches ride details for the place from JSON file
@@ -21,5 +22,8 @@ function SearchRideController($http) {
         }
         res=[];
       });
+  }
+  function changeToString(){
+    ctrl.searchDetail.startDate = ctrl.searchDetail.startDate.toLocaleDateString();
   };
 }
