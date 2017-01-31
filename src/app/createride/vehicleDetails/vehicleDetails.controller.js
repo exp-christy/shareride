@@ -44,8 +44,7 @@ console.log(ctrl.contact2)
       location.href = '/createride/rideDetails';
     };
 
-    // When the delete button is pressed, it will find the corresponding item's index from localStorage and splice it
-    ctrl.itemDelete = function(item) {
-      ctrl.contact2.splice(ctrl.contact2.indexOf(item), 1);
-    };
+    ctrl.cancel = function() {
+         location.href = '/home';
+     }
   }

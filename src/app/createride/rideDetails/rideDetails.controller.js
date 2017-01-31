@@ -64,6 +64,10 @@ console.log(ctrl.contact3)
      
     };
 
+    ctrl.cancel = function() {
+         location.href = '/home';
+     }
+
     // When the delete button is pressed, it will find the corresponding item's index from localStorage and splice it
     ctrl.itemDelete = function(item) {
       ctrl.contact3.splice(ctrl.contact3.indexOf(item), 1);
