@@ -13,12 +13,9 @@
   }
   .bg-2 { 
       background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
+      color: #008ae6;
   }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
+  
   .bg-4 { 
       background-color: #2f2f2f; /* Black Gray */
       color: #fff;
@@ -70,10 +67,12 @@
 					ng-change="ctrl.show = false" ng-model="ctrl.formdata.place" placeholder="Search for place..."
 				  ng-pattern="/^[a-z A-Z]*$/"	ng-required="true">
 				<span class="input-group-btn">
-        <button class="btn btn-secondary" name="frmSearchRide.btnSearch" ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
+        <button class="btn btn-secondary" name="btnSearch"
+			
+				 ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
         </span>
 				<div class="col-lg-6">
-					<span ng-show="frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required" class="help-block">
+					<span ng-show="(frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required)" class="help-block">
                 Enter the place
             </span>
             <span ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
@@ -86,7 +85,7 @@
 	</div>
 </nav>
 
-<div class="container-fluid bg-1 text-center">
+<div class="container-fluid bg-2 text-center">
 <table class="table table-bordered table-hover table-condensed" ng-show="ctrl.show">
 	<thead class="thead-inverse">
     <tr>
