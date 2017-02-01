@@ -70,7 +70,9 @@
 					ng-change="ctrl.show = false" ng-model="ctrl.formdata.place" placeholder="Search for place..."
 				  ng-pattern="/^[a-z A-Z]*$/"	ng-required="true">
 				<span class="input-group-btn">
-        <button class="btn btn-secondary" name="frmSearchRide.btnSearch" ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
+        <button class="btn btn-secondary" name="frmSearchRide.btnSearch"
+				ng-disabled="frmSearchRide.$invalid"
+				 ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" ng-model="ctrl.formdata.search" type="button">Go!</button>
         </span>
 				<div class="col-lg-6">
 					<span ng-show="frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required" class="help-block">
