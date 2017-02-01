@@ -6,7 +6,12 @@
     "angular-ui-router": "1.0.0-beta.1",
     "bootstrap": "^3.3.7",
     "angular-bootstrap": "^2.4.0",
+<<<<<<< HEAD
+    "angular-toastr": "^2.1.1",
+    "angular-animate": "^1.6.1"
+=======
     "angularfire": "^2.3.0"
+>>>>>>> bbfed6fb3329e2d3ab5fe6afbf0adff5acfa0afc
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0"
