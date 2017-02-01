@@ -9,7 +9,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('myHome', {
-      url: '/myHome',
+      url: '/',
       component: 'myHome'
     })
     .state('createride', {
@@ -29,7 +29,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'rideDetails'
     })
     .state('bookRide', {
-      url: '/bookRide',
+      url: '/bookRide/:id',
       component: 'bookRide'
     });
 }
