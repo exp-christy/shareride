@@ -1,12 +1,9 @@
 angular.module("app")
   .controller("ViewRideController", ViewRideController);
 
-function ViewRideController($uibModal, $log, $http) {
+function ViewRideController($uibModal, $log, $http,$stateParams) {
   var ctrl = this;
-
   ctrl.openComponentModal = openComponentModal;
-
-  ctrl.rideID = 2;
   ctrl.result = {};
   ctrl.ab;
 
@@ -24,11 +21,13 @@ ctrl.update = update;
       };
 
   function init() {
+    //console.log($stateParams);
+    ctrl.rideID = $stateParams.rideID;
     $http.get('/data/rideDetails.json').then(function (response) {
       var rideDetails = response.data;
       var len = rideDetails.rides.length;
       for (var i = 0; i < len; i++) {
-        if (rideDetails.rides[i].rideId === ctrl.rideID) {
+        if (rideDetails.rides[i].rideId == ctrl.rideID) {
           ctrl.result = rideDetails.rides[i];
           console.log(ctrl.result);
           break;
