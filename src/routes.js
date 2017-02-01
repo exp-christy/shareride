@@ -8,8 +8,40 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('app', {
+    .state('myHome', {
       url: '/',
-      component: 'app'
+      component: 'myHome'
+    })
+    .state('createride', {
+      url: '/createride',
+      component: 'createRide'
+    })
+    .state('driverDetails', {
+      url: '/createride/driverDetails',
+      component: 'driverDetails'
+    })
+    .state('vehicleDetails', {
+      url: '/createride/vehicleDetails',
+      component: 'vehicleDetails'
+    })
+    .state('rideDetails', {
+      url: '/createride/rideDetails',
+      component: 'rideDetails'
+    })
+    .state('searchRide', {
+      url: '/searchRide',
+      component: 'searchRide'
+    })
+    .state('fireBase', {
+      url: '/fireBase',
+      component: 'fireBase'
+    })
+    .state('viewride', {
+      url: '/viewride/{rideID}',
+      component: 'viewRide'
+    })
+    .state('bookRide', {
+      url: '/bookRide/:id',
+      component: 'bookRide'
     });
 }
