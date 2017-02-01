@@ -72,7 +72,7 @@
         <span ng-show="record.endHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
       </td>
 			<td>{{record.vacantSeats}}</td>
-			<td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search">View</button></td>
+			<td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search" ng-click="ctrl.viewRideDetails(record.rideId)" >View</button></td>
 		</tr>
 	</tbody>
 </table>
