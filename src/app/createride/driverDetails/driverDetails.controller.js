@@ -9,4 +9,8 @@ function DriverDetailController(){
        
         location.href = '/createride/vehicleDetails';
     }
+
+     ctrl.cancel = function() {
+         location.href = '/myHome';
+     }
 }
