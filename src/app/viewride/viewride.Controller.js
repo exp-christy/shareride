@@ -6,9 +6,9 @@ function ViewRideController($uibModal, $log, $http,$stateParams) {
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
   ctrl.ab;
-
   ctrl.$onInit = init;
 ctrl.update = update;
+var value='';
   function openComponentModal() {
     var modalInstance = $uibModal.open({
       component: 'viewModal',
@@ -21,6 +21,7 @@ ctrl.update = update;
       };
 
   function init() {
+    
     //console.log($stateParams);
     ctrl.rideID = $stateParams.rideID;
     $http.get('/data/rideDetails.json').then(function (response) {
@@ -39,4 +40,5 @@ ctrl.update = update;
 function update() {
 location.href= '/searchRide';
 }
+
 }

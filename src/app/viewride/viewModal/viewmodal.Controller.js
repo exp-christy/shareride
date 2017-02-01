@@ -1,32 +1,25 @@
  angular.module("app")
    .controller("ViewModalController", ViewModalController);
 
- function ViewModalController($uibModal) {
+ function ViewModalController($uibModal, $state, $timeout,toastr) {
    var ctrl = this;
    ctrl.formData = {};
-   ctrl.$onInit = function(){
-     console.log(angular.copy(ctrl));
-   }
+   ctrl.rideBook= rideBook;
+   ctrl.cancel = cancel;
    ctrl.ok = function () {
-     console.log(ctrl)
      ctrl.close({
        $value: ctrl.formData
      });
    };
-   $(".btn").on("click", function() {
-    $(".alert").removeClass("in").show();
-	$(".alert").delay(200).addClass("in").fadeIn();
-});
-
-
-   ctrl.cancel = function () {
+   function cancel() {
      ctrl.dismiss({
        $value: 'cancel'
      });
    };
-   ctrl.passengerDetails= function() {
-     console.log("Hello...");
-     location.href='/searchRide';
-     
+   function rideBook(){
+     $timeout(ctrl.ok,3000);
+     toastr.success('success', 'Booking has been made!');
+     $state.go('searchRide');
    }
+
  }
