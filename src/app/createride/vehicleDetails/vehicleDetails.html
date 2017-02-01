@@ -1,17 +1,81 @@
-<div class="container">
-  <p>
-		<h2 align="center">Vehicle Details</h2>
-	</p>
+<head>
+<style>
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: #008ae6; /* blue */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #ffffff; /* Dark Blue */
+      color: #000000;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #008ae6 !important;
+  }
+  
+  </style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                       
+      </button>
+      <img src="app/images/logo1.jpg"
+   class="img-responsive img-circle margin" style="display:inline" alt="LOGO" width="90" height="90">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/searchRide">SEARCH RIDE</a></li>
+        <li><a href="/createride/driverDetails">CREATE RIDE</a></li>
+      </ul>
+	  <h2 style="color:#008ae6" align="center">VEHICLE DETAILS</h2>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid bg-2 text-left">
 <form name="ctrl.vehicleDetails" ng-submit="ctrl.addRideDetails()">
   
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleNo"><b>Vehicle Number</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleNo">Vehicle Number</label>
                 <input class="form-control" type="text" name="vehicleNo"maxlength="20"
                  ng-model="ctrl.formData.vehicleNo" ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true"
                  placeholder="vehicle Number">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleNo.$dirty && ctrl.vehicleDetails.vehicleNo.$error.required">
@@ -23,12 +87,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleMake"><b>Vehicle Make</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleMake">Vehicle Make</label>
                 <input class="form-control" type="text" name="vehicleMake"maxlength="20"
                  ng-model="ctrl.formData.vehicleMake" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="Make">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleMake.$dirty && ctrl.vehicleDetails.vehicleMake.$error.required">
@@ -40,12 +104,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleModel"><b>Vehicle Model</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleModel">Vehicle Model</label>
                 <input class="form-control" type="text" name="vehicleModel"maxlength="20"
                  ng-model="ctrl.formData.vehicleModel" ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true"
                  placeholder="Model">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleModel.$dirty && ctrl.vehicleDetails.vehicleModel.$error.required">
@@ -57,12 +121,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-2"></br>
-                <label for="seatCapacity"><b>Seat Capacity</b></label>
+            <div class="col-sm-2">
+                <label for="seatCapacity">Seat Capacity</label>
                 <input class="form-control" type="text" name="seatCapacity"maxlength="20"
                  ng-model="ctrl.formData.seatCapacity" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="Seat">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.seatCapacity.$dirty && ctrl.vehicleDetails.seatCapacity.$error.required">
@@ -91,3 +155,9 @@
   </div>
  </form>
 </div>  
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p><a href="http://www.shareride.com">www.shareride.com</a></p> 
+</footer>
+
+</body>

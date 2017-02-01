@@ -2,10 +2,11 @@ angular
   .module('app')
   .controller('SearchRideController', SearchRideController);
 
-function SearchRideController($http) {
+function SearchRideController($http,$state) {
   var ctrl = this;
   ctrl.searchResult = [];
   ctrl.searchRideDetails = searchRideDetails;
+  ctrl.viewRideDetails = viewRideDetails;
   ctrl.filterDetail= {};
   ctrl.ampm;
   //Function searches ride details for the place from JSON file
@@ -23,5 +24,9 @@ function SearchRideController($http) {
         }
         res=[];
       });
+  }
+  function viewRideDetails(Id){
+    console.log(Id);
+    $state.go('viewride',{'rideID':Id});
   }
 }
