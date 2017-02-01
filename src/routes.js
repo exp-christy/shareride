@@ -32,6 +32,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/searchRide',
       component: 'searchRide'
     })
+    .state('fireBase', {
+      url: '/fireBase',
+      component: 'fireBase'
+    })
     .state('viewride', {
       url: '/viewride/:rideID',
       component: 'viewRide'
