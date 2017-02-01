@@ -12,8 +12,8 @@
       color: #ffffff;
   }
   .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #008ae6;
+      background-color: #ffffff; /* Dark Blue */
+      color: #000000;
   }
   .bg-3 { 
       background-color: #ffffff; /* White */
@@ -71,7 +71,7 @@
  <div class="form-group">
         <div class="col-sm-10" >
             <div class="col-sm-5">
-                <label for="from"><b>From</b></label>
+                <label for="from">From</label>
                 <input class="form-control" type="text" name="from" maxlength="20"
                  ng-model="ctrl.formData.from" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="From">
@@ -88,7 +88,7 @@
   <div class="form-group">
         <div class="col-sm-10" >
             <div class="col-sm-5">
-                <label for="stopPoints"><b>Stop Points</b></label>
+                <label for="stopPoints">Stop Points</label>
                 <input class="form-control" type="text" name="stopPoints" maxlength="40"
                  ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="Stop Points 1,2...">
@@ -105,7 +105,7 @@
 <div class="form-group">
         <div class="col-sm-12" >
             <div class="col-sm-2">
-                <label for="startDate"><b>Start Date</b></label>
+                <label for="startDate">Start Date</label>
                 <input class="form-control" type="date" name="startDate"
                  ng-model="ctrl.formData.startDate"  ng-required="true">
             </div>
@@ -126,12 +126,12 @@
 <div class="form-group">
         <div class="col-sm-12" >
             <div class="col-sm-2">
-                <label for="startTime"><b>Start Time</b></label>
+                <label for="startTime">Start Time</label>
                 <input class="form-control" type="time" name="startTime" placeholder="HH:MM:SS"
                  ng-model="ctrl.formData.startTime" ng-required="true">
             </div>
             <div class="col-sm-2">
-                <label for="endTime"><b>End Time</b></label>
+                <label for="endTime">End Time</label>
                 <input class="form-control" type="time" name="endTime" placeholder="HH:mm:ss"
                  ng-model="ctrl.formData.endTime" ng-required="true">
             </div>
@@ -146,7 +146,7 @@
 <div class="form-group">
         <div class="col-sm-10" >
             <div class="col-sm-2">
-                <label for="vacantSeats"><b>Vacant Seats</b></label>
+                <label for="vacantSeats">Vacant Seats</label>
                 <input class="form-control" type="text" name="vacantSeats"
                  ng-model="ctrl.formData.vacantSeats" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="Seats">
@@ -163,13 +163,13 @@
 <div class="form-group">
         <div class="col-sm-10" >
             <div class="col-sm-2">
-                <label for="fare"><b>Fare</b></label>
+                <label for="fare">Fare<</label>
                 <input class="form-control" type="text" name="fare"
                  ng-model="ctrl.formData.fare" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="fare">
             </div></br>
             <div class="col-sm-4">
-                <span><b> per ride.</b></span>
+                <span> per ride.</span>
                 <span class="alert" style="color:red"
                  ng-show="ctrl.rideDetails.fare.$dirty && ctrl.rideDetails.fare.$error.required">
                  Fare required.</span>

@@ -12,8 +12,8 @@
       color: #ffffff;
   }
   .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #008ae6;
+      background-color: #ffffff; /* Dark Blue */
+      color: #000000;
   }
   .bg-3 { 
       background-color: #ffffff; /* White */
@@ -70,12 +70,12 @@
   
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleNo"><b>Vehicle Number</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleNo">Vehicle Number</label>
                 <input class="form-control" type="text" name="vehicleNo"maxlength="20"
                  ng-model="ctrl.formData.vehicleNo" ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true"
                  placeholder="vehicle Number">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleNo.$dirty && ctrl.vehicleDetails.vehicleNo.$error.required">
@@ -87,12 +87,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleMake"><b>Vehicle Make</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleMake">Vehicle Make</label>
                 <input class="form-control" type="text" name="vehicleMake"maxlength="20"
                  ng-model="ctrl.formData.vehicleMake" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="Make">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleMake.$dirty && ctrl.vehicleDetails.vehicleMake.$error.required">
@@ -104,12 +104,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-4"></br>
-                <label for="vehicleModel"><b>Vehicle Model</b></label>
+            <div class="col-sm-4">
+                <label for="vehicleModel">Vehicle Model</label>
                 <input class="form-control" type="text" name="vehicleModel"maxlength="20"
                  ng-model="ctrl.formData.vehicleModel" ng-pattern="/^[a-z A-Z 0-9]*$/" ng-required="true"
                  placeholder="Model">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.vehicleModel.$dirty && ctrl.vehicleDetails.vehicleModel.$error.required">
@@ -121,12 +121,12 @@
   </div>
   <div class="form-group">
         <div class="col-sm-10" >
-            <div class="col-sm-2"></br>
-                <label for="seatCapacity"><b>Seat Capacity</b></label>
+            <div class="col-sm-2">
+                <label for="seatCapacity">Seat Capacity</label>
                 <input class="form-control" type="text" name="seatCapacity"maxlength="20"
                  ng-model="ctrl.formData.seatCapacity" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="Seat">
-            </div></br></br></br>
+            </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
                  ng-show="ctrl.vehicleDetails.seatCapacity.$dirty && ctrl.vehicleDetails.seatCapacity.$error.required">
