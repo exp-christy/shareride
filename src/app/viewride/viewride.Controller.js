@@ -11,7 +11,7 @@ function ViewRideController($uibModal, $log, $http) {
   ctrl.ab;
 
   ctrl.$onInit = init;
-
+ctrl.update = update;
   function openComponentModal() {
     var modalInstance = $uibModal.open({
       component: 'viewModal',
@@ -21,7 +21,7 @@ function ViewRideController($uibModal, $log, $http) {
     }).catch(function () {
       $log.info('modal-component dismissed at: ' + new Date());
     });
-  };
+      };
 
   function init() {
     $http.get('/data/rideDetails.json').then(function (response) {
@@ -37,4 +37,7 @@ function ViewRideController($uibModal, $log, $http) {
     });
   }
 
+function update() {
+location.href= '/searchRide';
+}
 }

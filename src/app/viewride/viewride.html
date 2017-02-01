@@ -1,18 +1,15 @@
-<form name="viewForm">
-  <div class="row">
-	  	<div class="col-sm-1">
-	</div>
+<div class="row">
+  <P>
+    <h2 align="center">RIDE DETAILS</h2>
+  </p>
+  <form name="viewForm">
+    <div class="col-sm-1">
+    </div>
     <div class="col-sm-5">
       <table class="table">
         <tbody>
           <tr>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="3"><b><u>DRIVER Details</u></b></td>
-          </tr>
-          <tr>
-            <td></td>
+            <td colspan="3"><b><u>DRIVER DETAILS</u></b></td>
           </tr>
           <tr>
           </tr>
@@ -38,8 +35,8 @@
         </tbody>
       </table>
     </div>
-	<div class="col-sm-1">
-	</div>
+    <div class="col-sm-1">
+    </div>
     <div class="col-sm-5">
       <table class="table">
         <tbody>
@@ -77,18 +74,16 @@
           </tr>
           <tr>
             <td><label for="fare">FARE:</label></td>
-            <td><label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}</label></td>
+            <td><label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}  <span><b> per ride.</b></span></label></td>
           </tr>
-		
           <tr>
             <td>
-
-              <button  class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Next</button> &nbsp&nbsp&nbsp&nbsp
-              <button  class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
+              <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Next</button> &nbsp&nbsp&nbsp&nbsp
+              <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-</form>
+  </form>
+</div>

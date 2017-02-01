@@ -24,8 +24,9 @@
        $value: 'cancel'
      });
    };
-   ctrl.psssengerDetails= function() {
+   ctrl.passengerDetails= function() {
      console.log("Hello...");
+     location.href='/searchRide';
      
    }
  }
