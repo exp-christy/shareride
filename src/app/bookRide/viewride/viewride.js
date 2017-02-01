@@ -1,7 +1,7 @@
 angular
   .module('app')
   .component('viewRide', {
-    templateUrl: 'app/viewride/viewride.html',
+    templateUrl: 'app/bookRide/viewride/viewride.html',
     controller: 'ViewRideController',
     controllerAs: 'ctrl',
     bindings: {}  
