@@ -13,20 +13,25 @@ function SearchRideController($http,$state) {
   function searchRideDetails(place) { 
       $http.get("/data/rideDetails.json")
       .then(function (response) {
-        ctrl.show="true";
         var res = response.data.rides;
         var len = res.length;
         ctrl.searchResult = [];
         for(var i=0;i < len; i++){
-            if(res[i].from.toUpperCase() == place.toUpperCase()){
+              if(res[i].from.toUpperCase() == place.toUpperCase()){
                 ctrl.searchResult.push(angular.copy(res[i]));
-            }
+              }
         }
-        res=[];
+        if(ctrl.searchResult.length !== 0){
+          ctrl.show="true";
+          res=[];
+        }
+        else{
+          alert("Sorry no rides were found!");
+        }
+        
       });
   }
   function viewRideDetails(Id){
-    console.log(Id);
     $state.go('viewride',{'rideID':Id});
   }
 }
