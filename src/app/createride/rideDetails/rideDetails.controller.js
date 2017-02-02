@@ -65,8 +65,8 @@ console.log(ctrl.contact3)
       vacantSeats:" ";
       fare: " ";
 
-      $timeout(ctrl.ok,3000);
-     toastr.success('success','New ride has been created');
+      $timeout(ctrl.ok,100);
+     toastr.success('New ride has been created');
      $state.go('myHome');
      
     };

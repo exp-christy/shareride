@@ -41,10 +41,7 @@ console.log(ctrl.contact2)
       vehicleMake: " ";
       vehicleModel: " ";
       seatCapacity: " ";
-      location.href = '/createride/rideDetails';
+    
     };
 
-    ctrl.cancel = function() {
-         location.href = '/myHome';
-     }
   }
