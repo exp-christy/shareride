@@ -43,5 +43,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('bookRide', {
       url: '/bookRide/:id',
       component: 'bookRide'
+    })
+    .state('rideList', {
+      url: '/rideList/:fromPlace',
+      component: 'rideList'
     });
 }
