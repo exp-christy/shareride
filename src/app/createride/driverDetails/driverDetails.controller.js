@@ -7,10 +7,5 @@ function DriverDetailController(){
     ctrl.addDriverDetails= addDriverDetails;
     function addDriverDetails(){
        
-        location.href = '/createride/vehicleDetails';
     }
-
-     ctrl.cancel = function() {
-         location.href = '/myHome';
-     }
 }

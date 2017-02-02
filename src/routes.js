@@ -37,11 +37,15 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'fireBase'
     })
     .state('viewride', {
-      url: '/viewride/{rideID}',
+      url: '/viewride/:rideID',
       component: 'viewRide'
     })
     .state('bookRide', {
       url: '/bookRide/:id',
       component: 'bookRide'
+    })
+    .state('rideList', {
+      url: '/rideList/:fromPlace',
+      component: 'rideList'
     });
 }

@@ -1,14 +1,14 @@
 angular.module("app")
   .controller("ViewRideController", ViewRideController);
 
-function ViewRideController($uibModal, $log, $http,$stateParams) {
+function ViewRideController($uibModal, $log, $http,$state,$stateParams) {
   var ctrl = this;
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
   ctrl.ab;
-
   ctrl.$onInit = init;
 ctrl.update = update;
+var value='';
   function openComponentModal() {
     var modalInstance = $uibModal.open({
       component: 'viewModal',
@@ -21,6 +21,7 @@ ctrl.update = update;
       };
 
   function init() {
+    
     //console.log($stateParams);
     ctrl.rideID = $stateParams.rideID;
     $http.get('/data/rideDetails.json').then(function (response) {
@@ -37,6 +38,7 @@ ctrl.update = update;
   }
 
 function update() {
-location.href= '/searchRide';
+$state.go('rideList',{'fromPlace':ctrl.result.from});
 }
+
 }

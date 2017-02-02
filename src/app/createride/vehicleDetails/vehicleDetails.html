@@ -58,8 +58,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/searchRide">SEARCH RIDE</a></li>
-        <li><a href="/createride/driverDetails">CREATE RIDE</a></li>
+        <li><a ui-sref="searchRide">SEARCH RIDE</a></li>
+        <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
       </ul>
 	  <h2 style="color:#008ae6" align="center">VEHICLE DETAILS</h2>
     </div>
@@ -140,15 +140,13 @@
         <div class="col-sm-8" >
             <div class="col-sm-2">
                 </br>
-                <button type="submit" class="btn btn-lg btn-block btn-primary"
-                 ng-disabled="ctrl.vehicleDetails.$invalid">Next</button>
+                <a ui-sref="rideDetails" type="submit" class="btn btn-lg btn-block btn-primary"
+                 ng-disabled="ctrl.vehicleDetails.$invalid">Next</a>
             </div>
-            <div class="col-sm-2">
-                </br>
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-danger" 
-                 ng-click="ctrl.cancel()">Cancel</button>
-                <ion-item ng-repeat="contact in contact2" item2="item">
-            </div>
+            <div class="col-sm-2"></br>
+               <a ui-sref="myHome" type="button" class="btn btn-primary btn-lg btn-block btn-danger"
+                 ng-click="ctrl.cancel()">Cancel</a>
+            </div> 
         </div>
   </div>
   
@@ -157,7 +155,7 @@
 </div>  
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p><a href="http://www.shareride.com">www.shareride.com</a></p> 
+  <p><a ui-sref="myHome">www.shareride.com</a></p> 
 </footer>
 
 </body>

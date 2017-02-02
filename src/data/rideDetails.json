@@ -31,6 +31,61 @@
     },
     {
       "rideId": 2,
+      "from": "Kochi",
+      "stopPoints": "Thoppumpady,Vytilla",
+      "startDate": "01/02/2017",
+      "endDate": "17/02/2017",
+      "startHour": 8,
+      "startMinute": 15,
+      "endHour": 18,
+      "endMinute": 15,
+      "vacantSeats":1,
+      "fare": "150",
+      "driver": {
+          "driverId": 1,
+          "driverFirstName": "Aashiq",
+          "driverLastName": "Mohmed",
+          "company": "Experion",
+          "contactNumber": "9895098950",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-43-F4",
+          "vehicleMake": "Mercedes",
+          "vehicleModel": "SLS AMG",
+          "seatCapacity": 1
+      }
+    },{
+      "rideId": 3,
+      "from": "Kochi",
+      "stopPoints": "Thoppumpady,Vytilla",
+      "startDate": "01/02/2017",
+      "endDate": "17/02/2017",
+      "startHour": 8,
+      "startMinute": 15,
+      "endHour": 18,
+      "endMinute": 15,
+      "vacantSeats":1,
+      "fare": "150",
+      "driver": {
+          "driverId": 1,
+          "driverFirstName": "Aashiq",
+          "driverLastName": "Mohmed",
+          "company": "Experion",
+          "contactNumber": "9800001122",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39-S1",
+          "vehicleMake": "Lamborghini",
+          "vehicleModel": "Sesto Elemento",
+          "seatCapacity": 1
+      }
+    },
+    {
+      "rideId": 4,
       "from": "Pala",
       "stopPoints": "Piravom,Arakunnam,Chottanikara",
       "startDate": "12/02/2017",
@@ -58,7 +113,7 @@
       }
     },
     {
-      "rideId": 3,
+      "rideId": 5,
       "from": "Piravom",
       "stopPoints": "Arakunnam,Chottanikara",
       "startDate": "14/02/2017",
@@ -86,7 +141,7 @@
       }
     },
     {
-      "rideId": 4,
+      "rideId": 6,
       "from": "Piravom",
       "stopPoints": "Arakunnam,Chottanikara,Thiruvankulam",
       "startDate": "24/02/2017",
