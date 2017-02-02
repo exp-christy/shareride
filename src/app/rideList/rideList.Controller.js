@@ -31,6 +31,7 @@ function RideListController($http,$stateParams,$state){
         
       });
   }
+  //Function to go to viewride page
   function viewRideDetails(Id){
     $state.go('viewride',{'rideID':Id});
   }
