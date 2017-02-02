@@ -21,7 +21,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'driverDetails'
     })
     .state('vehicleDetails', {
-      url: '/createride/vehicleDetails',
+      url: '/createride/vehicleDetails/:driverId',
       component: 'vehicleDetails'
     })
     .state('rideDetails', {
