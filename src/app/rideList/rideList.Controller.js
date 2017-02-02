@@ -15,6 +15,7 @@ function RideListController($http,$stateParams,$state){
       .then(function (response) {
         var res = response.data.rides;
         var len = res.length;
+        ctrl.fromPlace = $stateParams.fromPlace.toUpperCase();
         ctrl.searchResult = [];
         for(var i=0;i < len; i++){
               if(res[i].from.toUpperCase() == $stateParams.fromPlace.toUpperCase()){
