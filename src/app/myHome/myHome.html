@@ -10,7 +10,7 @@
   .margin {margin-bottom: 45px;}
   .bg-1 { 
       background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
+      color:#ffffff;
   }
   .bg-2 { 
       background-color: #008ae6; /* blue */
@@ -68,10 +68,28 @@
 
 <!-- first Container -->
 <div class="container-fluid bg-1 text-center">
-  <a ui-sref="searchRide" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-search"></span> Search
-  </a>
   <p>Find a ride and make it easier.</p>
+  <form name="frmSearchRide" ng-model="ctrl.formdata" align="center" novalidate="true">
+  <div class="col-lg-4 col-lg-offset-4">
+    <div class="input-group">
+      <input type="text" name="txtPlace" class="form-control" 
+        ng-change="ctrl.show = false" ng-model="ctrl.formdata.place" placeholder="Search for place..."
+        ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" name="btnSearch"
+				            ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" 
+                    ng-model="ctrl.formdata.search" type="button">Go!</button>
+                  </span>
+      </div>
+  </div>
+  <div class="col-sm-2">
+          <span style="color:red" ng-show="(frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required)" class="help-block">
+                        Enter the place
+                    </span>
+          <span style="color:red" ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
+  </div>
+</form>
+</br></br>
   <img src="app/images/share2.gif" class="img-responsive margin" style="width:100%" alt="Image">
   <h4 class="margin">Great minds ride together.</h4>
 </div>

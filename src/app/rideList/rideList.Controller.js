@@ -2,7 +2,7 @@ angular
     .module('app')
     .controller('RideListController',RideListController);
 
-function RideListController($http,$stateParams,$state){
+function RideListController($http,$stateParams,$state,toastr){
     var ctrl = this;
     ctrl.searchResult = [];
   ctrl.viewRideDetails = viewRideDetails;
