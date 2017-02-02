@@ -140,15 +140,13 @@
         <div class="col-sm-8" >
             <div class="col-sm-2">
                 </br>
-                <button type="submit" class="btn btn-lg btn-block btn-primary"
-                 ng-disabled="ctrl.vehicleDetails.$invalid">Next</button>
+                <a ui-sref="rideDetails" type="submit" class="btn btn-lg btn-block btn-primary"
+                 ng-disabled="ctrl.vehicleDetails.$invalid">Next</a>
             </div>
-            <div class="col-sm-2">
-                </br>
-                <button type="button" class="btn btn-primary btn-lg btn-block btn-danger" 
-                 ng-click="ctrl.cancel()">Cancel</button>
-                <ion-item ng-repeat="contact in contact2" item2="item">
-            </div>
+            <div class="col-sm-2"></br>
+               <a ui-sref="myHome" type="button" class="btn btn-primary btn-lg btn-block btn-danger"
+                 ng-click="ctrl.cancel()">Cancel</a>
+            </div> 
         </div>
   </div>
   
