@@ -1,7 +1,7 @@
 angular.module("app")
   .controller("ViewRideController", ViewRideController);
 
-function ViewRideController($uibModal, $log, $http,$stateParams) {
+function ViewRideController($uibModal, $log, $http,$state,$stateParams) {
   var ctrl = this;
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
@@ -38,7 +38,7 @@ var value='';
   }
 
 function update() {
-location.href= '/searchRide';
+$state.go('rideList',{'fromPlace':ctrl.result.from});
 }
 
 }
