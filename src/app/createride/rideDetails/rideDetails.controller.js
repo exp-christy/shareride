@@ -1,12 +1,15 @@
 angular.module("app")
   .controller("RideDetailsCtrl", RideDetailsCtrl);
 
-function RideDetailsCtrl() {
+function RideDetailsCtrl( $state, $timeout,toastr) {
   var ctrl = this;
 
   ctrl.$onInit = function () {
     console.log(ctrl.formData)
   }
+  
+  
+     
   
   //add 
 
@@ -61,15 +64,10 @@ console.log(ctrl.contact3)
       endMinute:" ";
       vacantSeats:" ";
       fare: " ";
+
+      $timeout(ctrl.ok,3000);
+     toastr.success('success','New ride has been created');
+     $state.go('myHome');
      
-    };
-
-    ctrl.cancel = function() {
-         location.href = '/myHome';
-     }
-
-    // When the delete button is pressed, it will find the corresponding item's index from localStorage and splice it
-    ctrl.itemDelete = function(item) {
-      ctrl.contact3.splice(ctrl.contact3.indexOf(item), 1);
     };
   }
