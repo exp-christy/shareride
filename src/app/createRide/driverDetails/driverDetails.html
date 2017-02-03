@@ -1,0 +1,34 @@
+
+
+    <form name="frmDriverDetails" ng-model="ctrl.formdata" novalidate="true">
+      <div class="form-group col-sm-10">
+            <label class="col-sm-2" for="dirverName">Driver Name</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="txtdriverName" 
+                 ng-model="ctrl.formdata.driverName" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
+                 placeholder=" Driver name">
+            </div>
+            <div class="col-sm-4">    
+                <span style="color:red" 
+                 ng-show="frmDriverDetails.txtdriverName.$touched && frmDriverDetails.txtdriverName.$error.required">
+                 Driver name required
+                </span>
+                <span style="color:red" ng-show="frmDriverDetails.txtdriverName.$error.pattern">Alphabets only</span>
+            </div>
+        </div>
+        <div class="form-group col-sm-10">
+            <label class="col-sm-2" for="licenseNumber">License Number</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="txtlicenseNumber" 
+                ng-model="ctrl.formdata.licenseNumber" ng-required="true"
+                placeholder="License number">
+            </div>
+            <div class="col-sm-4">    
+                <span style="color:red" 
+                 ng-show="frmDriverDetails.txtlicenseNumber.$touched && frmDriverDetails.txtlicenseNumber.$error.required">
+                 License number required
+                </span>
+            </div>
+        </div>
+    </form>
+  

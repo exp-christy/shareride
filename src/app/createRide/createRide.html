@@ -1,0 +1,17 @@
+<div class="container">
+    <form name="frmCreateRide" ng-model="ctrl.formdata" ng-submit="ctrl.addRideDetails()">
+        <driver-details></driver-details>
+        <vehicle-details></vehicle-details>
+        <ride-details></ride-details>
+            <div class="col-sm-6">
+                <button class="btn btn-primary col-sm-2"  name="btnSearch" type="submit" type="button">Submit</button>
+                <div class="col-sm-2"></div>
+                <button class="btn btn-danger col-sm-2"  name="btnSearch" ng-click="ctrl.clearDetails()" type="button">Cancel</button>
+            </div>
+            <div class="col-sm-2">
+                
+            </div>
+
+        </div>
+    </form>
+</div>
