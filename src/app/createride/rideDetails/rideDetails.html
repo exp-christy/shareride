@@ -66,22 +66,22 @@
   </div>
 </nav>
 <div class="container-fluid bg-2 text-left">
-<form name="ctrl.rideDetails" ng-submit="ctrl.addRideDetails()">
+<form name="frmrideDetails" ng-submit="ctrl.addRideDetails()" ng-model="ctrl.formdata">
   
  <div class="form-group">
         <div class="col-sm-10" >
             <div class="col-sm-5">
                 <label for="from">From</label>
                 <input class="form-control" type="text" name="from" maxlength="20"
-                 ng-model="ctrl.formData.from" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
+                 ng-model="ctrl.formdata.from" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="From">
             </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.from.$dirty && ctrl.rideDetails.from.$error.required">
+                 ng-show="frmrideDetails.from.$dirty && frmrideDetails.from.$error.required">
                  Enter a place.</span>
                 <span style="color:red"
-                 ng-show="ctrl.rideDetails.from.$error.pattern"> Alphabets only</span>
+                 ng-show="frmrideDetails.from.$error.pattern"> Alphabets only</span>
             </div>
         </div>
   </div> 
@@ -90,15 +90,15 @@
             <div class="col-sm-5">
                 <label for="stopPoints">Stop Points</label>
                 <input class="form-control" type="text" name="stopPoints" maxlength="40"
-                 ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
+                 ng-model="ctrl.formdata.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                  placeholder="Stop Points 1,2...">
             </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.stopPoints.$dirty && ctrl.rideDetails.stopPoints.$error.required">
+                 ng-show="frmrideDetails.stopPoints.$dirty && frmrideDetails.stopPoints.$error.required">
                  Atleast one stopPoints point required.</span>
                 <span style="color:red"
-                 ng-show="ctrl.rideDetails.stopPoints.$error.pattern"> Alphabets only</span>
+                 ng-show="frmrideDetails.stopPoints.$error.pattern"> Alphabets only</span>
             </div>
         </div>
   </div> 
@@ -107,17 +107,17 @@
             <div class="col-sm-2">
                 <label for="startDate">Start Date</label>
                 <input class="form-control" type="date" name="startDate"
-                 ng-model="ctrl.formData.startDate"  ng-required="true">
+                 ng-model="ctrl.formdata.startDate"  ng-required="true">
             </div>
              <div class="col-sm-2">
                 <label for="endDate"><b>End Date</b></label>
                 <input class="form-control" type="date" name="endDate"
-                 ng-model="ctrl.formData.endDate"  ng-required="true">
+                 ng-model="ctrl.formdata.endDate"  ng-required="true">
             </div>
             <div class="col-sm-4"></br>
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.startDate.$touched && ctrl.rideDetails.startDate.$error.required
-                 || ctrl.rideDetails.endDate.$touched && ctrl.rideDetails.endDate.$error.required">
+                 ng-show="frmrideDetails.startDate.$touched && frmrideDetails.startDate.$error.required
+                 || frmrideDetails.endDate.$touched && frmrideDetails.endDate.$error.required">
                  Start & End date required.</span>
             </div>
         </div>
@@ -128,17 +128,17 @@
             <div class="col-sm-2">
                 <label for="startTime">Start Time</label>
                 <input class="form-control" type="time" name="startTime" placeholder="HH:MM:SS"
-                 ng-model="ctrl.formData.startTime" ng-required="true">
+                 ng-model="ctrl.formdata.startTime" ng-required="true">
             </div>
             <div class="col-sm-2">
                 <label for="endTime">End Time</label>
                 <input class="form-control" type="time" name="endTime" placeholder="HH:mm:ss"
-                 ng-model="ctrl.formData.endTime" ng-required="true">
+                 ng-model="ctrl.formdata.endTime" ng-required="true">
             </div>
             <div class="col-sm-4"></br>
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.startTime.$touched && ctrl.rideDetails.startTime.$error.required
-                 || ctrl.rideDetails.endTime.$touched && ctrl.rideDetails.endTime.$error.required">
+                 ng-show="frmrideDetails.startTime.$touched && frmrideDetails.startTime.$error.required
+                 || frmrideDetails.endTime.$touched && frmrideDetails.endTime.$error.required">
                  Start & End time required.</span>
             </div>
         </div>
@@ -148,15 +148,15 @@
             <div class="col-sm-2">
                 <label for="vacantSeats">Vacant Seats</label>
                 <input class="form-control" type="text" name="vacantSeats"
-                 ng-model="ctrl.formData.vacantSeats" ng-pattern="/^(\d)+$/" ng-required="true"
+                 ng-model="ctrl.formdata.vacantSeats" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="Seats">
             </div></br>
             <div class="col-sm-4">
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.vacantSeats.$dirty && ctrl.rideDetails.vacantSeats.$error.required">
+                 ng-show="frmrideDetails.vacantSeats.$dirty && frmrideDetails.vacantSeats.$error.required">
                  Number of seats required.</span>
                 <span style="color:red"
-                 ng-show="ctrl.rideDetails.vacantSeats.$error.pattern"> Numbers only</span>
+                 ng-show="frmrideDetails.vacantSeats.$error.pattern"> Numbers only</span>
             </div>
         </div>
   </div> 
@@ -165,16 +165,16 @@
             <div class="col-sm-2">
                 <label for="fare">Fare</label>
                 <input class="form-control" type="text" name="fare"
-                 ng-model="ctrl.formData.fare" ng-pattern="/^(\d)+$/" ng-required="true"
+                 ng-model="ctrl.formdata.fare" ng-pattern="/^(\d)+$/" ng-required="true"
                  placeholder="fare">
             </div></br>
             <div class="col-sm-4">
                 <span> per ride.</span>
                 <span class="alert" style="color:red"
-                 ng-show="ctrl.rideDetails.fare.$dirty && ctrl.rideDetails.fare.$error.required">
+                 ng-show="frmrideDetails.fare.$dirty && frmrideDetails.fare.$error.required">
                  Fare required.</span>
                 <span style="color:red"
-                 ng-show="ctrl.rideDetails.fare.$error.pattern"> Numbers only</span>
+                 ng-show="frmrideDetails.fare.$error.pattern"> Numbers only</span>
             </div>
         </div>
   </div> 
@@ -182,7 +182,7 @@
         <div class="col-sm-8" >
             <div class="col-sm-2"></br>
                 <button type="submit" class="btn btn-lg btn-block btn-primary"
-                 ng-disabled="ctrl.rideDetails.$invalid">Submit</button>
+                 ng-disabled="frmrideDetails.$invalid">Submit</button>
             </div>
             <div class="col-sm-2"></br>
                <a ui-sref="myHome" type="button" class="btn btn-primary btn-lg btn-block btn-danger"
