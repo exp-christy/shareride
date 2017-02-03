@@ -7,10 +7,7 @@
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #008ae6; /* blue */
-      color: #ffffff;
-  }
+  
   .bg-2 { 
       background-color: #ffffff; /* Dark Blue */
       color: #000000;
@@ -24,17 +21,17 @@
       color: #fff;
   }
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 10px;
+      padding-bottom: 5px;
   }
   .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 7px;
+      padding-bottom: px;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
       font-size: 12px;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
   }
   .navbar-nav  li a:hover {
       color: #008ae6 !important;
@@ -53,16 +50,16 @@
         <span class="icon-bar"></span>                       
       </button>
       <img src="images/logo.jpg"
-   class="img-responsive img-circle margin" style="display:inline" alt="LOGO" width="90" height="90">
+   class="img-responsive  margin " style="display:inline" alt="LOGO" width="90" height="90">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="searchRide">SEARCH RIDE</a></li>
+        <li><a ui-sref="myHome">HOME</a></li>
         <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
       </ul>
     <h2 style="color:#008ae6" align="center">RIDE LIST</h2><h2> </h2></br>
   <h5 style="color:#003366">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    {{ctrl.searchResult.length}} rides starting from {{ctrl.fromPlace}} to INFOPARK</h5>
+     Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.searchResult.length}}</h5>
     </div>
   </div>
 </nav>
@@ -119,6 +116,22 @@
         </tr>
       </tbody>
     </table>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </pre>
   </div>
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">

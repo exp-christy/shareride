@@ -24,17 +24,17 @@
       color: #fff;
   }
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 10px;
+      padding-bottom: 5px;
   }
   .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 7px;
+      padding-bottom: 5px;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
       font-size: 12px;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
   }
   .navbar-nav  li a:hover {
       color: #008ae6 !important;
@@ -55,11 +55,11 @@
         <span class="icon-bar"></span>                       
       </button>
       <img src="images/logo.jpg"
-   class="img-responsive img-circle margin" style="display:inline" alt="LOGO" width="90" height="90">
+   class="img-responsive " style="display:inline" alt="LOGO" width="90" height="90">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="searchRide">SEARCH RIDE</a></li>
+        <li><a ui-sref="myHome">HOME</a></li>
         <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
       </ul>
 	  <h2 style="color:#008ae6" align="center">Ride from {{ctrl.result.from.toUpperCase()}}</h2>
@@ -141,14 +141,13 @@
             <label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}  <span><b> per ride.</b></span></label>
           </div>
           <div>
-            
-              <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button> &nbsp&nbsp&nbsp&nbsp
-              <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
-            
           </div>
        
     </div>
- 	
+ 	<pre>
+                                          <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button>    <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
+  </pre>
+  
   </form>
 </div>
 <!-- Footer -->

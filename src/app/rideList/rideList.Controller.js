@@ -2,7 +2,7 @@ angular
     .module('app')
     .controller('RideListController',RideListController);
 
-function RideListController($http,$stateParams,$state,toastr,$timeout){
+function RideListController($http,$stateParams,$state,$timeout){
     var ctrl = this;
     ctrl.searchResult = [];
   ctrl.viewRideDetails = viewRideDetails;
@@ -25,10 +25,6 @@ function RideListController($http,$stateParams,$state,toastr,$timeout){
         if(ctrl.searchResult.length !== 0){
           ctrl.show="true";
           res=[];
-        }
-        else{
-          toastr.info('Sorry no rides were found!');
-          $state.go('myHome');
         }
         
       });

@@ -18,8 +18,8 @@
    };
    function rideBook(){
      $timeout(ctrl.ok,3000);
-     toastr.success('success', 'Booking has been made!');
-     $state.go('searchRide');
+     toastr.success('Booking has been made!');
+     $state.go('myHome');
    }
 
  }

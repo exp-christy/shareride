@@ -167,6 +167,62 @@
           "vehicleModel": "Swift",
           "seatCapacity": 5
       }
+    },
+    {
+      "rideId": 7,
+      "from": "Kottayam",
+      "stopPoints": "Kaduthuruthy,nadakkavu",
+      "startDate": "24/02/2017",
+      "endDate": "29/02/2017",
+      "startHour": 9,
+      "startMinute": 15,
+      "endHour": 19,
+      "endMinute": 15,
+      "fare": "150",
+      "vacantSeats":1,
+      "driver": {
+          "driverId": 1,
+          "driverFirstName": "Dona",
+          "driverLastName": "Thomas",
+          "company": "Exp",
+          "contactNumber": "9546241719",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-3302",
+          "vehicleMake": "Ferrari",
+          "vehicleModel": "La-Ferrari",
+          "seatCapacity": 1
+      }
+    },
+    {
+      "rideId": 8,
+      "from": "Perumbavur",
+      "stopPoints": "Aluva",
+      "startDate": "24/02/2017",
+      "endDate": "29/02/2017",
+      "startHour": 9,
+      "startMinute": 15,
+      "endHour": 19,
+      "endMinute": 15,
+      "fare": "150",
+      "vacantSeats":1,
+      "driver": {
+          "driverId": 1,
+          "driverFirstName": "Aashiq",
+          "driverLastName": "Mohmed",
+          "company": "Exp",
+          "contactNumber": "9546241719",
+          "licenseNumber": "KL/2016/039"
+      },
+      "vehicle": {
+          "vehicleId": 1,
+          "VehicleNumber": "KL-39K-1",
+          "vehicleMake": "Bugatti",
+          "vehicleModel": "Chiron",
+          "seatCapacity": 1
+      }
     }
 
   ]
