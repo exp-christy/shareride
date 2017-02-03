@@ -4,5 +4,7 @@ angular
     templateUrl: '/app/createRide/rideDetails/rideDetails.html',
     controller: 'RideDetailsController',
     controllerAs: 'ctrl',
-    bindings: {}
+    bindings: {
+      formData : "="
+    }
   });

@@ -1,11 +1,11 @@
 
-<body>
-<form name="frmrideDetails"  ng-model="ctrl.formdata">
+<ng-form name="frmrideDetails">
     <div class="form-group col-sm-10">
             <label class="col-sm-2" for="from">From</label>
             <div class="col-sm-4">
                     <input class="form-control" type="text" name="txtfrom" maxlength="20"
-                    ng-model="ctrl.formdata.txtfrom" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
+                    ng-model="ctrl.formData.from" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
+                    uib-typeahead="from for from in ctrl.from | filter:$viewValue | limitTo:8"
                     placeholder="From place">
             </div>
             <div class="col-sm-4">
@@ -19,69 +19,55 @@
     <div class="form-group col-sm-10">
         <label class="col-sm-2" for="stopPoint">Stop Points</label>
         <div class="col-sm-4">
-            <input class="form-control" type="text" name="txtstopPoint" maxlength="40"
-                 ng-model="ctrl.formdata.stopPoints" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
-                 placeholder="Stop Point">
+            <input class="form-control" type="text" name="txtstopPoint" maxlength="50"
+                 ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z ,]*$/" ng-required="true"
+                 uib-typeahead="stops for stops in ctrl.stopPoints | filter:$viewValue | limitTo:8"
+                 placeholder="Stop Points">
         </div>
         <div class="col-sm-4">
             <span style="color:red"
              ng-show="frmrideDetails.txtstopPoint.$touched && frmrideDetails.txtstopPoint.$error.required">
              Stop point required</span>
             <span style="color:red"
-             ng-show="frmrideDetails.txtstopPoint.$error.pattern"> Alphabets only</span>
+             ng-show="frmrideDetails.txtstopPoint.$error.pattern"> Alphabets and comma only</span>
         </div>       
     </div> 
     <div class="form-group col-sm-10">
         <label class="col-sm-2" for="startDate">Start Date</label>
-        <div class="col-sm-4">
+        <div class="col-sm-2">
             <input class="form-control" type="date" name="dtstartDate"
-             ng-model="ctrl.formdata.startDate"  ng-required="true">
+             ng-model="ctrl.formData.startDate"  ng-required="true">
         </div>
+        <label class="col-sm-2" for="endDate">End Date</label>
+             <div class="col-sm-2 text-center">
+                <input class="form-control col-sm-2" type="date" name="dtendDate"
+                 ng-model="ctrl.formData.endDate"  ng-required="true">
+            </div>
         <div class="col-sm-4">
             <span style="color:red"
-             ng-show="frmrideDetails.dtstartDate.$touched && frmrideDetails.dtstartDate.$error.required">
-             Start date required
+             ng-show="frmrideDetails.dtstartDate.$touched && frmrideDetails.dtstartDate.$error.required ||
+             frmrideDetails.dtendDate.$touched && frmrideDetails.dtendDate.$error.required">
+             Start date and end date required
             </span>
         </div>
     </div>
-    <div class="form-group col-sm-10">
-        <label class="col-sm-2" for="endDate">End Date</label>
-             <div class="col-sm-4">
-                <input class="form-control" type="date" name="dtendDate"
-                 ng-model="ctrl.formdata.endDate"  ng-required="true">
-            </div>
-            <div class="col-sm-4">
-                <span style="color:red"
-                 ng-show="frmrideDetails.dtendDate.$touched && frmrideDetails.dtendDate.$error.required">
-                 End date required
-                 </span>
-            </div>
-    </div> 
-
 <div class="form-group col-sm-10">
     <label class="col-sm-2" for="startTime">Start Time</label>
     <div class="col-sm-2">
         <input class="form-control" type="time" name="tmstartTime" placeholder="HH:MM:SS"
-         ng-model="ctrl.formdata.startTime" ng-required="true">
+         ng-model="ctrl.formData.startTime" ng-required="true">
     </div>
-    <div class="col-sm-6">
-        <span style="color:red"
-        ng-show="frmrideDetails.tmstartTime.$touched && frmrideDetails.tmstartTime.$error.required">
-        Start time required
-        </span>
-    </div>
-</div>
-<div class="form-group col-sm-10">
     <label class="col-sm-2" for="endTime">End Time</label>
     <div class="col-sm-2">
         <input class="form-control" type="time" name="tmendTime" placeholder="HH:mm:ss"
-        ng-model="ctrl.formdata.endTime" ng-required="true">
+        ng-model="ctrl.formData.endTime" ng-required="true">
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <span style="color:red"
-         ng-show="frmrideDetails.tmendTime.$touched && frmrideDetails.tmendTime.$error.required">
-         End time required
-         </span>
+        ng-show="frmrideDetails.tmstartTime.$touched && frmrideDetails.tmstartTime.$error.required
+        || frmrideDetails.tmendTime.$touched && frmrideDetails.tmendTime.$error.required">
+        Start time and End time required
+        </span>
     </div>
 </div>
 </div> 
@@ -89,7 +75,7 @@
     <label class="col-sm-2" for="vacantSeats">Vacant Seats</label>      
     <div class="col-sm-2">           
         <input class="form-control" type="text" name="txtvacantSeats"
-        ng-model="ctrl.formdata.vacantSeats" ng-pattern="/^[0-9]*$/" ng-required="true"
+        ng-model="ctrl.formData.vacantSeats" ng-pattern="/^[0-9]*$/" ng-required="true"
         placeholder="Vacant seats">
     </div>
     <div class="col-sm-6">
@@ -106,7 +92,7 @@
     <label class="col-sm-2" for="fare">Fare</label>
     <div class="col-sm-2">
         <input class="form-control" type="text" name="txtfare"
-        ng-model="ctrl.formdata.fare" ng-pattern="/^[0-9]*$/" ng-required="true"
+        ng-model="ctrl.formData.fare" ng-pattern="/^[0-9]*$/" ng-required="true"
         placeholder="fare">
     </div>
     <div class="col-sm-6">
@@ -120,4 +106,25 @@
         </span>
     </div>
 </div> 
- </form>        
+<div class="form-group col-sm-10">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-4">
+        <label class="radio-inline">
+        <input type="radio" name="rideGender"><b>Only Gents</b>
+        </label>
+        <label class="radio-inline">
+        <input type="radio" name="rideGender"><b>Only Ladies</b>
+        </label>
+        <label class="radio-inline">
+        <input type="radio" name="rideGender"><b>Both</b>
+        </label>
+    </div>
+    <div class="col-sm-4">
+        <span style="color:red"
+        ng-show="frmrideDetails.rideGender.$touched && frmrideDetails.rideGender.$error.required">
+        Passenger gender restriction required
+        </span>
+    </div>
+</div>
+</ng-form>        
