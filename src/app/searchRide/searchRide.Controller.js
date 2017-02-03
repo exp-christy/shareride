@@ -2,17 +2,31 @@ angular
   .module('app')
   .controller('SearchRideController', SearchRideController);
 
-function SearchRideController($http, $state) {
+function SearchRideController($http,toastr,$state) {
   var ctrl = this;
   ctrl.startLocations = [];
   ctrl.searchRideDetails = searchRideDetails;
-  var same = 0;
-
+  
+  ctrl.places = ["pala","Piravom","Kochi","Kottayam","Perumbavur"];
   function searchRideDetails(place) {
-    $state.go('rideList', {
+    for(var i=0;i<ctrl.places.length;i++){
+        var str1=place.toUpperCase();
+        var str2=ctrl.places[i].toUpperCase();
+          var str=str1.localeCompare(str2);
+   
+      if(str===0){break;}
+    }
+
+
+if(str===0){
+      $state.go('rideList', {
       'fromPlace': place
     });
-  }
- ctrl.places = ["pala","Piravom","Kochi","Kottayam","Perumbaavoor"];
-
+       
+    }
+    else{
+       toastr.info('Sorry no rides were found!');
+          $state.go('myHome');
+    }
+}
 }

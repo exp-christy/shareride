@@ -1,7 +1,7 @@
  angular.module("app")
    .controller("ViewModalController", ViewModalController);
 
- function ViewModalController($uibModal, $state, $timeout,toastr) {
+ function ViewModalController($uibModal, $state,toastr) {
    var ctrl = this;
    ctrl.formData = {};
    ctrl.rideBook= rideBook;
@@ -17,9 +17,10 @@
      });
    };
    function rideBook(){
-     $timeout(ctrl.ok,3000);
-     toastr.success('success', 'Booking has been made!');
-     $state.go('searchRide');
+    ctrl.cancel();
+     $state.go('myHome');
+     toastr.success('Booking has been made!');
+    
    }
 
  }
