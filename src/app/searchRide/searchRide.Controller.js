@@ -25,6 +25,7 @@ if(str===0){
        
     }
     else{
+      ctrl.formdata.place="";    
        toastr.info('Sorry no rides were found!');
           $state.go('myHome');
     }

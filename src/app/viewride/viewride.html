@@ -1,33 +1,49 @@
 <head>
-<style>
-  body {
+  <style>
+    body {
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
-      color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #008ae6; /* blue */
-      color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #ffffff; /* Dark Blue */
-      color: #000000;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
       color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
+    }
+    
+    p {
+      font-size: 16px;
+    }
+    
+    .margin {
+      margin-bottom: 45px;
+    }
+    
+    .bg-1 {
+      background-color: #008ae6;
+      /* blue */
+      color: #ffffff;
+    }
+    
+    .bg-2 {
+      background-color: #ffffff;
+      /* Dark Blue */
+      color: #000000;
+    }
+    
+    .bg-3 {
+      background-color: #ffffff;
+      /* White */
+      color: #555555;
+    }
+    
+    .bg-4 {
+      background-color: #2f2f2f;
+      /* Black Gray */
       color: #fff;
-  }
-  .container-fluid {
-      padding-top: 10px;
-      padding-bottom: 5px;
-  }
-  .navbar {
+    }
+    
+    .container-fluid {
+      padding-top: 12px;
+      padding-bottom: 8px;
+    }
+    
+    .navbar {
       padding-top: 7px;
       padding-bottom: 5px;
       border: 0;
@@ -35,123 +51,118 @@
       margin-bottom: 0;
       font-size: 12px;
       letter-spacing: 4px;
-  }
-  .navbar-nav  li a:hover {
+    }
+    
+    .navbar-nav li a:hover {
       color: #008ae6 !important;
-  }
-  
+    }
+
   </style>
 </head>
+
 <body>
-
-
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                       
       </button>
-      <img src="images/logo.jpg"
-   class="img-responsive " style="display:inline" alt="LOGO" width="90" height="90">
+        <img src="images/logo.jpg" class="img-responsive " style="display:inline" alt="LOGO" width="90" height="90">
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="myHome">HOME</a></li>
+          <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
+        </ul>
+        <h2 style="color:#008ae6" align="center">Ride from {{ctrl.result.from.toUpperCase()}}</h2>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="myHome">HOME</a></li>
-        <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
-      </ul>
-	  <h2 style="color:#008ae6" align="center">Ride from {{ctrl.result.from.toUpperCase()}}</h2>
-    </div>
-  </div>
-</nav>
-<div class="container-fluid bg-2 text-left">
-  <form name="viewForm">
-  
-    <div class="col-sm-5">
-      
-          <div>
-            <td colspan="3"><b><u>DRIVER DETAILS</u></b>
-          </div>
-          <div>
-            Driver Name :
-            <label name="name" ng-model="ctrl.formData.driverName">{{ctrl.result.driver.driverFirstName}}  {{ctrl.result.driver.driverLastName}}</label>
-          </div>
-          <div>
-            Contact Number :
-            <label name="mobilenumber" ng-model="ctrl.formData.contactNumber">{{ctrl.result.driver.contactNumber}}</label>
-          </div>
-          <div></br>
-            <td colspan="2"><b><u>CAR DETAILS</u></b>
-          </div>
-          <div>
-            Vehicle Number :
-            <label name="vehiclenumber" ng-model="ctrl.formData.VehicleNumber">{{ctrl.result.vehicle.VehicleNumber}}</label>
-          </div>
-          <div>
-            Vehicle Make :
-            <label name="vehiclemake" ng-model="ctrl.formData.vehicleMake">{{ctrl.result.vehicle.vehicleMake}}</label>
-          </div>
-          <div>
-            Vehicle Model :
-            <label name="vehiclemodel" ng-model="ctrl.formData.vehicleModel">{{ctrl.result.vehicle.vehicleModel}}</label>
-          </div>
-      
-    </div>
-   
-    <div class="col-sm-7">
+  </nav>
+  <div class="container-fluid bg-2 text-left">
+    <form name="viewForm">
+      <div class="col-sm-5">
         <div>
-            <td colspan="2"><b><u>RIDE DETAILS</u></b>
-          </div>
-          <div>
-             FROM:
-            <label name="from" ng-model="ctrl.formData.from">{{ctrl.result.from}}</label>
-          </div>
-          <div>
-            STOP POINTS:
-            <label name="stoppoints" ng-model="ctrl.formData.stoppoints">{{ctrl.result.stopPoints}}</label>
-          </div>
-          <div>
-            COMPANY:
-            <label name="company" ng-model="ctrl.formData.company">{{ctrl.result.driver.company}}</label>
-          </div>
-          <div>
-            START DATE:
-            <label name="startdate" ng-model="ctrl.formData.startdate">{{ctrl.result.startDate}}</label>
-          </div>
-          <div>
-            END DATE:
-            <label name="enddate" ng-model="ctrl.formData.enddate">{{ctrl.result.endDate}}</label>
-          </div>
-          <div>
-           START TIME:
-            <label name="starttime" ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'am': ctrl.ab= 'pm'">{{ctrl.ab}}</span></label>
-          </div>
-          <div>
-           RETURN TIME:
-            <label name="returntime" ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}} <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='am': ctrl.ab='pm'">{{ctrl.ab}}</span></label>
-          </div>
-          <div>
-           SEATS:
-            <label name="seats" ng-model="ctrl.formData.seats">{{ctrl.result.vacantSeats}}/{{ctrl.result.vehicle.seatCapacity}}</label>
-          </div>
-          <div>
-           FARE:
-            <label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}  <span><b> per ride.</b></span></label>
-          </div>
-          <div>
-          </div>
-       
-    </div>
- 	<pre>
-                                          <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button>         <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button></pre>
-  
-  </form>
-</div>
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p><a ui-sref="myHome">www.shareride.com</a></p> 
-</footer>
-
+          </br>
+          <td colspan="3"><b><u>DRIVER DETAILS</u></b>
+        </div>
+        <div>
+          Driver Name :
+          <label name="name" ng-model="ctrl.formData.driverName">{{ctrl.result.driver.driverFirstName}}  {{ctrl.result.driver.driverLastName}}</label>
+        </div>
+        <div>
+          Contact Number :
+          <label name="mobilenumber" ng-model="ctrl.formData.contactNumber">{{ctrl.result.driver.contactNumber}}</label>
+        </div>
+        <div>
+          </br>
+          <td colspan="2"><b><u>CAR DETAILS</u></b>
+        </div>
+        <div>
+          Vehicle Number :
+          <label name="vehiclenumber" ng-model="ctrl.formData.VehicleNumber">{{ctrl.result.vehicle.VehicleNumber}}</label>
+        </div>
+        <div>
+          Vehicle Make :
+          <label name="vehiclemake" ng-model="ctrl.formData.vehicleMake">{{ctrl.result.vehicle.vehicleMake}}</label>
+        </div>
+        <div>
+          Vehicle Model :
+          <label name="vehiclemodel" ng-model="ctrl.formData.vehicleModel">{{ctrl.result.vehicle.vehicleModel}}</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div>
+          </br>
+          <td colspan="2"><b><u>RIDE DETAILS</u></b>
+        </div>
+        <div>
+          FROM:
+          <label name="from" ng-model="ctrl.formData.from">{{ctrl.result.from}}</label>
+        </div>
+        <div>
+          STOP POINTS:
+          <label name="stoppoints" ng-model="ctrl.formData.stoppoints">{{ctrl.result.stopPoints}}</label>
+        </div>
+        <div>
+          COMPANY:
+          <label name="company" ng-model="ctrl.formData.company">{{ctrl.result.driver.company}}</label>
+        </div>
+        <div>
+          START DATE:
+          <label name="startdate" ng-model="ctrl.formData.startdate">{{ctrl.result.startDate}}</label>
+        </div>
+        <div>
+          END DATE:
+          <label name="enddate" ng-model="ctrl.formData.enddate">{{ctrl.result.endDate}}</label>
+        </div>
+        <div>
+          START TIME:
+          <label name="starttime" ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'am': ctrl.ab= 'pm'">{{ctrl.ab}}</span></label>
+        </div>
+        <div>
+          RETURN TIME:
+          <label name="returntime" ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}} <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='am': ctrl.ab='pm'">{{ctrl.ab}}</span></label>
+        </div>
+        <div>
+          SEATS:
+          <label name="seats" ng-model="ctrl.formData.seats">{{ctrl.result.vacantSeats}}/{{ctrl.result.vehicle.seatCapacity}}</label>
+        </div>
+        <div>
+          FARE:
+          <label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}  <span><b> per ride.</b></span></label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container-fluid bg-3 text-center">
+        <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button>&nbsp&nbsp
+        <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
+      </div>
+  <!-- Footer -->
+  <footer class="container-fluid bg-4 text-center">
+    <p><a ui-sref="myHome">www.shareride.com</a></p>
+  </footer>
 </body>
