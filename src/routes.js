@@ -12,20 +12,20 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'myHome'
     })
-    .state('createride', {
-      url: '/createride',
+    .state('createRide', {
+      url: '/createRide',
       component: 'createRide'
     })
     .state('driverDetails', {
-      url: '/createride/driverDetails',
+      url: '/createRide/driverDetails',
       component: 'driverDetails'
     })
     .state('vehicleDetails', {
-      url: '/createride/vehicleDetails/:driverId',
+      url: '/createRide/vehicleDetails',
       component: 'vehicleDetails'
     })
     .state('rideDetails', {
-      url: '/createride/rideDetails/:vehicleId',
+      url: '/createRide/rideDetails',
       component: 'rideDetails'
     })
     .state('searchRide', {
