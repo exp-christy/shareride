@@ -1,7 +1,11 @@
 
-<h5 style="color:#003366">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.rides.length}}</h5>
-  <!--<div class="container-fluid bg-2 text-center">
-    <table class="table table-bordered table-hover table-condensed" ng-show="ctrl.show">
+
+  
+  
+  <div class="container-fluid bg-3 text-center">
+    </br></br></br></br></br></br>
+    <h5 style="color:#003366">Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.rides.length}}</h5>
+    <table class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
           <th class="text-center col-sm-2">Start Date</th>
@@ -9,6 +13,7 @@
           <th class="text-center col-sm-2">Start Time </th>
           <th class="text-center col-sm-2">End Time </th>
           <th class="text-center col-sm-2">Vacant Seats</th>
+          <th class="text-center col-sm-2">fare</th>
           <th class="text-center col-sm-2">Action</th>
         </tr>
       </thead>
@@ -34,9 +39,13 @@
             <input class="col-sm-6 col-sm-offset-3" type="text" name="lstSearchRide.txtVacantSeats" ng-change="ctrl.filterDetail.vacantSeats = ctrl.searchDetail.vacantSeats"
               ng-model="ctrl.searchDetail.vacantSeats">
           </td>
+          <td>
+            <input class="col-sm-6 col-sm-offset-3" type="text" name="lstSearchRide.txtfare" ng-change="ctrl.filterDetail.fare = ctrl.searchDetail.fare"
+              ng-model="ctrl.searchDetail.vacantSeats">
+          </td>
           <td></td>
         </tr>
-        <tr ng-repeat="record in ctrl.rideList">
+        <tr ng-repeat="record in ctrl.searchResult">
           <td>{{record.startDate}}</td>
           <td>{{record.endDate}}</td>
           <td>
@@ -53,9 +62,5 @@
         </tr>
       </tbody>
     </table>
-  </div>-->
-  <table>
-    <tr ng-repeat="record in ctrl.rides">
-          <td>{{record}}</td>
-    </tr>
-  </table>
+  </div>
+  
