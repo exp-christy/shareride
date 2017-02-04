@@ -60,11 +60,15 @@
       </div>
       <div>
         START TIME:
-        <label name="starttime"style="color:#003366" ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'am': ctrl.ab= 'pm'">{{ctrl.ab}}</span></label>
+        <label name="starttime"style="color:#003366"
+         ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span
+          ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'pm': ctrl.ab= 'am'">{{ctrl.ab}}</span></label>
       </div>
       <div>
         RETURN TIME:
-        <label name="returntime"style="color:#003366" ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}} <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='am': ctrl.ab='pm'">{{ctrl.ab}}</span></label>
+        <label name="returntime"style="color:#003366"
+         ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}}
+          <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='pm': ctrl.ab='am'">{{ctrl.ab}}</span></label>
       </div>
       <div>
         SEATS:
