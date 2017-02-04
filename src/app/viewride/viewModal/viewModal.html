@@ -7,7 +7,7 @@
       <div class="form-group">
         <label class=" control-label col-sm-3" style="color:#000000" for="name">Name:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" name="name" placeholder="Enter name" ng-model="ctrl.formData.name" ng-pattern="/^[a-z A-Z]*$/"
+          <input type="text" class="form-control" autocomplete="off" name="name" placeholder="Enter name" ng-model="ctrl.formData.name" ng-pattern="/^[a-z A-Z]*$/"
             ng-required="true">
         </div>
         <div class="col-sm-5">
@@ -18,7 +18,7 @@
       <div class="form-group">
         <label class=" control-label col-sm-3" style="color:#000000" for="mobileno">Mobile No:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" name="mobileno" placeholder="Enter mobile Number" ng-model="ctrl.formData.mobileno"
+          <input type="text" class="form-control" autocomplete="off" name="mobileno" placeholder="Enter mobile Number" ng-model="ctrl.formData.mobileno"
             ng-pattern="/^\d+$/" ng-required="true">
         </div>
         <div class="col-sm-5">
@@ -29,7 +29,7 @@
       <div class="form-group">
         <label class=" control-label col-sm-3" style="color:#000000" for="company">Company:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" name="company" placeholder="Enter company name" ng-model="ctrl.formData.company"
+          <input type="text" class="form-control" autocomplete="off" name="company" placeholder="Enter company name" ng-model="ctrl.formData.company"
             ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
         </div>
         <div class="col-sm-5">
@@ -40,7 +40,7 @@
       <div class="form-group">
         <label class=" control-label col-sm-3" style="color:#000000" for="stoppoint">Stop Point:</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" name="stoppoint" placeholder="Enter stoppoint" ng-model="ctrl.formData.stoppoint"
+          <input type="text" class="form-control" autocomplete="off" name="stoppoint" placeholder="Enter stoppoint" ng-model="ctrl.formData.stoppoint"
             ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
         </div>
         <div class="col-sm-5">
@@ -52,7 +52,8 @@
     <div class="container">
       <div class="col-sm-offset-3 col-sm-9">
         <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="ctrl.ok()">BACK</button>
-        <button type="submit" name="btnBook" class="btn btn-primary" ng-disabled="detailsForm.$invalid" ng-click="ctrl.rideBook()">SUBMIT</button>
+        <button type="submit" name="btnBook" class="btn btn-primary"
+         ng-disabled="detailsForm.$invalid" ng-click="ctrl.rideBook()">SUBMIT</button>
       </div>
     </div>
   </div>
