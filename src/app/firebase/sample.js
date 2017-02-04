@@ -31,7 +31,7 @@
       }
 
       function selectItem(data) {
-        console.log('Working ...');
+        console.log('Working ..');
         ctrl.formData = data;
       }
     }

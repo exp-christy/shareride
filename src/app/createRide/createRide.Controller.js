@@ -32,12 +32,11 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
     ctrl.formData.startDate = ctrl.formDataRide.startDate.toLocaleDateString();
     ctrl.formData.endDate = ctrl.formDataRide.endDate.toLocaleDateString();
     ctrl.formData.startHour = ctrl.formDataRide.startTime.getHours();
-    ctrl.formData.endtHour = ctrl.formDataRide.endTime.getHours();
+    ctrl.formData.endHour = ctrl.formDataRide.endTime.getHours();
     ctrl.formData.startMinute = ctrl.formDataRide.startTime.getMinutes();
     ctrl.formData.endMinute = ctrl.formDataRide.endTime.getMinutes();
     ctrl.formData.fare = ctrl.formDataRide.fare;
     ctrl.formData.genderRestriction = ctrl.formDataRide.rideGender;
-    console.log(ctrl.formData);
     ctrl.rideDetailsList.$add(ctrl.formData);
     ctrl.clearDetails();
     toastr.success('Ride has been created');
