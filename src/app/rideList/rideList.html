@@ -1,77 +1,9 @@
-<head>
-  <style>
-    body {
-      font: 16px Montserrat, sans-serif;
-      line-height: 1.8;
-      color: #f5f6f7;
-    }
-    
-    p {
-      font-size: 16px;
-    }
-    
-    .margin {
-      margin-bottom: 45px;
-    }
-    
-    .bg-2 {
-      background-color: #ffffff;
-      /* Dark Blue */
-      color: #000000;
-    }
-    
-    .bg-4 {
-      background-color: #2f2f2f;
-      /* Black Gray */
-      color: #fff;
-    }
-    
-    .container-fluid {
-      padding-top: 15px;
-      padding-bottom: 10px;
-    }
-    
-    .navbar {
-      padding-top: 7px;
-      padding-bottom: 0px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 4px;
-    }
-    
-    .navbar-nav li a:hover {
-      color: #008ae6 !important;
-    }
-
-  </style>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                       
-      </button>
-        <img src="images/logo.jpg" class="img-responsive margin " style="display:inline" alt="LOGO" width="90" height="90">
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref="myHome">HOME</a></li>
-          <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
-        </ul>
-        <h2 style="color:#008ae6" align="center">RIDE LIST</h2>
-        <h2> </h2>
-        </br>
-        <h5 style="color:#003366">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.searchResult.length}}</h5>
-      </div>
-    </div>
-  </nav>
-  <div class="container-fluid bg-2 text-center">
+<my-header></my-header>
+  <div class="container-fluid bg-3 text-center"></br></br>
+    <h2 style="color:#008ae6" align="center">RIDE LIST</h2>
+    </br>
+        <h4 style="color:#003366">&nbsp&nbsp&nbsp Rides starting from
+        <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.searchResult.length}}</h4></br>
     <table class="table table-bordered table-hover table-condensed" ng-show="ctrl.show">
       <thead>
         <tr>
@@ -125,10 +57,4 @@
       </tbody>
     </table>
   </div>
-  <!-- Footer -->
-  <footer class="navbar-default navbar-fixed-bottom">
-    <div class="container-fluid bg-4 text-center">
-      <p><a ui-sref="myHome">www.shareride.com</a></p>
-    </div>
-  </footer>
-</body>
+ <my-footer></my-footer>
