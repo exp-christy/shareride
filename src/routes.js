@@ -32,6 +32,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/searchRide',
       component: 'searchRide'
     })
+    .state('myHeader', {
+      url: '/myHeader',
+      component: 'myHeader'
+    })
+    .state('myFooter', {
+      url: '/myFooter',
+      component: 'myFooter'
+    })
     .state('fireBase', {
       url: '/fireBase',
       component: 'fireBase'
