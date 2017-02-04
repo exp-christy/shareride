@@ -109,22 +109,16 @@
 <div class="form-group col-sm-10">
     <div class="col-sm-2">
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4">    
         <label class="radio-inline">
-        <input type="radio" name="rideGender"><b>Only Gents</b>
+        <input type="radio" ng-model='ctrl.formData.rideGender' name="rideGender" ng-value='"Only Gents allowed"' ><b>Only Gents</b>
         </label>
         <label class="radio-inline">
-        <input type="radio" name="rideGender"><b>Only Ladies</b>
+        <input type="radio" ng-model='ctrl.formData.rideGender' name="rideGender" ng-value='"Only Ladies allowed"'><b>Only Ladies</b>
         </label>
         <label class="radio-inline">
-        <input type="radio" name="rideGender"><b>Both</b>
+        <input type="radio" checked="true" ng-model='ctrl.formData.rideGender' name="rideGender" ng-value='"Both allowed"'><b>Both</b>
         </label>
-    </div>
-    <div class="col-sm-4">
-        <span style="color:red"
-        ng-show="frmrideDetails.rideGender.$touched && frmrideDetails.rideGender.$error.required">
-        Passenger gender restriction required
-        </span>
     </div>
 </div>
 </ng-form>        

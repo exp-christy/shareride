@@ -12,6 +12,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   ctrl.rideDetailsList = $firebaseArray(ref3);
   ctrl.addRideDetails = addRideDetails;
   ctrl.clearDetails = clearDetails;
+  ctrl.goHome = goHome;
   ctrl.formData={};
   ctrl.formDataDriver = {};
   ctrl.formDataVehicle = {};
@@ -26,11 +27,23 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
     ctrl.formData.driverId = ctrl.formDataDriver.driverId;
     ctrl.driverList.$add(ctrl.formDataDriver);
     ctrl.formData.from = ctrl.formDataRide.from;
-    ctrl.formData.stopPoints=ctrl.formDataRide.stopPoints;
-    ctrl.formData.vacantSeats=ctrl.formDataRide.vacantSeats;
-    ctrl.formData.fare=ctrl.formDataRide.fare;
+    ctrl.formData.stopPoints = ctrl.formDataRide.stopPoints;
+    ctrl.formData.vacantSeats = ctrl.formDataRide.vacantSeats;
+    ctrl.formData.startDate = ctrl.formDataRide.startDate.toLocaleDateString();
+    ctrl.formData.endDate = ctrl.formDataRide.endDate.toLocaleDateString();
+    ctrl.formData.startHour = ctrl.formDataRide.startTime.getHours();
+    ctrl.formData.endtHour = ctrl.formDataRide.endTime.getHours();
+    ctrl.formData.startMinute = ctrl.formDataRide.startTime.getMinutes();
+    ctrl.formData.endMinute = ctrl.formDataRide.endTime.getMinutes();
+    ctrl.formData.fare = ctrl.formDataRide.fare;
+    ctrl.formData.genderRestriction = ctrl.formDataRide.rideGender;
     ctrl.rideDetailsList.$add(ctrl.formData);
     ctrl.clearDetails();
+    toastr.success('Ride has been created','Success');
+    $timeout(ctrl.goHome,3000); 
+  }
+  
+  function goHome(){
     $state.go('myHome');
   }
 
