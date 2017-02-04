@@ -1,3 +1,7 @@
+  
+  
+  <!--<div><my-header></my-header></div>-->
+  <div class="container-fluid bg-3 responsive">
   <form name="ctrl.frmCreateRide" ng-submit="ctrl.addRideDetails()" novalidate="true">
     <driver-details form-data="ctrl.formDataDriver"></driver-details>
     <vehicle-details form-data="ctrl.formDataVehicle"></vehicle-details>
@@ -7,5 +11,15 @@
       <div class="col-sm-2"></div>
       <button class="btn btn-danger col-sm-2" name="btnClear" ng-click="ctrl.clearDetails()" type="button">Cancel</button>
     </div>
+    <!--<table>
+      <th>Start T</th>
+      <tr ng-repeat="ride in ctrl.rideDetailsList">
+        <td>{{ride.startHour}}:{{ride.startMinute}}</td>
+        <td>{{ride.endHour}}:{{ride.endMinute}}</td>
+        <td>{{ride.rideGender}}</td>
+      </tr>
+    </table>-->
   </form>
+  </div>
+  <my-footer></my-footer>
 
