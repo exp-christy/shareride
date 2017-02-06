@@ -4,7 +4,7 @@
   
   <div class="container-fluid bg-3 text-center">
     </br></br></br></br></br></br>
-    <h5 style="color:#003366">Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.rides.length}}</h5>
+    <h5 style="color:#003366">Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.rideDetailsList.length}}</h5>
     <table class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
@@ -41,11 +41,11 @@
           </td>
           <td>
             <input class="col-sm-6 col-sm-offset-3" type="text" name="lstSearchRide.txtfare" ng-change="ctrl.filterDetail.fare = ctrl.searchDetail.fare"
-              ng-model="ctrl.searchDetail.vacantSeats">
+              ng-model="ctrl.searchDetail.fare">
           </td>
           <td></td>
         </tr>
-        <tr ng-repeat="record in ctrl.searchResult">
+        <tr ng-repeat="record in ctrl.searchResult | filter : ctrl.filterDetail">
           <td>{{record.startDate}}</td>
           <td>{{record.endDate}}</td>
           <td>
@@ -58,7 +58,8 @@
             <span ng-show="record.endHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
           </td>
           <td>{{record.vacantSeats}}</td>
-          <td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search" ng-click="ctrl.viewRideDetails(record.rideId)">View</button></td>
+           <td>{{record.fare}}</td>
+          <td><button type="button" class="btn btn-primary" name="lstSearchRide.btnView" ng-model="ctrl.list.search" ng-click="ctrl.viewRideDetails(record.$id)">View</button></td>
         </tr>
       </tbody>
     </table>
