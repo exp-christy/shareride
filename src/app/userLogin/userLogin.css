@@ -8,6 +8,7 @@ input[type=password]
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    color: #003300;
 }
 
 input[type=submit] {
@@ -25,11 +26,10 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-div {
-    border-radius: 5px;
-    background-color: #ebebe0;
-    padding: 20px;
-}
-label {
+
+label,
+h2
+ {
 color: #003300;
 }
+.buttonHolder{ text-align: center; }
