@@ -1,14 +1,21 @@
 angular.module("app")
   .controller("ViewRideController", ViewRideController);
 
-function ViewRideController($uibModal, $log, $http,$state,$stateParams) {
+function ViewRideController($uibModal, $log, $http, $state, $stateParams, $firebaseArray) {
   var ctrl = this;
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
   ctrl.ab;
   ctrl.$onInit = init;
-ctrl.update = update;
-var value='';
+  ctrl.update = update;
+  var ref1 = firebase.database().ref().child('rideDetailsList');
+  ctrl.rideDetail = $firebaseArray(ref1);
+  var driverref = firebase.database().ref().child('drivers');
+  ctrl.drivers = $firebaseArray(driverref);
+  var vehicleref = firebase.database().ref().child('vehicles');
+  ctrl.vehicles = $firebaseArray(vehicleref);
+
+  var value='';
   function openComponentModal() {
     var modalInstance = $uibModal.open({
       component: 'viewModal',
@@ -21,19 +28,12 @@ var value='';
       };
 
   function init() {
-    
-    //console.log($stateParams);
-    ctrl.rideID = $stateParams.rideID;
-    $http.get('/data/rideDetails.json').then(function (response) {
-      var rideDetails = response.data;
-      var len = rideDetails.rides.length;
-      for (var i = 0; i < len; i++) {
-        if (rideDetails.rides[i].rideId == ctrl.rideID) {
-          ctrl.result = rideDetails.rides[i];
-          console.log(ctrl.result);
-          break;
-        }
-      }
+    ctrl.rideDetail.$loaded().then( function () {
+      ctrl.ride = $stateParams.ride;
+      ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+      ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
+      ctrl.dirver = ctrl.drivers.$getRecord(ctrl.result.driverId);
+      console.log(ctrl.vehicle,ctrl.dirver);
     });
   }
 

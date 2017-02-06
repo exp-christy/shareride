@@ -53,7 +53,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'fireBase'
     })
     .state('viewride', {
-      url: '/viewride/:rideID',
+      url: '/viewride/:ride',
       component: 'viewRide'
     })
     .state('userRegistration', {

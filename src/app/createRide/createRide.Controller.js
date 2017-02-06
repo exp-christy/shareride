@@ -20,12 +20,14 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
 
   function addRideDetails() {
     ctrl.formData.rideId = ctrl.rideDetailsList.length + 1;
-    ctrl.formDataVehicle.vehicleId = ctrl.vehicleList.length + 1;
-    ctrl.formData.vehicleId = ctrl.formDataVehicle.vehicleId;
     ctrl.vehicleList.$add(ctrl.formDataVehicle);
-    ctrl.formDataDriver.driverId = ctrl.driverList.length + 1;
-    ctrl.formData.driverId = ctrl.formDataDriver.driverId;
+    ref2.on('child_added',function(snapshot) {
+      ctrl.formData.vehicleId = snapshot.key;
+    });
     ctrl.driverList.$add(ctrl.formDataDriver);
+    ref1.on('child_added',function(snapshot) {
+      ctrl.formData.driverId = snapshot.key;
+    });
     ctrl.formData.from = ctrl.formDataRide.from;
     ctrl.formData.stopPoints = ctrl.formDataRide.stopPoints;
     ctrl.formData.vacantSeats = ctrl.formDataRide.vacantSeats;
