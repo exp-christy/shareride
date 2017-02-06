@@ -13,7 +13,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   ctrl.addRideDetails = addRideDetails;
   ctrl.clearDetails = clearDetails;
   ctrl.goHome = goHome;
-  ctrl.formData={};
+  ctrl.formData = {};
   ctrl.formDataDriver = {};
   ctrl.formDataVehicle = {};
   ctrl.formDataRide = {};
@@ -21,11 +21,11 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   function addRideDetails() {
     ctrl.formData.rideId = ctrl.rideDetailsList.length + 1;
     ctrl.vehicleList.$add(ctrl.formDataVehicle);
-    ref2.on('child_added',function(snapshot) {
+    ref2.on('child_added', function (snapshot) {
       ctrl.formData.vehicleId = snapshot.key;
     });
     ctrl.driverList.$add(ctrl.formDataDriver);
-    ref1.on('child_added',function(snapshot) {
+    ref1.on('child_added', function (snapshot) {
       ctrl.formData.driverId = snapshot.key;
     });
     ctrl.formData.from = ctrl.formDataRide.from;
@@ -42,17 +42,17 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
     ctrl.rideDetailsList.$add(ctrl.formData);
     ctrl.clearDetails();
     toastr.success('Ride has been created');
-    $timeout(ctrl.goHome,3000); 
+    $timeout(ctrl.goHome, 3000);
   }
-  
-  function goHome(){
+
+  function goHome() {
     $state.go('myHome');
   }
 
   function clearDetails() {
     ctrl.formDataDriver = {};
     ctrl.formDataVehicle = {};
-    ctrl.formDataRide = {}; 
+    ctrl.formDataRide = {};
     ctrl.frmCreateRide.$setUntouched();
   }
 }

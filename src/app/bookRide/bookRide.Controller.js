@@ -1,8 +1,8 @@
 angular
-    .module('app')
-    .controller('BookRideController',BookRideController);
+  .module('app')
+  .controller('BookRideController', BookRideController);
 
-function BookRideController($stateParams){
-    var ctrl = this;
-    ctrl.params = $stateParams;
+function BookRideController($stateParams) {
+  var ctrl = this;
+  ctrl.params = $stateParams;
 }

@@ -16,16 +16,15 @@ function RideListController($http, $stateParams, $state, $timeout, $firebaseArra
     ctrl.rideDetailsList.$loaded().then(function () {
       ctrl.len = ctrl.rideDetailsList.length;
       ctrl.searchResult = [];
-      for (var i = 0 ; i < ctrl.len ; i++) {
-              if(ctrl.rideDetailsList[i].from.toUpperCase() == $stateParams.fromPlace.toUpperCase()){
-                ctrl.searchResult.push(angular.copy(ctrl.rideDetailsList[i]));
-              }
+      for (var i = 0; i < ctrl.len; i++) {
+        if (ctrl.rideDetailsList[i].from.toUpperCase() === $stateParams.fromPlace.toUpperCase()) {
+          ctrl.searchResult.push(angular.copy(ctrl.rideDetailsList[i]));
+        }
       }
-    });     
+    });
   }
-  
   //  Function to go to viewride page
-  function viewRideDetails(Id){
-    $state.go('viewride',{'ride':Id});
+  function viewRideDetails(Id) {
+    $state.go('viewride', {ride: Id});
   }
 }
