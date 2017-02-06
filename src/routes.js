@@ -16,6 +16,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/createRide',
       component: 'createRide'
     })
+    .state('userHome', {
+      url: '/userHome',
+      component: 'userHome'
+    })
+    .state('userHeader', {
+      url: '/userHeader',
+      component: 'userHeader'
+    })
     .state('driverDetails', {
       url: '/createRide/driverDetails',
       component: 'driverDetails'
