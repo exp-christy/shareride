@@ -10,11 +10,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('myHome', {
       url: '/',
-      component: 'myHome'
+      component: 'myHome',
+      css: 'myHome/myHome.css'
     })
     .state('createRide', {
       url: '/createRide',
-      component: 'createRide'
+      component: 'createRide',
+      css: 'createRide/createRide.css'
     })
     .state('userHome', {
       url: '/userHome',
@@ -42,11 +44,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('myHeader', {
       url: '/myHeader',
-      component: 'myHeader'
+      component: 'myHeader',
+      css: 'myHeader/myHeader.css'
     })
     .state('myFooter', {
       url: '/myFooter',
-      component: 'myFooter'
+      component: 'myFooter',
+      css: 'myFooter/myFooter.css'
     })
     .state('fireBase', {
       url: '/fireBase',
@@ -58,11 +62,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('userRegistration', {
       url: '/userRegistration',
-      component: 'userRegistration'
+      component: 'userRegistration',
+      css: 'userRegistration/userRegistration.css'
     })
     .state('userLogin', {
       url: '/userLogin',
-      component: 'userLogin'
+      component: 'userLogin',
+      css: 'userLogin/userLogin.css'
     })
     .state('bookRide', {
       url: '/bookRide/:id',
@@ -70,6 +76,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('rideList', {
       url: '/rideList/:fromPlace',
-      component: 'rideList'
+      component: 'rideList',
+      css: 'rideList/rideList.css'
     });
 }

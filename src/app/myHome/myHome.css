@@ -1,0 +1,35 @@
+body {
+  font: 14px Montserrat, sans-serif;
+  line-height: 1.8;
+  height: 20%;
+  color: #f5f6f7;
+}
+
+p {
+  font-size: 16px;
+  color: #f5f6f7;
+}
+
+margin {
+  margin-bottom: 45px;
+  color: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+.bg-m1 {
+  background-color: #474e5d;
+  color: #ffffff;
+}
+
+.bg-m2 {
+  background-color: #008ae6;
+  color: #ffffff;
+}
+
+.container-fluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}

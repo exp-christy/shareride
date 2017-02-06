@@ -4,25 +4,17 @@
       color: #f5f6f7;
     }
     
-    p {
-      font-size: 16px;
-    }
-    
-    .margin {
-      margin-bottom: 45px;
-    }
-    
-    .bg-4 {
+    .bg-f4 {
       background-color: #2f2f2f;
       color: #fff;
     }
     
-    .container-fluid {
+    container-fluid {
       padding-top: 10px;
       padding-bottom: 5px;
     }
     
-    .navbar {
+    navbar {
       padding-top: 7px;
       padding-bottom: 0px;
       border: 0;
@@ -32,6 +24,6 @@
       letter-spacing: 4px;
     }
     
-    .navbar-nav li a:hover {
+    navbar-nav li a:hover {
       color: #008ae6 !important;
     }
