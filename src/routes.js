@@ -52,6 +52,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/userRegistration',
       component: 'userRegistration'
     })
+    .state('userLogin', {
+      url: '/userLogin',
+      component: 'userLogin'
+    })
     .state('bookRide', {
       url: '/bookRide/:id',
       component: 'bookRide'
