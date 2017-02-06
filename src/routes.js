@@ -16,6 +16,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/createRide',
       component: 'createRide'
     })
+    .state('userHome', {
+      url: '/userHome',
+      component: 'userHome'
+    })
+    .state('userHeader', {
+      url: '/userHeader',
+      component: 'userHeader'
+    })
     .state('driverDetails', {
       url: '/createRide/driverDetails',
       component: 'driverDetails'
@@ -47,6 +55,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('viewride', {
       url: '/viewride/:ride',
       component: 'viewRide'
+    })
+    .state('userRegistration', {
+      url: '/userRegistration',
+      component: 'userRegistration'
+    })
+    .state('userLogin', {
+      url: '/userLogin',
+      component: 'userLogin'
     })
     .state('bookRide', {
       url: '/bookRide/:id',
