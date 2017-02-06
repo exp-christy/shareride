@@ -1,64 +1,78 @@
 <div class="col-md-6 col-md-offset-3">
   <h2>Register</h2>
-  <ng-form name="registrationForm" data-toggle="validator">
-    <div class="form-group">
-      <label for="firstname">First name</label>
-      <input type="text" name="firstName" id="firstName" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.firstName"
-        required />
-      <span style="color:red" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">First name required</span>
-      <span style="color:red" ng-show="registrationForm.firstName.$error.pattern">Alphabets only</span>
-    </div>
-    <div class="form-group">
-      <label for="lastname">Last name</label>
-      <input type="text" name="lastName" id="Text1" placeholder="Last Name" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.lastName"
-        required />
-      <span style="color:red" ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$error.required">Last name required</span>
-      <span style="color:red" ng-show="registrationForm.lastName.$error.pattern">Alphabets only</span>
-    </div>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="userName" id="username" placeholder="username" class="form-control" ng-model="vm.user.username"
-        required />
-      <span style="color:red" ng-show="registrationForm.userName.$touched && registrationForm.userName.$error.required">Username required</span>
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" ng-model="ctrl.formData.pass"
-        required />
-      <span style="color:red" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">First name required</span>
-    </div>
-    <div class="form-group">
-      <label for="confirmpassword">Confirm Password</label>
-      <input type="password" name="rePassword" id="pass2" placeholder="Re enter password" class="form-control" ng-keyup="ctrl.checkPass()"
-        ng-model="ctrl.formData.password" />
-      <span id="confirmMessage" class="confirmMessage"></span>
-      <span style="color:red" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">Repeat the password</span>
-    </div>
-    <div class="form-group">
-      <div class="radio">
-        <label>
-        <input type="radio" name="userGender" required>
-       Male
-      </label>
-        <label>
-        <input type="radio" name="userGender" required>
-       Female
-      </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="contactNumber">Contact Number</label>
-      <input class="form-control" type="text" name="contacttNumber" ng-pattern="/^[0-9]*$/" ng-model="ctrl.formData.contactNumber" ng-required="true"
-        placeholder="Contact Detail" data-error="Please enter valid number" ng-required="true">
-        <div class="col-sm-4">
-          <span style="color:red" ng-show="frmrideDetails.txtvacantSeats.$error.pattern"> Numbers only
-        </span>
-          <span style="color:red" ng-show="registrationForm.contactNumber.$touched && registrationForm.contactNumber.$error.required">Enter number</span>
-          <span style="color:red" ng-show="registrationForm.contactNumberr.$error.pattern">Only digits and hyphen allowed</span>
+  <ng-form name="registrationForm" class="form-style-9">
+    <ul>
+      <li>
+        <div class="form-group">
+          <label for="firstname">First name</label>
+          <input type="text" name="firstName" id="firstName" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.firstName"
+            required />
+          <span style="color:red" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">First name required</span>
+          <span style="color:red" ng-show="registrationForm.firstName.$error.pattern">Alphabets only</span>
         </div>
-    </div>
-    <div class="form-actions">
-      <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Register</button>
-    </div>
-    </form>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="lastname">Last name</label>
+          <input type="text" name="lastName" id="Text1" placeholder="Last Name" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.lastName"
+            required />
+          <span style="color:red" ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$error.required">Last name required</span>
+          <span style="color:red" ng-show="registrationForm.lastName.$error.pattern">Alphabets only</span>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="userName" id="username" placeholder="username" class="form-control" ng-model="vm.user.username"
+            required />
+          <span style="color:red" ng-show="registrationForm.userName.$touched && registrationForm.userName.$error.required">Username required</span>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" ng-model="ctrl.formData.pass"
+            required />
+          <span style="color:red" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password required</span>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password" name="rePassword" id="pass2" placeholder="Re enter password" class="form-control" ng-keyup="ctrl.checkPass()"
+            ng-model="ctrl.formData.password" />
+          <span id="confirmMessage" class="confirmMessage"></span>
+          <span style="color:red" ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Repeat the password</span>
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="gender">Gender</label></br>
+          <div class="radio">
+            <label>
+        <input type="radio" name="userGender" required> Male</label>
+            <label><input type="radio" name="userGender" required>Female</label>
+          </div>
+       </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="contactNumber">Contact Number</label>
+          <input class="form-control" type="text" name="contactNumber" ng-pattern="/^[0-9]*$/" ng-model="ctrl.formData.contactNumber"
+            ng-required="true" placeholder="Enter contact Number" ng-required="true">
+            <div class="col-sm-4">
+              <span style="color:red" ng-show="registrationForm.contactNumber.$touched && registrationForm.contactNumber.$error.required">Contact number required</span>
+              <span style="color:red" ng-show="registrationForm.contactNumber.$error.pattern">Only digits are allowed</span>
+            </div>
+        </div>
+        </br>
+      </li>
+      <li>
+        <div class="form-actions">
+          <button type="submit" ng-disabled="registrationForm.$invalid" class="btn btn-primary" ng-click="ctrl.userRegister()">Register</button>
+          <button type="button" class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
+        </div>
+      </li>
+      <ul>
+  </ng-form>
 </div>

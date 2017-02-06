@@ -2,9 +2,11 @@ angular
   .module('app')
   .controller('userRegistrationController', userRegistrationController);
 
-function userRegistrationController($timeout) {
+function userRegistrationController($timeout,$state,toastr) {
      var ctrl = this;
   ctrl.checkPass = checkPass;
+  ctrl.userRegister= userRegister;
+  ctrl.cancel= cancel;
 function checkPass(){
     console.log("hello....");  
        var pass1 = document.getElementById('pass1');
@@ -26,5 +28,12 @@ function checkPass(){
     else{
       message.innerHTML = "";
     }
+}
+function userRegister(){
+  toastr.success('Registration Successfull!');
+  $state.go('myHome');
 } 
+function cancel(){
+  $state.go('userLogin');
+}
 }
