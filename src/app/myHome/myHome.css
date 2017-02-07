@@ -1,29 +1,31 @@
-   body {
-     font: 14px Montserrat, sans-serif;
-     line-height: 1.8;
-     height: 20%;
-     color: #f5f6f7;
-   }
-   
-   p {
-     font-size: 16px;
-   }
-   
-   .margin {
-     margin-bottom: 45px;
-   }
-   
-   .bg-m1 {
-     background-color: #474e5d;
-     color: #ffffff;
-   }
-   
-   .bg-m2 {
-     background-color: #008ae6;
-     color: #ffffff;
-   }
-   
-   .container-fluid {
-     padding-top: 10px;
-     padding-bottom: 5px;
-   }
+p {
+  font-size: 16px;
+}
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.myhome1 {
+  background-color: #474e5d;
+  color: #ffffff;
+}
+
+.myhome2 {
+  background-color: #008ae6;
+  color: #ffffff;
+}
+
+.myhome1 h2,
+h3 {
+  color: #ffffff;
+}
+
+.myhome2 h2 {
+  color: #ffffff;
+}
+
+.container-fluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
