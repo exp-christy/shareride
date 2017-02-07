@@ -42,7 +42,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
           fromPlace: place});
       }
       else {
-        ctrl.formdata.place = "";
+        ctrl.formData.place = "";
         toastr.info('Sorry no rides were found!');
         $state.go('myHome');
       }

@@ -1,14 +1,14 @@
-<form name="frmSearchRide" ng-model="ctrl.formdata" ng-submit="ctrl.searchRideDetails(ctrl.formdata.place)" novalidate="true">
-  <div class="col-lg-7 col-lg-offset-2">
-    <div class="input-group" name="divname">
-      <input type="text" autocomplete="off" name="txtPlace" class="form-control" ng-change="ctrl.show = false" ng-model="ctrl.formdata.place" placeholder="Search for place..."
-        ng-pattern="/^[a-z A-Z]*$/" ng-required="true" uib-typeahead="place for place in ctrl.places | filter:$viewValue | limitTo:8">
-        <span class="input-group-btn">
-            <button class="btn btn-danger" name="btnSearch" type="submit" ng-model="ctrl.formdata.search" type="button">Go!</button>
+<form name="frmSearchRide" ng-submit="ctrl.searchRideDetails(ctrl.formData.place)" novalidate="true">
+	<div class="col-lg-7 col-lg-offset-2">
+		<div class="input-group">
+			<input type="text" autocomplete="off" name="txtPlace" class="form-control" ng-model="ctrl.formData.place"
+				placeholder="Search for place..." ng-pattern="/^[a-z A-Z]*$/" ng-required="true" uib-typeahead="place for place in ctrl.places | filter:$viewValue | limitTo:8">
+			<span class="input-group-btn">
+            <button class="btn btn-danger" name="btnSearch" type="submit" ng-model="ctrl.formData.search" >Go!</button>
         </span>
-    </div>
-  </div>
-  <div class="col-lg-3 text-left">
-    <span style="color:red" ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
-  </div>
-  </form>
+		</div>
+	</div>
+	<div class="col-lg-3 text-left">
+		<span style="color:red" ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
+	</div>
+</form>
