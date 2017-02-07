@@ -5,8 +5,8 @@ angular
     controller: 'ViewModalController',
     controllerAs: 'ctrl',
     bindings: {
-         formData: '=?',
-         close: '&',
-         dismiss: '&'
-    }  
+      formData: '=?',
+      close: '&',
+      dismiss: '&'
+    }
   });

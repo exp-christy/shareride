@@ -3,8 +3,6 @@ angular
   .component('userLogin', {
     templateUrl: 'app/userLogin/userLogin.html',
     controller: 'userLoginController',
-	controllerAs:'ctrl',
-    bindings: {
-             
-    }
+    controllerAs: 'ctrl',
+    bindings: {}
   });

@@ -19,7 +19,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
     ctrl.rideDetailsList.$loaded().then(function () {
       var totalRides = ctrl.rideDetailsList.length; // Number of rides in ride table
       for (i = 0; i < totalRides; i++) {
-        for (j = 0; j < placeListLength; j++) { //  Checking whether place already exist in the list 
+        for (j = 0; j < placeListLength; j++) { //  Checking whether place already exist in the list
           if (ctrl.places[j] === ctrl.rideDetailsList[i].from) {
             break;
           }
@@ -38,20 +38,14 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
       var str = str1.localeCompare(str2);
 
       if (str === 0) {
-        break;
+        $state.go('rideList', {
+          fromPlace: place});
       }
-    }
-
-
-    if (str === 0) {
-      $state.go('rideList', {
-        'fromPlace': place
-      });
-
-    } else {
-      ctrl.formdata.place = "";
-      toastr.info('Sorry no rides were found!');
-      $state.go('myHome');
+      else {
+        ctrl.formdata.place = "";
+        toastr.info('Sorry no rides were found!');
+        $state.go('myHome');
+      }
     }
   }
 }

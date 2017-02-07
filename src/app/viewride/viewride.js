@@ -4,5 +4,5 @@ angular
     templateUrl: 'app/viewride/viewride.html',
     controller: 'ViewRideController',
     controllerAs: 'ctrl',
-    bindings: {}  
+    bindings: {}
   });

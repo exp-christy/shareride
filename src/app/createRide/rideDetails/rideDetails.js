@@ -5,6 +5,6 @@ angular
     controller: 'RideDetailsController',
     controllerAs: 'ctrl',
     bindings: {
-      formData : "="
+      formData: "="
     }
   });
