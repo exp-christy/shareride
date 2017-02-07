@@ -48,6 +48,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/myFooter',
       component: 'myFooter'
     })
+    .state('userFooter', {
+      url: '/userFooter',
+      component: 'userFooter'
+    })
     .state('fireBase', {
       url: '/fireBase',
       component: 'fireBase'

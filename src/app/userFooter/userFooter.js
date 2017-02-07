@@ -1,7 +1,7 @@
 angular
   .module('app')
-  .component('myFooter', {
-    templateUrl: 'app/myFooter/myFooter.html',
+  .component('userFooter', {
+    templateUrl: 'app/userFooter/userFooter.html',
     controller: 'UserFooterController',
     controllerAs: 'ctrl',
     bindings: {}
