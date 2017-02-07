@@ -32,19 +32,22 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
   }
 
   function searchRideDetails(place) {
-    for (var i = 0; i < ctrl.places.length; i++) {
-      var str1 = place.toUpperCase();
-      var str2 = ctrl.places[i].toUpperCase();
-      var str = str1.localeCompare(str2);
-
-      if (str === 0) {
-        $state.go('rideList', {
-          fromPlace: place});
+    if (place != undefined){
+      var placeNotFound = 'true';
+      for (var i = 0; i < ctrl.places.length; i++) {
+        var str = place.toUpperCase().localeCompare(ctrl.places[i].toUpperCase());
+        if (str === 0) {
+          placeNotFound = 'false';
+          $state.go('rideList', {
+            fromPlace: place});
+        }
       }
-      else {
+      if (placeNotFound === 'true')
+      {
         ctrl.formData.place = "";
         toastr.info('Sorry no rides were found!');
-        $state.go('myHome');
+        ctrl.frmSearchRide.$setUntouched();
+
       }
     }
   }
