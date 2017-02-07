@@ -1,8 +1,10 @@
-  
-  
-  <div><my-header></my-header></div>
-  </br></br></br>
-  <div class="container-fluid bg-3">
+  <div>
+  <user-header></user-header>
+</div>
+</br>
+</br>
+</br>
+<div class="container-fluid bg-3">
   <form name="ctrl.frmCreateRide" ng-submit="ctrl.addRideDetails()" novalidate="true">
     <driver-details form-data="ctrl.formDataDriver"></driver-details>
     <vehicle-details form-data="ctrl.formDataVehicle"></vehicle-details>
@@ -13,7 +15,8 @@
       <button class="btn btn-danger col-sm-2" name="btnClear" ng-click="ctrl.clearDetails()" type="button">Cancel</button>
     </div>
   </form>
-  </div>
-  </br></br></br>
-  <my-footer></my-footer>
-
+</div>
+</br>
+</br>
+</br>
+<user-footer></user-footer>

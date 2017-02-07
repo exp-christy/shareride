@@ -12,9 +12,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'myHome'
     })
-    .state('createRide', {
-      url: '/createRide',
-      component: 'createRide'
+    .state('myHeader', {
+      url: '/myHeader',
+      component: 'myHeader'
+    })
+    .state('myFooter', {
+      url: '/myFooter',
+      component: 'myFooter'
     })
     .state('userHome', {
       url: '/userHome',
@@ -24,41 +28,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/userHeader',
       component: 'userHeader'
     })
-    .state('driverDetails', {
-      url: '/createRide/driverDetails',
-      component: 'driverDetails'
-    })
-    .state('vehicleDetails', {
-      url: '/createRide/vehicleDetails',
-      component: 'vehicleDetails'
-    })
-    .state('rideDetails', {
-      url: '/createRide/rideDetails',
-      component: 'rideDetails'
-    })
-    .state('searchRide', {
-      url: '/searchRide',
-      component: 'searchRide'
-    })
-    .state('myHeader', {
-      url: '/myHeader',
-      component: 'myHeader'
-    })
-    .state('myFooter', {
-      url: '/myFooter',
-      component: 'myFooter'
-    })
     .state('userFooter', {
       url: '/userFooter',
       component: 'userFooter'
-    })
-    .state('fireBase', {
-      url: '/fireBase',
-      component: 'fireBase'
-    })
-    .state('viewride', {
-      url: '/viewride/:ride',
-      component: 'viewRide'
     })
     .state('userRegistration', {
       url: '/userRegistration',
@@ -68,12 +40,24 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/userLogin',
       component: 'userLogin'
     })
-    .state('bookRide', {
-      url: '/bookRide/:id',
-      component: 'bookRide'
+    .state('createRide', {
+      url: '/createRide',
+      component: 'createRide'
+    })
+    .state('searchRide', {
+      url: '/searchRide',
+      component: 'searchRide'
     })
     .state('rideList', {
       url: '/rideList/:fromPlace',
       component: 'rideList'
+    })
+    .state('viewride', {
+      url: '/viewride/:ride',
+      component: 'viewRide'
+    })
+    .state('fireBase', {
+      url: '/fireBase',
+      component: 'fireBase'
     });
 }
