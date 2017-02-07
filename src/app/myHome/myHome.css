@@ -1,7 +1,3 @@
-p {
-  font-size: 16px;
-}
-
 .mymargin {
   margin-bottom: 45px;
 }
@@ -21,7 +17,8 @@ h3 {
   color: #ffffff;
 }
 
-.myhome2 h2 {
+.myhome2 h2,
+h4 {
   color: #ffffff;
 }
 
