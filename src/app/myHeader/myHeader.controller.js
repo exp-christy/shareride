@@ -1,5 +1,6 @@
 angular.module("app")
-  .controller("HeaderCtrl", HeaderCtrl);
-function HeaderCtrl() {
+  .controller("HeaderController", HeaderController);
+
+function HeaderController() {
 
 }

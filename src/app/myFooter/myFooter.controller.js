@@ -1,5 +1,5 @@
 angular.module("app")
-  .controller("FooterCtrl", FooterCtrl);
-function FooterCtrl() {
+  .controller("FooterController", FooterController);
+function FooterController() {
 
 }
