@@ -6,7 +6,7 @@
   </br>
   </br>
   </br>
-  <h5 style="color:#003366">Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.rideDetailsList.length}}</h5>
+  <h5 style="color:#003366">Rides starting from <b>{{ctrl.fromPlace}}</b> to <b>INFOPARK </b>:{{ctrl.searchResult.length}}</h5>
   <table class="table table-bordered table-hover table-condensed">
     <thead>
       <tr>
@@ -38,7 +38,7 @@
             ng-model="ctrl.searchDetail.endHour">
         </td>
         <td>
-          <input class="col-sm-6 col-sm-offset-3" type="text" name="lstSearchRide.txtVacantSeats" ng-change="ctrl.filterDetail.vacantSeats = ctrl.searchDetail.vacantSeats"
+          <input class="col-sm-6" type="text" name="lstSearchRide.txtVacantSeats" ng-change="ctrl.filterDetail.vacantSeats = ctrl.searchDetail.vacantSeats"
             ng-model="ctrl.searchDetail.vacantSeats">
         </td>
         <td>
