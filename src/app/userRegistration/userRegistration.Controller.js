@@ -7,6 +7,7 @@ function userRegistrationController($timeout,$state,toastr) {
   ctrl.checkPass = checkPass;
   ctrl.userRegister= userRegister;
   ctrl.cancel= cancel;
+  ctrl.usersCategory = usersCategory;
 function checkPass(){
     console.log("hello....");  
        var pass1 = document.getElementById('pass1');
@@ -31,9 +32,13 @@ function checkPass(){
 }
 function userRegister(){
   toastr.success('Registration Successfull!');
-  $state.go('myHome');
+  $state.go('userHome');
 } 
 function cancel(){
-  $state.go('userLogin');
+  $state.go('myHome');
+}
+function usersCategory(){
+ 
+   console.log(ctrl.formData.userCategory);
 }
 }

@@ -1,11 +1,15 @@
-<<div class="col-md-6 col-md-offset-3">
-  <h2 align ="center" >Login</h2>
+<div class="container">
+<div class="col-md-6 col-md-offset-3" userlogin>
+  <h2 class="text-center">Login</h2>
   <ng-form name="userLogin">
     <label for="userName">Username</label>
     <input type="text" name="userName" ng-required="true">
     <label for="password">Password</label>
     <input type="password" name="password" ng-required="true">
-   <input type="submit" value="Sign-up">
-   <input type ="submit" value="Sign-in">
+    <div class="buttonHolder">
+      <input type="submit" value="Sign In" ng-click="ctrl.usersLogin()">
+      <input type="submit" value="Sign Up" ng-click="ctrl.userReg()">
+    </div>
   </ng-form>
+</div>
 </div>
