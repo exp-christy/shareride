@@ -1,31 +1,32 @@
-   p {
-     font-size: 16px;
-   }
-   
-   .usermargin {
-     margin-bottom: 45px;
-   }
-   
-   .userhome1 {
-     background-color: #474e5d;
-     color: #ffffff;
-   }
-   
-   .userhome2 {
-     background-color: #008ae6;
-     color: #ffffff;
-   }
-   
-   .userhome1 h2,
-   h3 {
-     color: #ffffff;
-   }
-   
-   .userhome2 h2 {
-     color: #ffffff;
-   }
-   
-   .container-userfluid {
-     padding-top: 10px;
-     padding-bottom: 5px;
-   }
+p {
+  font-size: 16px;
+}
+
+.usermargin {
+  margin-bottom: 45px;
+}
+
+.userhome1 {
+  background-color: #474e5d;
+  color: #ffffff;
+}
+
+.userhome2 {
+  background-color: #008ae6;
+  color: #ffffff;
+}
+
+.userhome1 h2,
+h3 {
+  color: #ffffff;
+}
+
+.userhome2 h2,
+h4 {
+  color: #ffffff;
+}
+
+.container-userfluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
