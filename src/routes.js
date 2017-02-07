@@ -12,26 +12,26 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'myHome'
     })
-    .state('myHeader', {
-      url: '/myHeader',
-      component: 'myHeader'
-    })
-    .state('myFooter', {
-      url: '/myFooter',
-      component: 'myFooter'
-    })
+    // .state('myHeader', {
+    //   url: '/myHeader',
+    //   component: 'myHeader'
+    // })
+    // .state('myFooter', {
+    //   url: '/myFooter',
+    //   component: 'myFooter'
+    // })
     .state('userHome', {
       url: '/userHome',
       component: 'userHome'
     })
-    .state('userHeader', {
-      url: '/userHeader',
-      component: 'userHeader'
-    })
-    .state('userFooter', {
-      url: '/userFooter',
-      component: 'userFooter'
-    })
+    // .state('userHeader', {
+    //   url: '/userHeader',
+    //   component: 'userHeader'
+    // })
+    // .state('userFooter', {
+    //   url: '/userFooter',
+    //   component: 'userFooter'
+    // })
     .state('userRegistration', {
       url: '/userRegistration',
       component: 'userRegistration'
@@ -39,6 +39,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('userLogin', {
       url: '/userLogin',
       component: 'userLogin'
+    })
+    .state('signIn', {
+      url: '/signIn',
+      component: 'signIn'
     })
     .state('createRide', {
       url: '/createRide',
