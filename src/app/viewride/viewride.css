@@ -1,0 +1,32 @@
+p {
+  font-size: 10px;
+}
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.viewride1 {
+  background-color: #ffffff;
+  color: #000000;
+  font-size:18px;
+}
+
+.viewride2 {
+  background-color: #ffffff;
+  color: #ffffff;
+
+}
+
+.viewride1 label,h4{
+  color: #474e5d;
+}
+
+.viewride1 h5{
+  color: #0066ff;
+}
+
+.container-fluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}

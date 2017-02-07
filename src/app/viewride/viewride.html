@@ -1,9 +1,12 @@
 <user-header></user-header>
 <div class="container-fluid viewride1 text-left">
   <form name="viewForm">
-    <div class="col-sm-5">
+    <div class="col-sm-6">
       <div>
-        <td colspan="3"><b><u>DRIVER DETAILS</u></b>
+        <pre>
+
+        </pre>
+        <h5><b><u>DRIVER DETAILS</u></b></h5>
       </div>
       <div>
         Driver Name :
@@ -14,8 +17,8 @@
         <label name="mobilenumber" ng-model="ctrl.formData.contactNumber">{{ctrl.dirver.contactNumber}}</label>
       </div>
       <div>
-        </br>
-        <td colspan="2"><b><u>CAR DETAILS</u></b>
+        
+        <h5><b><u>CAR DETAILS</u></b></h5>
       </div>
       <div>
         Seat Capacity :
@@ -29,85 +32,54 @@
         Vehicle Number :
         <label name="vehiclemodel" ng-model="ctrl.formData.vehicleModel">{{ctrl.vehicle.vehicleNumber}}</label>
       </div>
-      <div class="col-sm-6" align="centre">
-        <h3>
-          <b><u>RIDE DETAILS</u></b>
-        </h3>
-        <div>
-          FROM:
-          <label name="from" style="color:#003366" ng-model="ctrl.formData.from">{{ctrl.result.from}}</label>
-        </div>
-        <div>
-          STOP POINTS:
-          <label name="stoppoints" style="color:#003366" ng-model="ctrl.formData.stoppoints">{{ctrl.result.stopPoints}}</label>
-        </div>
-        <div>
-          COMPANY:
-          <label name="company" style="color:#003366" ng-model="ctrl.formData.company">{{ctrl.result.driver.company}}</label>
-        </div>
-        <div>
-          START DATE:
-          <label name="startdate" style="color:#003366" ng-model="ctrl.formData.startdate">{{ctrl.result.startDate}}</label>
-        </div>
-        <div>
-          END DATE:
-          <label name="enddate" style="color:#003366" ng-model="ctrl.formData.enddate">{{ctrl.result.endDate}}</label>
-        </div>
-        <div>
-          START TIME:
-          <label name="starttime" style="color:#003366" ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span
-          ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'pm': ctrl.ab= 'am'">{{ctrl.ab}}</span></label>
-        </div>
-        <div>
-          RETURN TIME:
-          <label name="returntime" style="color:#003366" ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}}
-          <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='pm': ctrl.ab='am'">{{ctrl.ab}}</span></label>
-        </div>
-        <div class="col-sm-7">
-          <div>
-            <td colspan="2"><b><u>RIDE DETAILS</u></b>
+      
+      
+      <div align="centre">
+            <h5><b><u>RIDE DETAILS</u></b></h5>
           </div>
           <div>
-            FROM:
+            From:
             <label name="from" ng-model="ctrl.formData.from">{{ctrl.result.from}}</label>
           </div>
           <div>
-            STOP POINTS:
+            Stop Points:
             <label name="stoppoints" ng-model="ctrl.formData.stoppoints">{{ctrl.result.stopPoints}}</label>
           </div>
           <div>
-            COMPANY:
+            Company:
             <label name="company" ng-model="ctrl.formData.company">{{ctrl.result.driver.company}}</label>
           </div>
           <div>
-            START DATE:
+            Start Date:
             <label name="startdate" ng-model="ctrl.formData.startdate">{{ctrl.result.startDate}}</label>
           </div>
           <div>
-            END DATE:
+            End Date:
             <label name="enddate" ng-model="ctrl.formData.enddate">{{ctrl.result.endDate}}</label>
           </div>
           <div>
-            START TIME:
+            Start Time:
             <label name="starttime" ng-model="ctrl.formData.starttime">{{ctrl.result.startHour}}:{{ctrl.result.startMinute}} <span ng-show="ctrl.result.startHour<= 12 ? ctrl.ab= 'am': ctrl.ab= 'pm'">{{ctrl.ab}}</span></label>
           </div>
           <div>
-            RETURN TIME:
+            Return Time:
             <label name="returntime" ng-model="ctrl.formData.returntime">{{ctrl.result.endHour}}:{{ctrl.result.endMinute}} <span ng-show="ctrl.result.endHour <= 12?ctrl.ab='am': ctrl.ab='pm'">{{ctrl.ab}}</span></label>
           </div>
           <div>
-            SEATS:
+            Seats:
             <label name="seats" ng-model="ctrl.formData.seats">{{ctrl.result.vacantSeats}}/{{ctrl.result.vehicle.seatCapacity}}</label>
           </div>
           <div>
-            FARE:
+            Fare:
             <label name="fare" ng-model="ctrl.formData.fare">{{ctrl.result.fare}}  <span><b> per ride.</b></span></label>
           </div>
-        </div>
+      
+      <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button>&nbsp&nbsp
+    <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button></br></br>
+ </div> 
   </form>
   </div>
-  <div class="container-fluid viewride2 text-center">
-    <button class="btn btn-primary" type="button" ng-click="ctrl.openComponentModal()">Book</button>&nbsp&nbsp
-    <button class="btn btn-warning" type="button" ng-click="ctrl.update()">Cancel</button>
-  </div>
+  
+    
+
   <user-footer></user-footer>
