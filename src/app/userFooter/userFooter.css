@@ -3,21 +3,7 @@
   color: #fff;
 }
 
-.container-fluid {
+.container-fluidfooter2 {
   padding-top: 10px;
   padding-bottom: 5px;
-}
-
-.navbar {
-  padding-top: 7px;
-  padding-bottom: 0px;
-  border: 0;
-  border-radius: 9;
-  margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 4px;
-}
-
-.navbar-nav li a:hover {
-  color: #008ae6 !important;
 }
