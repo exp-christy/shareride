@@ -2,7 +2,7 @@ angular
   .module('app')
   .component('userHeader', {
     templateUrl: 'app/userHeader/userHeader.html',
-    controller: 'UserHeaderCtrl',
+    controller: 'UserHeaderController',
     controllerAs: 'ctrl',
     bindings: {}
   });

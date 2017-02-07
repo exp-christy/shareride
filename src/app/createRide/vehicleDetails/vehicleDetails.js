@@ -5,6 +5,6 @@ angular
     controller: 'VehicleDetailsController',
     controllerAs: 'ctrl',
     bindings: {
-      formData : "="
+      formData: "="
     }
   });

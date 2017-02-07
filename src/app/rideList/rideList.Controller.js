@@ -1,6 +1,6 @@
 angular
-    .module('app')
-    .controller('RideListController', RideListController);
+  .module('app')
+  .controller('RideListController', RideListController);
 
 function RideListController($http, $stateParams, $state, $timeout, $firebaseArray) {
   var ctrl = this;
@@ -25,6 +25,8 @@ function RideListController($http, $stateParams, $state, $timeout, $firebaseArra
   }
   //  Function to go to viewride page
   function viewRideDetails(Id) {
-    $state.go('viewride', {ride: Id});
+    $state.go('viewride', {
+      ride: Id
+    });
   }
 }

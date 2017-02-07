@@ -3,8 +3,6 @@ angular
   .component('searchRide', {
     templateUrl: 'app/searchRide/searchRide.html',
     controller: 'SearchRideController',
-	controllerAs:'ctrl',
-    bindings: {
-             
-    }
+    controllerAs: 'ctrl',
+    bindings: {}
   });

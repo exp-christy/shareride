@@ -1,0 +1,31 @@
+p {
+  font-size: 16px;
+}
+
+.mymargin {
+  margin-bottom: 45px;
+}
+
+.myhome1 {
+  background-color: #474e5d;
+  color: #ffffff;
+}
+
+.myhome2 {
+  background-color: #008ae6;
+  color: #ffffff;
+}
+
+.myhome1 h2,
+h3 {
+  color: #ffffff;
+}
+
+.myhome2 h2 {
+  color: #ffffff;
+}
+
+.container-myfluid {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}

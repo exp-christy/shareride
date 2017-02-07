@@ -5,5 +5,4 @@ angular
       controller: 'RideListController',
       controllerAs: 'ctrl',
       bindings: {}
-
     });
