@@ -2,7 +2,7 @@ angular
   .module('app')
   .component('myFooter', {
     templateUrl: 'app/myFooter/myFooter.html',
-    controller: 'FooterCtrl',
+    controller: 'FooterController',
     controllerAs: 'ctrl',
     bindings: {}
   });
