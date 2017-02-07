@@ -3,5 +3,4 @@ angular
   .controller("DriverDetailController", DriverDetailController);
 
 function DriverDetailController() {
-  var ctrl = this;
 }

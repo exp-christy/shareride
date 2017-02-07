@@ -5,7 +5,6 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
   var ctrl = this;
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
-  ctrl.ab;
   ctrl.$onInit = init;
   ctrl.update = update;
   var ref1 = firebase.database().ref().child('rideDetailsList');
@@ -15,30 +14,29 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
   var vehicleref = firebase.database().ref().child('vehicles');
   ctrl.vehicles = $firebaseArray(vehicleref);
 
-  var value='';
   function openComponentModal() {
     var modalInstance = $uibModal.open({
-      component: 'viewModal',
+      component: 'viewModal'
     });
     modalInstance.result.then(function (formData) {
       $log.info(formData);
     }).catch(function () {
       $log.info('modal-component dismissed at: ' + new Date());
     });
-      };
+  }
 
   function init() {
-    ctrl.rideDetail.$loaded().then( function () {
+    ctrl.rideDetail.$loaded().then(function () {
       ctrl.ride = $stateParams.ride;
       ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
       ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
       ctrl.dirver = ctrl.drivers.$getRecord(ctrl.result.driverId);
-      console.log(ctrl.vehicle,ctrl.dirver);
     });
   }
 
-function update() {
-$state.go('rideList',{'fromPlace':ctrl.result.from});
-}
-
+  function update() {
+    $state.go('rideList', {
+      fromPlace: ctrl.result.from
+    });
+  }
 }

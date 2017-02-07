@@ -1,12 +1,13 @@
 angular.module("app")
-  .controller("UserHomeCtrl", UserHomeCtrl);
+  .controller("UserHomeController", UserHomeController);
 
-
-function UserHomeCtrl($state) {
+function UserHomeController($state) {
   var ctrl = this;
   ctrl.searchRideDetails = searchRideDetails;
-  function searchRideDetails(place){
-    $state.go('rideList',{'fromPlace':place});
-  }
 
+  function searchRideDetails(place) {
+    $state.go('rideList', {
+      fromPlace: place
+    });
+  }
 }
