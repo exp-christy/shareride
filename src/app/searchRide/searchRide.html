@@ -1,7 +1,7 @@
 <form name="ctrl.frmSearchRide" ng-submit="ctrl.searchRideDetails(ctrl.formData.place)" novalidate="true">
 	<div class="col-lg-7 col-lg-offset-2">
 		<div class="input-group">
-			<input type="text" autocomplete="off" name="txtPlace" class="form-control" ng-model="ctrl.formData.place"
+			<input type="text" autocomplete="off" name="txtPlace" class="form-control margin-bottom-8px" ng-model="ctrl.formData.place"
 				placeholder="Search for place..." ng-pattern="/^[a-z A-Z]*$/" ng-required="true" uib-typeahead="place for place in ctrl.places | filter:$viewValue | limitTo:8">
 			</br>
       <span class="input-group-btn">
