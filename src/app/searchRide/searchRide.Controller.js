@@ -32,7 +32,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
   }
 
   function searchRideDetails(place) {
-    if (place != undefined){
+    if (angular.isDefined(place)) {
       var placeNotFound = 'true';
       for (var i = 0; i < ctrl.places.length; i++) {
         var str = place.toUpperCase().localeCompare(ctrl.places[i].toUpperCase());
@@ -42,12 +42,10 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
             fromPlace: place});
         }
       }
-      if (placeNotFound === 'true')
-      {
+      if (placeNotFound === 'true') {
         ctrl.formData.place = "";
         toastr.info('Sorry no rides were found!');
         ctrl.frmSearchRide.$setUntouched();
-
       }
     }
   }
