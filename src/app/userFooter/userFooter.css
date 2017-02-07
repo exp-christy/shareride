@@ -1,9 +1,6 @@
-p {
-  font-size: 16px;
-}
-
-.margin {
-  margin-bottom: 45px;
+.userfooter {
+  background-color: #2f2f2f;
+  color: #fff;
 }
 
 .container-fluid {
