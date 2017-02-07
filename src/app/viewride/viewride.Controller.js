@@ -28,9 +28,13 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
   function init() {
     ctrl.rideDetail.$loaded().then(function () {
       ctrl.ride = $stateParams.ride;
-      ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
-      ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
-      ctrl.dirver = ctrl.drivers.$getRecord(ctrl.result.driverId);
+      ctrl.vehicles.$loaded().then(function (){
+        ctrl.drivers.$loaded().then(function (){
+          ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+          ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
+          ctrl.dirver = ctrl.drivers.$getRecord(ctrl.result.driverId);
+        });
+      });
     });
   }
 
