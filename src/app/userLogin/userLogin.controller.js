@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('userLoginController', userLoginController)
+  .controller("userLoginController", userLoginController);
 
 function userLoginController($state) {
   var ctrl = this;
@@ -14,6 +14,4 @@ function userLoginController($state) {
   function userReg() {
     $state.go('userRegistration');
   }
-
-  function userLoginController() {}
 }
