@@ -1,0 +1,39 @@
+<ng-form name="frmvehicleDetails">
+  <div class="form-group col-sm-10">
+    <label class="col-sm-2" for="vehicleNumber">Vehicle Number</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" name="txtvehicleNumber" maxlength="20" ng-model="ctrl.formData.vehicleNumber" ng-required="true"
+        placeholder="vehicle Number">
+    </div>
+    <div class="col-sm-4">
+      <span  style="color:red" ng-show="frmvehicleDetails.txtvehicleNumber.$touched && frmvehicleDetails.txtvehicleNumber.$error.required">
+                 Vehicle number required</span>
+    </div>
+  </div>
+  <div class="form-group col-sm-10">
+    <label class="col-sm-2" for="vehicleModel">Vehicle Model</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" name="txtvehicleModel" uib-typeahead="vehicle for vehicle in ctrl.vehicles | filter:$viewValue | limitTo:8"
+        ng-model="ctrl.formData.vehicleModel" ng-required="true" placeholder="vehicle Model">
+    </div>
+    <div class="col-sm-4">
+      <span style="color:red" ng-show="frmvehicleDetails.txtvehicleModel.$touched && frmvehicleDetails.txtvehicleModel.$error.required">
+                      Enter Model
+                  </span>
+    </div>
+  </div>
+  <div class="form-group col-sm-10">
+    <label class="col-sm-2" for="seatCapacity">Seat Capacity</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" name="txtseatCapacity" ng-model="ctrl.formData.seatCapacity" ng-pattern="/^[0-9]*$/"
+        ng-required="true" placeholder="seat capacity">
+    </div>
+    <div class="col-sm-4">
+      <span style="color:red" ng-show="frmvehicleDetails.txtseatCapacity.$touched && frmvehicleDetails.txtseatCapacity.$error.required">
+                      Seat capacity required
+                  </span>
+      </span>
+      <span style="color:red" ng-show="frmvehicleDetails.txtseatCapacity.$error.pattern">Digits only</span>
+    </div>
+  </div>
+</ng-form>

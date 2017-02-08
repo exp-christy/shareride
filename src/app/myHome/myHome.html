@@ -1,122 +1,36 @@
-
-<head>
-<style>
-  body {
-      font: 20px Montserrat, sans-serif;
-      line-height: 1.8;
-      color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #474e5d; /* Dark Blue */
-      color:#ffffff;
-  }
-  .bg-2 { 
-      background-color: #008ae6; /* blue */
-      color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-  }
-  .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-      color: #008ae6 !important;
-  }
-  </style>
-</head>
-<body>
-
-
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                       
-      </button>
-      <img src="app/images/logo2.jpg"
-   class="img-responsive img-circle margin" style="display:inline" alt="LOGO" width="90" height="90">
-    </div>
-    <h1><font color="#008ae6" align="left"><b>&nbsp&nbspSHARE </b></font><font color="#474e5d"><b>RIDE</b></font></h1>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="searchRide">SEARCH RIDE</a></li>&nbsp
-        <li><a ui-sref="driverDetails">CREATE RIDE</a></li>
-      </ul> 
-    </div>  
-  </div>
-</nav>
-
+<my-header></my-header>
 <!-- first Container -->
-<div class="container-fluid bg-1 text-center">
-  <p>Find a ride and make it easier.</p>
-  <form name="frmSearchRide" ng-model="ctrl.formdata" align="center" novalidate="true">
-  <div class="col-lg-4 col-lg-offset-4">
-    <div class="input-group">
-      <input type="text" name="txtPlace" class="form-control" 
-        ng-change="ctrl.show = false" ng-model="ctrl.formdata.place" placeholder="Search for place..."
-        ng-pattern="/^[a-z A-Z]*$/" ng-required="true">
-                <span class="input-group-btn">
-                    <button class="btn btn-success" name="btnSearch"
-				            ng-click="ctrl.searchRideDetails(ctrl.formdata.place)" 
-                    ng-model="ctrl.formdata.search" type="button">Go!</button>
-                  </span>
-      </div>
-  </div>
-  <div class="col-sm-2">
-          <span style="color:#ffffff" ng-show="(frmSearchRide.txtPlace.$touched && frmSearchRide.txtPlace.$error.required)" class="help-block">
-                        Enter the place
-                    </span>
-          <span style="color:#ffffff" ng-show="frmSearchRide.txtPlace.$error.pattern"> Alphabets only</span>
-  </div>
-</form>
-</br></br>
-  <img src="app/images/share2.gif" class="img-responsive margin" style="width:100%" alt="Image">
-  <h4 class="margin">Great minds ride together.</h4>
+<div class="container-myfluid myhome1 text-center">
+  <pre>
+
+  </pre>
+  <p>
+    <h3>Find a ride and make it easier.</h3>
+  </p>
+  <search-ride></search-ride>
+  </br>
+  </br>
+  <img src="images/share2.gif" class="img-responsive margin" style="width:100%" alt="Image"></br>
+  <h2 class="mymargin">Great minds ride together.</h2>
 </div>
-
-
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-2 text-center">    
-  <h3 class="margin">One of a kind</h3><br>
+<!-- second Container (Grid) -->
+<div class="container-myfluid myhome2 text-center">
+  <h2 class="mymargin">One of a kind</h2><br>
   <div class="row">
     <div class="col-sm-4">
-      <p>Share a ride.</p>
-      <img src="app/images/ride1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <h4>Share a ride.</h4>
+      <img src="images/ride1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
-    <div class="col-sm-4"> 
-      <p>Don't wait for it... Book your ride now.</p>
-      <img src="app/images/ride2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    <div class="col-sm-4">
+      <h4>Don't wait for it... Book your ride now.</h4>
+      <img src="images/ride2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
-    <div class="col-sm-4"> 
-      <p>Be a change.</p>
-      <img src="app/images/ride3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    <div class="col-sm-4">
+      <h4>Be a change.</h4>
+      <img src="images/ride3.jpg" class="img-responsive margin" style="width:100%" alt="Image"></br>
+      </br>
     </div>
   </div>
 </div>
-
 <!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p><a ui-sref="myHome">www.shareride.com</a></p> 
-</footer>
-
-</body>
+<my-footer></my-footer>

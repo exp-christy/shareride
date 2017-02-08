@@ -2,7 +2,7 @@ angular
   .module('app')
   .component('myHome', {
     templateUrl: '/app/myHome/myHome.html',
-    controller: 'HomeCtrl',
+    controller: 'HomeController',
     controllerAs: 'ctrl',
     bindings: {}
   });

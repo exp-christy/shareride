@@ -1,12 +1,9 @@
 (function () {
-
   angular
     .module('app')
     .component('fireBase', fireBaseComp());
 
-
   function fireBaseComp() {
-
     function fireBaseController($firebaseArray) {
       var ctrl = this;
       var ref = firebase.database().ref().child("datas"); // get reference
@@ -31,7 +28,6 @@
       }
 
       function selectItem(data) {
-        console.log('Working ...');
         ctrl.formData = data;
       }
     }
@@ -41,7 +37,6 @@
       controller: fireBaseController,
       controllerAs: 'ctrl',
       templateUrl: 'app/firebase/sample.html'
-    }
+    };
   }
-
-}());
+});

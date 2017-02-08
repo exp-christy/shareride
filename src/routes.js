@@ -12,40 +12,56 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'myHome'
     })
-    .state('createride', {
-      url: '/createride',
+    // .state('myHeader', {
+    //   url: '/myHeader',
+    //   component: 'myHeader'
+    // })
+    // .state('myFooter', {
+    //   url: '/myFooter',
+    //   component: 'myFooter'
+    // })
+    .state('userHome', {
+      url: '/userHome',
+      component: 'userHome'
+    })
+    // .state('userHeader', {
+    //   url: '/userHeader',
+    //   component: 'userHeader'
+    // })
+    // .state('userFooter', {
+    //   url: '/userFooter',
+    //   component: 'userFooter'
+    // })
+    .state('userRegistration', {
+      url: '/userRegistration',
+      component: 'userRegistration'
+    })
+    .state('userLogin', {
+      url: '/userLogin',
+      component: 'userLogin'
+    })
+    .state('signIn', {
+      url: '/signIn',
+      component: 'signIn'
+    })
+    .state('createRide', {
+      url: '/createRide',
       component: 'createRide'
-    })
-    .state('driverDetails', {
-      url: '/createride/driverDetails',
-      component: 'driverDetails'
-    })
-    .state('vehicleDetails', {
-      url: '/createride/vehicleDetails',
-      component: 'vehicleDetails'
-    })
-    .state('rideDetails', {
-      url: '/createride/rideDetails',
-      component: 'rideDetails'
     })
     .state('searchRide', {
       url: '/searchRide',
       component: 'searchRide'
     })
-    .state('fireBase', {
-      url: '/fireBase',
-      component: 'fireBase'
-    })
-    .state('viewride', {
-      url: '/viewride/:rideID',
-      component: 'viewRide'
-    })
-    .state('bookRide', {
-      url: '/bookRide/:id',
-      component: 'bookRide'
-    })
     .state('rideList', {
       url: '/rideList/:fromPlace',
       component: 'rideList'
+    })
+    .state('viewride', {
+      url: '/viewride/:ride',
+      component: 'viewRide'
+    })
+    .state('fireBase', {
+      url: '/fireBase',
+      component: 'fireBase'
     });
 }

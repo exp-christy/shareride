@@ -1,11 +1,10 @@
 angular
-  .module('app', ['ui.router','ui.bootstrap', 'ngAnimate', 'toastr', 'firebase']);
+  .module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'toastr', 'firebase']);
 var config = {
-  apiKey: "AIzaSyCexbbGcO-lskcQ2bhMK2qVQRpRKX2_aCA",
-  authDomain: "sample-95dc3.firebaseapp.com",
-  databaseURL: "https://sample-95dc3.firebaseio.com",
-  storageBucket: "sample-95dc3.appspot.com",
-  messagingSenderId: "28749619647"
+  apiKey: "AIzaSyCtT4Y-HLlHkS9C8pRzQZYHXImWJjxsSbc",
+  authDomain: "shareride-fe79d.firebaseapp.com",
+  databaseURL: "https://shareride-fe79d.firebaseio.com",
+  storageBucket: "shareride-fe79d.appspot.com",
+  messagingSenderId: "685827960392"
 };
 firebase.initializeApp(config);
-
