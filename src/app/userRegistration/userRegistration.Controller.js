@@ -18,7 +18,7 @@ function userRegistrationController($timeout, $state, toastr) {
     var badColor = "#ff6666";
     // Compare the values in the password field and the confirmation field
     var match = pass1.localeCompare(pass2);
-    if (match == 0) {
+    if (match === 0) {
       message.innerHTML = "";
     } else {
       // The passwords do not match.Set the color to the bad color andnotify the user.
