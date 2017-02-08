@@ -17,12 +17,13 @@ function userRegistrationController($timeout, $state, toastr) {
     // Set the colors we will be using ...
     var badColor = "#ff6666";
     // Compare the values in the password field and the confirmation field
-    if (pass1 !== pass2) {
+    var match = pass1.localeCompare(pass2);
+    if (match === 0) {
+      message.innerHTML = "";
+    } else {
       // The passwords do not match.Set the color to the bad color andnotify the user.
       message.style.color = badColor;
       message.innerHTML = "Passwords Do Not Match!";
-    } else {
-      message.innerHTML = "";
     }
   }
 
@@ -36,6 +37,6 @@ function userRegistrationController($timeout, $state, toastr) {
   }
 
   function usersCategory() {
-    console.log(ctrl.formData.userCategory);
+    // console.log(ctrl.formData.userCategory);
   }
 }

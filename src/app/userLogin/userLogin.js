@@ -4,5 +4,9 @@ angular
     templateUrl: 'app/userLogin/userLogin.html',
     controller: 'userLoginController',
     controllerAs: 'ctrl',
-    bindings: {}
+    bindings: {
+      formData: '=?',
+      close: '&',
+      dismiss: '&'
+    }
   });
