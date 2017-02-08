@@ -22,9 +22,11 @@ function userLoginController($state, $uibModal) {
 
   function usersLogin() {
     $state.go('userHome');
+    ctrl.ok();
   }
 
   function userReg() {
     $state.go('userRegistration');
+    ctrl.ok();
   }
 }

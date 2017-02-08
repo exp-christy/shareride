@@ -20,8 +20,9 @@
           <div class="panel-footer">
             <div class="buttonHolder">
               <div class="text-center">
-                <input type="submit" value="Sign In" ng-disabled="true" class="btn btn-primary" ng-click="ctrl.usersLogin()">
+                <input type="submit" value="Sign In" ng-disabled="userLogin.$invalid" class="btn btn-primary" ng-click="ctrl.usersLogin()">
                 <input type="submit" value="Sign Up" class="btn btn-primary" ng-click="ctrl.userReg()">
+                <input type="button" value="Cancel" class="btn btn-warning" ng-click="ctrl.cancel()">
               </div>
             </div>
           </div>
