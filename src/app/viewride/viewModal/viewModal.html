@@ -1,8 +1,8 @@
 <div class="modal-dialog modal-md">
   <div class="modal-header">
-    <h2 style="color:#008ae6" align="centre">&nbsp&nbspPASSENGER DETAILS</h2>
+    <h4 style="color:#008ae6" align="centre">&nbsp&nbspConfirm Booking...?</h4>
   </div>
-  <div class="modal-body" id="modal-body">
+  <!--<div class="modal-body" id="modal-body">
     <form name="detailsForm" class="form-horizontal" ng-model="ctrl.formData" novalidate="true">
       <div class="form-group">
         <label class=" control-label col-sm-3" style="color:#000000" for="name">Name:</label>
@@ -48,12 +48,13 @@
           <span style="color:red" ng-show="detailsForm.stoppoint.$error.pattern">Alphabets only</span>
         </div>
       </div>
-    </form>
+    </form>-->
     <div class="container">
-      <div class="col-sm-offset-3 col-sm-9">
-        <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="ctrl.ok()">BACK</button>
-        <button type="submit" name="btnBook" class="btn btn-primary" ng-disabled="detailsForm.$invalid" ng-click="ctrl.rideBook()">SUBMIT</button>
+      <div class="col-sm-offset-3 col-sm-7">
+        <button type="submit" name="btnBook" class="btn btn-primary" ng-disabled="detailsForm.$invalid"
+         ng-click="ctrl.rideBook()">YES</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="ctrl.ok()">NO</button>
       </div>
     </div>
-  </div>
+  <!--</div>-->
 </div>
