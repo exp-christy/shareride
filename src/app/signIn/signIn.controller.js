@@ -3,8 +3,8 @@ angular.module("app")
 
 function SignInController($uibModal, $log) {
   var ctrl = this;
-  // ctrl.$onInit = init;
   ctrl.openComponentModal = openComponentModal;
+
   function openComponentModal() {
     var modalInstance = $uibModal.open({
       component: 'userLogin'

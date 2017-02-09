@@ -8,6 +8,7 @@ function userLoginController($state, $uibModal) {
   ctrl.userReg = userReg;
   ctrl.ok = ok;
   ctrl.cancel = cancel;
+
   function cancel() {
     ctrl.dismiss({
       $value: 'cancel'
