@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
   <h2 class="text-left">Registration</h2>
-  <ng-form name="registrationForm">
+  <ng-form name="ctrl.registrationForm">
     <div class="form-group">
       <label for="firstname" class=" control-label col-sm-3">First name</label>
       <div class="col-sm-4">
@@ -8,8 +8,8 @@
           ng-model="ctrl.formData.firstName" required />
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">First name required</span>
-        <span style="color:red" ng-show="registrationForm.firstName.$error.pattern">Alphabets only</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.firstName.$touched && ctrl.registrationForm.firstName.$error.required">First name required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.firstName.$error.pattern">Alphabets only</span>
       </div>
     </div>
     </br>
@@ -21,8 +21,21 @@
           required />
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$error.required">Last name required</span>
-        <span style="color:red" ng-show="registrationForm.lastName.$error.pattern">Alphabets only</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.lastName.$touched && ctrl.registrationForm.lastName.$error.required">Last name required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.lastName.$error.pattern">Alphabets only</span>
+      </div>
+    </div>
+    </br>
+    </br>
+     <div class="form-group">
+      <label for="company" class=" control-label col-sm-3">Company</label>
+      <div class="col-sm-4">
+        <input type="text" name="company"  placeholder="company" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="ctrl.formData.company"
+          required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.company.$touched && ctrl.registrationForm.company.$error.required">Company required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.company.$error.pattern">Alphabets only</span>
       </div>
     </div>
     </br>
@@ -56,7 +69,7 @@
           required />
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.userName.$touched && registrationForm.userName.$error.required">Username required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.userName.$touched && ctrl.registrationForm.userName.$error.required">Username required</span>
       </div>
     </div>
     </br>
@@ -68,7 +81,7 @@
           required />
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.password.$touched && ctrl.registrationForm.password.$error.required">Password required</span>
       </div>
     </div>
     </br>
@@ -80,7 +93,7 @@
           ng-model="ctrl.formData.password" ng-required="true" />
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Repeat the password</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.rePassword.$touched && ctrl.registrationForm.rePassword.$error.required">Repeat the password</span>
         <span id="confirmMessage" class="confirmMessage"></span>
       </div>
     </div>
@@ -93,8 +106,8 @@
           ng-required="true" placeholder="Enter contact Number" ng-required="true">
       </div>
       <div class="col-sm-5">
-        <span style="color:red" ng-show="registrationForm.contactNumber.$touched && registrationForm.contactNumber.$error.required">Contact required</span>
-        <span style="color:red" ng-show="registrationForm.contactNumber.$error.pattern">Only digits are allowed</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.contactNumber.$touched && ctrl.registrationForm.contactNumber.$error.required">Contact required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.contactNumber.$error.pattern">Only digits are allowed</span>
       </div>
     </div>
     </br>
@@ -105,7 +118,7 @@
       <div class="col-sm-6">
         </br>
         </br>
-        <button type="submit" ng-disabled="registrationForm.$invalid" class="btn btn-primary" ng-click="ctrl.userRegister()">Register</button>
+        <button type="submit" ng-disabled="ctrl.registrationForm.$invalid" class="btn btn-primary" ng-click="ctrl.userRegister()">Register</button>
         <button type="button" class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
       </div>
       <div class="col-sm-4">
