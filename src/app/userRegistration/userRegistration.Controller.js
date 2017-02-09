@@ -2,12 +2,13 @@ angular
   .module('app')
   .controller('userRegistrationController', userRegistrationController);
 
-function userRegistrationController($timeout, $state, toastr) {
+function userRegistrationController($timeout, $state, toastr, $firebaseArray) {
   var ctrl = this;
   ctrl.checkPass = checkPass;
   ctrl.userRegister = userRegister;
   ctrl.cancel = cancel;
-
+var usersRef = firebase.database().ref().child('user');
+  ctrl.userDetails = $firebaseArray(usersRef);
   function checkPass() {
     var pass1 = ctrl.formData.pass;
     var pass2 = ctrl.formData.password;
@@ -27,6 +28,12 @@ function userRegistrationController($timeout, $state, toastr) {
   }
 
   function userRegister() {
+    ctrl.userDetails.$add(ctrl.formData);
+    usersRef.on('child_added', function (snapshot) {
+      ctrl.formData.userId = snapshot.key;
+    });
+    ctrl.formData = {};
+    ctrl.registrationForm.$setUntouched();
     toastr.success('Registration Successfull!');
     $state.go('userHome');
   }
