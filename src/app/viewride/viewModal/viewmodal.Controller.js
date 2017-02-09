@@ -20,7 +20,7 @@ function ViewModalController($uibModal, $state, toastr) {
 
   function rideBook() {
     ctrl.cancel();
-    $state.go('myHome');
+    $state.go('userHome');
     toastr.success('Booking has been made!');
   }
 }
