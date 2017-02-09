@@ -48,5 +48,8 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
         ctrl.frmSearchRide.$setUntouched();
       }
     }
+    else {
+      toastr.info('Please select some place and then search!');
+    }
   }
 }
