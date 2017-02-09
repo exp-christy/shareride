@@ -4,11 +4,30 @@ angular
 
 function userRegistrationController($timeout, $state, toastr, $firebaseArray) {
   var ctrl = this;
+  ctrl.checkUserName = checkUserName;
   ctrl.checkPass = checkPass;
   ctrl.userRegister = userRegister;
   ctrl.cancel = cancel;
-var usersRef = firebase.database().ref().child('user');
+  var usersRef = firebase.database().ref().child('user');
   ctrl.userDetails = $firebaseArray(usersRef);
+  ctrl.usernameNotValid = false;
+  
+
+  function checkUserName(){
+    ctrl.userDetails.$loaded().then( function (){
+      var usersListLength = ctrl.userDetails.length;
+      var i;
+      for(i = 0; i < usersListLength; i++){
+        if(ctrl.formData.username === ctrl.userDetails[i].username){
+          ctrl.usernameNotValid = true;
+        }
+        else{
+          ctrl.usernameNotValid = false;
+        }
+      }
+    });
+  }
+
   function checkPass() {
     var pass1 = ctrl.formData.pass;
     var pass2 = ctrl.formData.password;
@@ -28,10 +47,9 @@ var usersRef = firebase.database().ref().child('user');
   }
 
   function userRegister() {
+    ctrl.formData.userCategory = ctrl.formData.userCategory.value;
+    ctrl.formData.userGender = ctrl.formData.userGender.value;
     ctrl.userDetails.$add(ctrl.formData);
-    usersRef.on('child_added', function (snapshot) {
-      ctrl.formData.userId = snapshot.key;
-    });
     ctrl.formData = {};
     ctrl.registrationForm.$setUntouched();
     toastr.success('Registration Successfull!');
