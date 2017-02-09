@@ -46,7 +46,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   }
 
   function goHome() {
-    $state.go('myHome');
+    $state.go('userHome');
   }
 
   function clearDetails() {
