@@ -1,69 +1,128 @@
 <div class="col-md-6 col-md-offset-3">
-  <h2>Registration</h2>
-  <ng-form name="registrationForm" class="form-style-9">
-        <div class="form-group">
-          <label for="firstname">First name</label>
-          <input type="text" name="firstName" id="firstName" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.firstName"
-            required />
-          <span style="color:red" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">First name required</span>
-          <span style="color:red" ng-show="registrationForm.firstName.$error.pattern">Alphabets only</span>
-        </div>
-        <div class="form-group">
-          <label for="lastname">Last name</label>
-          <input type="text" name="lastName" id="Text1" placeholder="Last Name" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="vm.user.lastName"
-            required />
-          <span style="color:red" ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$error.required">Last name required</span>
-          <span style="color:red" ng-show="registrationForm.lastName.$error.pattern">Alphabets only</span>
-        </div>
-           <div class="form-group">
-          <label for="gender">Gender</label>
-          <div class="radio">
-            <label>
-        <input type="radio" name="userGender" ng-model="ctrl.formData.userGender" ng-click="ctrl.userGen()" required> Male</label>
-            <label><input type="radio" name="userGender"  ng-click="ctrl.userGen()" required>Female</label>
-          </div>
-       </div>
-          <div class="form-group">
-          <label for="category">Category</label>
-          <div class="radio">
-            <label>
-        <input type="radio"  checked="true" ng-model="ctrl.formData.userCategory" value="driver" name="userCateg" ng-click="ctrl.usersCategory()">Driver</label>
-            <label><input type="radio"  ng-model="ctrl.formData.userCategory" name="userCateg" value="passenger"  ng-click="ctrl.usersCategory()">Passenger</label>
-          </div>
+  <h2 class="text-left">Registration</h2>
+  <ng-form name="ctrl.registrationForm">
+    <div class="form-group">
+      <label for="firstname" class=" control-label col-sm-3">First name</label>
+      <div class="col-sm-4">
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control" ng-pattern="/^[a-z A-Z]*$/"
+          ng-model="ctrl.formData.firstName" required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.firstName.$touched && ctrl.registrationForm.firstName.$error.required">First name required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.firstName.$error.pattern">Alphabets only</span>
+      </div>
     </div>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" name="userName" id="username" placeholder="username" class="form-control" ng-model="vm.user.username"
-            required />
-          <span style="color:red" ng-show="registrationForm.userName.$touched && registrationForm.userName.$error.required">Username required</span>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="lastname" class=" control-label col-sm-3">Last name</label>
+      <div class="col-sm-4">
+        <input type="text" name="lastName" id="Text1" placeholder="Last Name" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="ctrl.formData.lastName"
+          required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.lastName.$touched && ctrl.registrationForm.lastName.$error.required">Last name required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.lastName.$error.pattern">Alphabets only</span>
+      </div>
+    </div>
+    </br>
+    </br>
+     <div class="form-group">
+      <label for="company" class=" control-label col-sm-3">Company</label>
+      <div class="col-sm-4">
+        <input type="text" name="company"  placeholder="company" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="ctrl.formData.company"
+          required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.company.$touched && ctrl.registrationForm.company.$error.required">Company required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.company.$error.pattern">Alphabets only</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="gender" class="control-label col-sm-3">Gender</label>
+      <div class="col-sm-9">
+        <div class="radio">
+          <label><input type="radio" name="userGender" ng-model="ctrl.formData.userGender" ng-value="Male"> Male</label>
+          <label><input type="radio" name="userGender" ng-model="ctrl.formData.userGender" value="Female">Female</label>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" ng-model="ctrl.formData.pass"
-            required />
-          <span style="color:red" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password required</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="category" class="control-label col-sm-3">Category</label>
+      <div class="col-sm-9">
+        <div class="radio">
+          <label><input type="radio"  ng-model="ctrl.formData.userCategory" name="userCateg" ng-value="driver" >Driver</label>
+          <label><input type="radio"  ng-model="ctrl.formData.userCategory" name="userCateg" value="passenger">Passenger</label>
         </div>
-        <div class="form-group">
-          <label for="confirmpassword">Confirm Password</label>
-          <input type="password" name="rePassword" id="pass2" placeholder="Re enter password" class="form-control" ng-keyup="ctrl.checkPass()"
-            ng-model="ctrl.formData.password" />
-          <span style="color:red" ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Repeat the password</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="username" class=" control-label col-sm-3">Username</label>
+      <div class="col-sm-4">
+        <input type="text" name="userName" id="username" placeholder="username" class="form-control" ng-model="ctrl.formData.username"
+          required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.userName.$touched && ctrl.registrationForm.userName.$error.required">Username required</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="password" class=" control-label col-sm-3">Password</label>
+      <div class="col-sm-4">
+        <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" ng-model="ctrl.formData.pass"
+          required />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.password.$touched && ctrl.registrationForm.password.$error.required">Password required</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="confirmpassword" class=" control-label col-sm-3">Confirm Password</label>
+      <div class="col-sm-4">
+        <input type="password" name="rePassword" id="pass2" placeholder="Re enter password" class="form-control" ng-keyup="ctrl.checkPass()"
+          ng-model="ctrl.formData.password" ng-required="true" />
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.rePassword.$touched && ctrl.registrationForm.rePassword.$error.required">Repeat the password</span>
         <span id="confirmMessage" class="confirmMessage"></span>
-        </div>
-     
-        <div class="form-group">
-          <label for="contactNumber">Contact Number</label>
-          <input class="form-control" type="text" name="contactNumber" ng-pattern="/^[0-9]*$/" ng-model="ctrl.formData.contactNumber"
-            ng-required="true" placeholder="Enter contact Number" ng-required="true">
-            <div class="col-sm-4">
-              <span style="color:red" ng-show="registrationForm.contactNumber.$touched && registrationForm.contactNumber.$error.required">Contact number required</span>
-              <span style="color:red" ng-show="registrationForm.contactNumber.$error.pattern">Only digits are allowed</span>
-            </div>
-        </div>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="contactNumber" class=" control-label col-sm-3">Contact Number</label>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" name="contactNumber" ng-pattern="/^[0-9]*$/" ng-model="ctrl.formData.contactNumber"
+          ng-required="true" placeholder="Enter contact Number" ng-required="true">
+      </div>
+      <div class="col-sm-5">
+        <span style="color:red" ng-show="ctrl.registrationForm.contactNumber.$touched && ctrl.registrationForm.contactNumber.$error.required">Contact required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.contactNumber.$error.pattern">Only digits are allowed</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-6">
         </br>
-        <div class="form-actions">
-          <button type="submit" ng-disabled="registrationForm.$invalid" class="btn btn-primary" ng-click="ctrl.userRegister()">Register</button>
-          <button type="button" class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
-        </div>
+        </br>
+        <button type="submit" ng-disabled="ctrl.registrationForm.$invalid" class="btn btn-primary" ng-click="ctrl.userRegister()">Register</button>
+        <button type="button" class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
   </ng-form>
 </div>
