@@ -6,7 +6,7 @@ function UserHomeController($state) {
   ctrl.searchRideDetails = searchRideDetails;
 
   function searchRideDetails(place) {
-    $state.go('rideList', {
+    $state.go('userRideList', {
       fromPlace: place
     });
   }

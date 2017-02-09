@@ -52,9 +52,17 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/searchRide',
       component: 'searchRide'
     })
+    .state('userSearchRide', {
+      url: '/userSearchRide',
+      component: 'userSearchRide'
+    })
     .state('rideList', {
       url: '/rideList/:fromPlace',
       component: 'rideList'
+    })
+    .state('userRideList', {
+      url: '/userRideList/:fromPlace',
+      component: 'userRideList'
     })
     .state('viewride', {
       url: '/viewride/:ride',
