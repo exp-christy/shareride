@@ -8,12 +8,12 @@
         <div class="panel-body">
           <div class="form-group">
             <label for="userName">Username</label>
-            <input type="text" name="username" class="form-control" ng-model="ctrl.formData.username" placeholder="Enter username" ng-required="true">
+            <input type="text" autocomplete ="off" name="username" class="form-control" ng-model="ctrl.formData.username" placeholder="Enter username" ng-required="true">
             <span style="color:red" ng-show="userLogin.username.$touched && userLogin.username.$error.required">Username required</span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" ng-model="ctrl.formData.password" class="form-control" placeholder="Enter password"
+            <input type="password" autocomplete ="off" name="password" ng-model="ctrl.formData.password" class="form-control" placeholder="Enter password"
               ng-required="true"></div>
           <span style="color:red" ng-show="userLogin.password.$touched && userLogin.password.$error.required">Password required</span>
         </div>
@@ -21,8 +21,8 @@
           <div class="buttonHolder">
             <div class="text-center">
               <input type="submit" value="Sign In" ng-disabled="userLogin.$invalid" class="btn btn-primary" ng-click="ctrl.usersLogin()">
-              <input type="submit" value="Sign Up" class="btn btn-primary" ng-click="ctrl.userReg()">
-              <input type="button" value="Cancel" class="btn btn-warning" ng-click="ctrl.cancel()">
+              <input type="button" value="Cancel" class="btn btn-warning" ng-click="ctrl.cancel()"></br></br>
+              Not Registered?<a ui-sref="userRegistration"> SIGN UP</a>
             </div>
           </div>
         </div>
