@@ -3,23 +3,13 @@
 }
 
 .userhome1 {
-  background-color: #474e5d;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #474e5d;
 }
 
-.userhome2 {
-  background-color: #008ae6;
-  color: #ffffff;
-}
-
-.userhome1 h2,
+.userhome1 h2,h4,
 h3 {
-  color: #ffffff;
-}
-
-.userhome2 h2,
-h4 {
-  color: #ffffff;
+  color: #474e5d;
 }
 
 .container-userfluid {
