@@ -49,7 +49,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
       }
     }
     else {
-      toastr.info('Please select some place and then search!');
+      toastr.info('Please type some place and search!');
     }
   }
 }
