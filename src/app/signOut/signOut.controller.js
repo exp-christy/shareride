@@ -1,12 +1,13 @@
 angular.module("app")
   .controller("SignOutController", SignOutController);
 
-function SignOutController($state) {
+function SignOutController($state , $firebaseAuth , $firebase) {
   var ctrl = this;
-  ctrl.signOut = signOut;
+  ctrl.authObj = $firebaseAuth();
+ // ctrl.signOut = signOut;
 
-  function signOut() {
+  //function signOut() {
 
-    $state.go('myHome');
-  }
+   // $state.go('myHome');
+  //}
 }
