@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('RideListController', RideListController);
 
-function RideListController($http, $stateParams, $state,toastr, $timeout, $firebaseArray) {
+function RideListController($http, $stateParams, $state,toastr, $timeout, $firebaseArray, $firebaseAuth) {
   var ctrl = this;
   ctrl.searchResult = [];
   ctrl.viewRideDetails = viewRideDetails;
@@ -10,8 +10,10 @@ function RideListController($http, $stateParams, $state,toastr, $timeout, $fireb
   ctrl.$onInit = init;
   var ref = firebase.database().ref().child("rideDetailsList");
   ctrl.rideDetailsList = $firebaseArray(ref);
+  ctrl.authObj = $firebaseAuth();
   //  Function searches ride details for the place from JSON file
   function init() {
+    ctrl.firebaseUser = ctrl.authObj.$getAuth();
     ctrl.fromPlace = $stateParams.fromPlace.toUpperCase();
     ctrl.rideDetailsList.$loaded().then(function () {
       ctrl.len = ctrl.rideDetailsList.length;
