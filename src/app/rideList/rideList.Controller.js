@@ -17,10 +17,14 @@ function RideListController($http, $stateParams, $state,toastr, $timeout, $fireb
     if(ctrl.firebaseUser){
       ctrl.showUserHeader = true;
       ctrl.showMyHeader = false;
+      ctrl.showUserFooter = true;
+      ctrl.showMyFooter = false;
     }
     else{
       ctrl.showUserHeader = false;
       ctrl.showMyHeader = true;
+      ctrl.showUserFooter = false;
+      ctrl.showMyFooter = true;
 
     }
     ctrl.fromPlace = $stateParams.fromPlace.toUpperCase();
