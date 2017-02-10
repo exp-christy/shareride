@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'toastr','firebase']);
+  .module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'toastr', 'firebase']);
 var config = {
   apiKey: "AIzaSyCtT4Y-HLlHkS9C8pRzQZYHXImWJjxsSbc",
   authDomain: "shareride-fe79d.firebaseapp.com",
