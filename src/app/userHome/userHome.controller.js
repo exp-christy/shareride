@@ -19,6 +19,7 @@ function UserHomeController($state, $firebaseAuth, $firebaseArray) {
             ctrl.userName = ctrl.userList[i].firstName;
             ctrl.userName1 = ctrl.userList[i].lastName;
             ctrl.company = ctrl.userList[i].company;
+            
           }
         }
       });

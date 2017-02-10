@@ -21,16 +21,16 @@ function userLoginController($state, $firebaseAuth) {
     ctrl.close({
       $value: ctrl.formData
     });
-  };
+  }
 
   function usersLogin() {
     ctrl.authObj.$signInWithEmailAndPassword(ctrl.formData.email, ctrl.formData.password).then(function (firebaseUser) {
-      console.log("Signed in as:", firebaseUser.uid);
+
       $state.go('userHome');
     }).catch(function (error) {
-      console.error("Authentication failed:", error);
+
     });
-    
+
     ctrl.ok();
   }
 
