@@ -15,21 +15,21 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   ctrl.rideDetailsList = $firebaseArray(ref3);
   ctrl.addRideDetails = addRideDetails;
   ctrl.clearDetails = clearDetails;
-  ctrl.$onInit = init; 
+  ctrl.$onInit = init;
   ctrl.goHome = goHome;
-  //ctrl.formData = {};
+  ctrl.formData = {};
   ctrl.formDataDriver = {};
   ctrl.formDataVehicle = {};
   ctrl.formDataRide = {};
 
-  function init(){
+  function init() {
     ctrl.firebaseUser = ctrl.authObj.$getAuth();
-    if(ctrl.firebaseUser){
-      ctrl.userList.$loaded().then(function(){
+    if (ctrl.firebaseUser) {
+      ctrl.userList.$loaded().then(function () {
         var numberOfUsers = ctrl.userList.length;
         var i;
-        for(i=0; i < numberOfUsers; i++){
-          if(ctrl.firebaseUser.uid === ctrl.userList[i].firebaseUserId){
+        for (i = 0; i < numberOfUsers; i++) {
+          if (ctrl.firebaseUser.uid === ctrl.userList[i].firebaseUserId) {
             ctrl.formDataDriver.contactNumber = ctrl.userList[i].contactNumber;
             ctrl.formDataDriver.driverName = ctrl.userList[i].firstName + ctrl.userList[i].lastName;
             ctrl.formDataDriver.licenseNumber = ctrl.userList[i].licenseNumber;
@@ -37,8 +37,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
         }
       });
 
-    }
-    else{
+    } else {
       $state.go('myHome');
       toastr.warning('Only registered users can create ride');
 
@@ -46,7 +45,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   }
 
   function addRideDetails() {
-    if(angular.isDefined(ctrl.formData)){
+    ctrl.rideDetailsList.$loaded().then(function(){
       ctrl.formData.rideId = ctrl.rideDetailsList.length + 1;
       ctrl.vehicleList.$add(ctrl.formDataVehicle);
       ref2.on('child_added', function (snapshot) {
@@ -71,11 +70,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
       ctrl.clearDetails();
       toastr.success('Ride has been created');
       ctrl.goHome();
-    }
-     else{
-
-       toastr.warning('Please enter details');
-    }
+    });
   }
 
   function goHome() {
