@@ -3,7 +3,7 @@
     <div class="form-group col-sm-10">
             <label class="col-sm-2" for="from">From</label>
             <div class="col-sm-4">
-                    <input class="form-control" type="text" name="txtfrom" maxlength="20"
+                    <input class="form-control"autocomplete="off" type="text" name="txtfrom" maxlength="20"
                     ng-model="ctrl.formData.from" ng-pattern="/^[a-z A-Z]*$/" ng-required="true"
                     uib-typeahead="from for from in ctrl.from | filter:$viewValue | limitTo:8"
                     placeholder="From place">
@@ -19,7 +19,7 @@
     <div class="form-group col-sm-10">
         <label class="col-sm-2" for="stopPoint">Stop Points</label>
         <div class="col-sm-4">
-            <input class="form-control" type="text" name="txtstopPoint" maxlength="50"
+            <input class="form-control"autocomplete="off" type="text" name="txtstopPoint" maxlength="50"
                  ng-model="ctrl.formData.stopPoints" ng-pattern="/^[a-z A-Z ,]*$/" ng-required="true"
                  uib-typeahead="stops for stops in ctrl.stopPoints | filter:$viewValue | limitTo:8"
                  placeholder="Stop Points">
@@ -74,7 +74,7 @@
 <div class="form-group col-sm-10">
     <label class="col-sm-2" for="vacantSeats">Vacant Seats</label>      
     <div class="col-sm-2">           
-        <input class="form-control" type="text" name="txtvacantSeats"
+        <input class="form-control"autocomplete="off" type="text" name="txtvacantSeats"
         ng-model="ctrl.formData.vacantSeats" ng-pattern="/^[0-9]*$/" ng-required="true"
         placeholder="Vacant seats">
     </div>
@@ -91,7 +91,7 @@
 <div class="form-group col-sm-10">
     <label class="col-sm-2" for="fare">Fare</label>
     <div class="col-sm-2">
-        <input class="form-control" type="text" name="txtfare"
+        <input class="form-control"autocomplete="off" type="text" name="txtfare"
         ng-model="ctrl.formData.fare" ng-pattern="/^[0-9]*$/" ng-required="true"
         placeholder="fare">
     </div>

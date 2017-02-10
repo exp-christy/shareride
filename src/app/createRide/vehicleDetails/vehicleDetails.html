@@ -3,7 +3,7 @@
   <div class="form-group col-sm-10">
     <label class="col-sm-2" for="vehicleNumber">Vehicle Number</label>
     <div class="col-sm-4">
-      <input class="form-control" type="text" name="txtvehicleNumber" maxlength="20" ng-model="ctrl.formData.vehicleNumber" ng-required="true"
+      <input class="form-control"autocomplete="off" type="text" name="txtvehicleNumber" maxlength="20" ng-model="ctrl.formData.vehicleNumber" ng-required="true"
         placeholder="vehicle Number">
     </div>
     <div class="col-sm-4">
@@ -14,7 +14,7 @@
   <div class="form-group col-sm-10">
     <label class="col-sm-2" for="vehicleModel">Vehicle Model</label>
     <div class="col-sm-4">
-      <input class="form-control" type="text" name="txtvehicleModel" uib-typeahead="vehicle for vehicle in ctrl.vehicles | filter:$viewValue | limitTo:8"
+      <input class="form-control"autocomplete="off" type="text" name="txtvehicleModel" uib-typeahead="vehicle for vehicle in ctrl.vehicles | filter:$viewValue | limitTo:8"
         ng-model="ctrl.formData.vehicleModel" ng-required="true" placeholder="vehicle Model">
     </div>
     <div class="col-sm-4">
@@ -26,7 +26,7 @@
   <div class="form-group col-sm-10">
     <label class="col-sm-2" for="seatCapacity">Seat Capacity</label>
     <div class="col-sm-4">
-      <input class="form-control" type="text" name="txtseatCapacity" ng-model="ctrl.formData.seatCapacity" ng-pattern="/^[0-9]*$/"
+      <input class="form-control"autocomplete="off" type="text" name="txtseatCapacity" ng-model="ctrl.formData.seatCapacity" ng-pattern="/^[0-9]*$/"
         ng-required="true" placeholder="seat capacity">
     </div>
     <div class="col-sm-4">
