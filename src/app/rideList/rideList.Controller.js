@@ -25,9 +25,6 @@ function RideListController($http, $stateParams, $state,toastr, $timeout, $fireb
   }
   //  Function to go to viewride page
   function viewRideDetails(Id) {
-    $state.go('viewride', {
-      //ride: Id
-   });
-   toastr.warning('You need to Sign In!');
+    $state.go('viewride', {ride: Id});
   }
 }
