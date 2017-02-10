@@ -64,6 +64,7 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
       ctrl.authObj.$createUserWithEmailAndPassword(ctrl.formData.email, ctrl.formData.pass)
         .then(function(firebaseUser) {
           ctrl.formData.firebaseUserId = firebaseUser.uid;
+          delete ctrl.formData.pass;
           ctrl.userDetails.$add(ctrl.formData);
           ctrl.formData = {};
           ctrl.registrationForm.$setUntouched();

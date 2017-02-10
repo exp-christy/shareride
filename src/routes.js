@@ -21,7 +21,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     //   component: 'myFooter'
     // })
     .state('userHome', {
-      url: '/userHome',
+      url: '/userHome/:userId',
       component: 'userHome'
     })
     // .state('userHeader', {
