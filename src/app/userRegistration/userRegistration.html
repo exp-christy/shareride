@@ -28,19 +28,6 @@
     </br>
     </br>
     <div class="form-group">
-      <label for="email" class="control-label col-sm-4">E-mail</label>
-      <div class="col-sm-4">
-        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control" 
-          ng-model="ctrl.formData.email" required />
-      </div>
-      <div class="col-sm-4">
-        <span style="color:red" ng-show="ctrl.registrationForm.email.$touched && ctrl.registrationForm.email.$error.required">E-mail required</span>
-        <span style="color:red" ng-show="ctrl.registrationForm.email.$error.pattern">Enter valid e-mail</span>
-      </div>
-    </div>
-    </br>
-    </br>
-    <div class="form-group">
       <label for="company" class=" control-label col-sm-4">Company</label>
       <div class="col-sm-4">
         <input type="text" name="company" placeholder="company" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="ctrl.formData.company"
@@ -95,16 +82,27 @@
     </br>
     </br>
     <div class="form-group">
-      <label for="username" class=" control-label col-sm-4">Username</label>
+      <label for="username" class=" control-label col-sm-4">License Number</label>
       <div class="col-sm-4">
-        <input type="text" name="userName" id="username" placeholder="username" 
-            class="form-control" ng-model="ctrl.formData.username"
-            ng-change="ctrl.checkUserName()"
+        <input type="text" name="licenseNumber" id="licenseNumber" placeholder="License Number" 
+            class="form-control" ng-model="ctrl.formData.licenseNumber"
           required />
       </div>
       <div class="col-sm-4">
-        <span style="color:red" ng-show="ctrl.registrationForm.userName.$touched && ctrl.registrationForm.userName.$error.required">Username required</span>
-        <span style="color:red" ng-show="ctrl.usernameNotValid">Username already exist</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.licenseNumber.$touched && ctrl.registrationForm.licenseNumber.$error.required">License Number required</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
+      <label for="email" class="control-label col-sm-4">E-mail</label>
+      <div class="col-sm-4">
+        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control" 
+          ng-model="ctrl.formData.email" required  ng-change="ctrl.checkUserName()"/>
+      </div>
+      <div class="col-sm-4">
+        <span style="color:red" ng-show="ctrl.registrationForm.email.$touched && ctrl.registrationForm.email.$error.required">E-mail required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.email.$error.pattern">Enter valid e-mail</span>
       </div>
     </div>
     </br>
@@ -113,10 +111,11 @@
       <label for="password" class=" control-label col-sm-4">Password</label>
       <div class="col-sm-4">
         <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" ng-model="ctrl.formData.pass"
-          required />
+          ng-minlength="6" required />
       </div>
       <div class="col-sm-4">
         <span style="color:red" ng-show="ctrl.registrationForm.password.$touched && ctrl.registrationForm.password.$error.required">Password required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.$error.minlength">Enter atleast 6 characters</span>
       </div>
     </div>
     </br>

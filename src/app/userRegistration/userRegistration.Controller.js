@@ -26,13 +26,13 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
       var usersListLength = ctrl.userDetails.length;
       var i;
       for(i = 0; i < usersListLength; i++){
-        // Comparing the provided username with existing usernames
-        if(ctrl.formData.username === ctrl.userDetails[i].username){
-          // Setting the username as not valid 
+        // Comparing the provided email id with existing email id
+        if(ctrl.formData.email === ctrl.userDetails[i].email){
+          // Setting the email id as not valid as it already exist
           ctrl.usernameNotValid = true;
         }
         else{
-          // Setting the username as valid once it does not match with existing username
+          // Setting the email id as valid once it does not match with existing email id
           ctrl.usernameNotValid = false;
         }
       }
@@ -40,31 +40,40 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
   }
 
   function checkPass() {
-    var pass1 = ctrl.formData.pass;
-    var pass2 = ctrl.formData.password;
-    // Store the Confimation Message Object ...
-    var message = document.getElementById('confirmMessage');
-    // Set the colors we will be using ...
-    var badColor = "#ff6666";
-    // Compare the values in the password field and the confirmation field
-    var match = pass1.localeCompare(pass2);
-    if (match === 0) {
+    if(angular.isDefined(ctrl.formData.pass)&& angular.isDefined(ctrl.formData.password)){
+      var pass1 = ctrl.formData.pass;
+      var pass2 = ctrl.formData.password;
+      // Store the Confimation Message Object ...
+      var message = document.getElementById('confirmMessage');
+      // Set the colors we will be using ...
+      var badColor = "#ff6666";
+      // Compare the values in the password field and the confirmation field
+      var match = pass1.localeCompare(pass2);
+      if (match === 0) {
       message.innerHTML = "";
-    } else {
+      } else {
       // The passwords do not match.Set the color to the bad color andnotify the user.
       message.style.color = badColor;
       message.innerHTML = "Passwords Do Not Match!";
     }
+    }
   }
 
   function userRegister() {
-    // 
     if(angular.isDefined(ctrl.formData)){
-      ctrl.userDetails.$add(ctrl.formData);
-      ctrl.formData = {};
-      ctrl.registrationForm.$setUntouched();
-      toastr.success('Registration Successfull!','Please sign in to continue');
-      $state.go('myHome');
+      ctrl.authObj.$createUserWithEmailAndPassword(ctrl.formData.email, ctrl.formData.pass)
+        .then(function(firebaseUser) {
+          ctrl.formData.firebaseUserId = firebaseUser.uid;
+          ctrl.userDetails.$add(ctrl.formData);
+          ctrl.formData = {};
+          ctrl.registrationForm.$setUntouched();
+          $state.go('userHome');
+          toastr.success('Registration Successfull!');
+          //console.log("User " + firebaseUser.uid + " created successfully!");
+        }).catch(function(error) {
+            toaster.danger("An unepected error has occured");
+            //console.error("Error: ", error);
+        });
     }
   }
 
