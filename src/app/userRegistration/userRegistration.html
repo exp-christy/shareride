@@ -28,6 +28,19 @@
     </br>
     </br>
     <div class="form-group">
+      <label for="email" class="control-label col-sm-4">E-mail</label>
+      <div class="col-sm-4">
+        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control" 
+          ng-model="ctrl.formData.email" required />
+      </div>
+      <div class="col-sm-4">
+        <span style="color:red" ng-show="ctrl.registrationForm.email.$touched && ctrl.registrationForm.email.$error.required">E-mail required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.email.$error.pattern">Enter valid e-mail</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <div class="form-group">
       <label for="company" class=" control-label col-sm-4">Company</label>
       <div class="col-sm-4">
         <input type="text" name="company" placeholder="company" class="form-control" ng-pattern="/^[a-z A-Z]*$/" ng-model="ctrl.formData.company"
@@ -54,12 +67,14 @@
     </br>
     </br>
     <div class="form-group">
-      <label for="gender" class="control-label col-sm-4">Gender</label>
+      <label for="gender" class="control-label col-sm-4">Gender </label>
       <div class="col-sm-8">
-        <div>
-          <label class="radio-inline"><input type="radio" ng-checked="true" name="userGender" ng-model="ctrl.formData.userGender" value="Male"> Male</label>
-          <label class="radio-inline"><input type="radio" name="userGender" ng-model="ctrl.formData.userGender" value="Female">Female</label>
-        </div>
+          <label class="radio-inline">
+            <input type="radio" ng-model="ctrl.formData.userGender" ng-value="'Male'">Male          
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="ctrl.formData.userGender" ng-value="'Female'">Female
+          </label>
       </div>
     </div>
     </br>
@@ -68,8 +83,12 @@
       <label for="category" class="control-label col-sm-4">Category</label>
       <div class="col-sm-8">
         <div>
-          <label class="radio-inline"><input type="radio" ng-checked="true" ng-model="ctrl.formData.userCategory" name="userCateg" value="driver" >Driver</label>
-          <label class="radio-inline"><input type="radio"  ng-model="ctrl.formData.userCategory" name="userCateg" value="passenger">Passenger</label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="ctrl.formData.userCategory" ng-value="'driver'" >Driver
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="ctrl.formData.userCategory" ng-value="'passenger'">Passenger
+          </label>
         </div>
       </div>
     </div>

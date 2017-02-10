@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('userRegistrationController', userRegistrationController);
 
-function userRegistrationController($timeout, $state, toastr, $firebaseArray) {
+function userRegistrationController($timeout, $state, toastr, $firebaseArray, $firebaseAuth) {
   var ctrl = this;
   ctrl.checkUserName = checkUserName;
   ctrl.checkPass = checkPass;
@@ -10,18 +10,29 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray) {
   ctrl.cancel = cancel;
   var usersRef = firebase.database().ref().child('user');
   ctrl.userDetails = $firebaseArray(usersRef);
+  ctrl.authObj = $firebaseAuth();
   ctrl.usernameNotValid = false;
+  ctrl.$onInit = init;
+  ctrl.formData = {userCategory : "driver", userGender: "Male"};
   
+  function init(){
+    // ctrl.formData.userCategory ="driver";
+    // ctrl.formData.userGender ="Male";
+  }
 
   function checkUserName(){
     ctrl.userDetails.$loaded().then( function (){
+      // Finding the number of registered users
       var usersListLength = ctrl.userDetails.length;
       var i;
       for(i = 0; i < usersListLength; i++){
+        // Comparing the provided username with existing usernames
         if(ctrl.formData.username === ctrl.userDetails[i].username){
+          // Setting the username as not valid 
           ctrl.usernameNotValid = true;
         }
         else{
+          // Setting the username as valid once it does not match with existing username
           ctrl.usernameNotValid = false;
         }
       }
@@ -47,13 +58,14 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray) {
   }
 
   function userRegister() {
-    ctrl.formData.userCategory = ctrl.formData.userCategory.value;
-    ctrl.formData.userGender = ctrl.formData.userGender.value;
-    ctrl.userDetails.$add(ctrl.formData);
-    ctrl.formData = {};
-    ctrl.registrationForm.$setUntouched();
-    toastr.success('Registration Successfull!');
-    $state.go('userHome');
+    // 
+    if(angular.isDefined(ctrl.formData)){
+      ctrl.userDetails.$add(ctrl.formData);
+      ctrl.formData = {};
+      ctrl.registrationForm.$setUntouched();
+      toastr.success('Registration Successfull!','Please sign in to continue');
+      $state.go('myHome');
+    }
   }
 
   function cancel() {
