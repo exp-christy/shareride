@@ -2,21 +2,48 @@ angular
   .module('app')
   .controller("CreateRideController", CreateRideController);
 
-function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseArray) {
+function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseArray, $firebaseAuth) {
   var ctrl = this;
+  var userref = firebase.database().ref().child("user");
   var ref1 = firebase.database().ref().child("drivers");
   var ref2 = firebase.database().ref().child("vehicles");
   var ref3 = firebase.database().ref().child("rideDetailsList");
+  ctrl.authObj = $firebaseAuth();
+  ctrl.userList = $firebaseArray(userref);
   ctrl.driverList = $firebaseArray(ref1);
   ctrl.vehicleList = $firebaseArray(ref2);
   ctrl.rideDetailsList = $firebaseArray(ref3);
   ctrl.addRideDetails = addRideDetails;
   ctrl.clearDetails = clearDetails;
+  ctrl.$onInit = init; 
   ctrl.goHome = goHome;
   //ctrl.formData = {};
   ctrl.formDataDriver = {};
   ctrl.formDataVehicle = {};
   ctrl.formDataRide = {};
+
+  function init(){
+    ctrl.firebaseUser = ctrl.authObj.$getAuth();
+    if(ctrl.firebaseUser){
+      ctrl.userList.$loaded().then(function(){
+        var numberOfUsers = ctrl.userList.length;
+        var i;
+        for(i=0; i < numberOfUsers; i++){
+          if(ctrl.firebaseUser.uid === ctrl.userList[i].firebaseUserId){
+            ctrl.formDataDriver.contactNumber = ctrl.userList[i].contactNumber;
+            ctrl.formDataDriver.driverName = ctrl.userList[i].firstName + ctrl.userList[i].lastName;
+            ctrl.formDataDriver.licenseNumber = ctrl.userList[i].licenseNumber;
+          }
+        }
+      });
+
+    }
+    else{
+      $state.go('myHome');
+      toastr.warning('Only registered users can create ride');
+
+    }
+  }
 
   function addRideDetails() {
     if(angular.isDefined(ctrl.formData)){
