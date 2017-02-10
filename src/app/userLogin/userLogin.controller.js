@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller("userLoginController", userLoginController);
 
-function userLoginController($state, $firebaseAuth) {
+function userLoginController($state, $firebaseAuth, toastr) {
   var ctrl = this;
   ctrl.usersLogin = usersLogin;
   ctrl.userReg = userReg;
@@ -25,8 +25,13 @@ function userLoginController($state, $firebaseAuth) {
   function usersLogin() {
     ctrl.authObj.$signInWithEmailAndPassword(ctrl.formData.email, ctrl.formData.password).then(function (firebaseUser) {
       $state.go('userHome');
-    }).catch(function (error) {});
-    ctrl.ok();
+      ctrl.cancel();
+    }).catch(function (error) {
+      ctrl.formData = {};
+      ctrl.userLogin.$setUntouched();
+      toastr.error('You have not signed up');
+    });
+    //ctrl.ok();
   }
 
   function userReg() {
