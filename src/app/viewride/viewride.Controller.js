@@ -1,7 +1,7 @@
 angular.module("app")
   .controller("ViewRideController", ViewRideController);
 
-function ViewRideController($uibModal, $log, $http, $state, $stateParams, $firebaseArray, $firebaseAuth) {
+function ViewRideController($uibModal, $log, $http, $state, $stateParams, $firebaseArray, $firebaseAuth, toastr) {
   var ctrl = this;
   ctrl.openComponentModal = openComponentModal;
   ctrl.result = {};
@@ -45,6 +45,7 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
       ctrl.rideDetail.$loaded().then(function(){
         ctrl.ride = $stateParams.ride;
         ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+        toastr.warning('Only signed in users can view ride details');
         ctrl.update();
       });
     }
@@ -53,7 +54,7 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
   }
 
   function update() {
-    $state.go('userRideList', {
+    $state.go('rideList', {
       fromPlace: ctrl.result.from
     });
   }
