@@ -68,7 +68,7 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
           ctrl.userDetails.$add(ctrl.formData);
           ctrl.formData = {};
           ctrl.registrationForm.$setUntouched();
-          $state.go('userHome');
+          $state.go('userHome',{userId: firebaseUser.uid});
           toastr.success('Registration Successfull!');
           //console.log("User " + firebaseUser.uid + " created successfully!");
         }).catch(function(error) {
