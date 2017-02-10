@@ -9,7 +9,6 @@ function userLoginController($state, $firebaseAuth) {
   ctrl.ok = ok;
   ctrl.cancel = cancel;
   ctrl.authObj = $firebaseAuth();
-  console.log(ctrl.authObj);
 
   function cancel() {
     ctrl.dismiss({
@@ -25,12 +24,8 @@ function userLoginController($state, $firebaseAuth) {
 
   function usersLogin() {
     ctrl.authObj.$signInWithEmailAndPassword(ctrl.formData.email, ctrl.formData.password).then(function (firebaseUser) {
-
       $state.go('userHome');
-    }).catch(function (error) {
-
-    });
-
+    }).catch(function (error) {});
     ctrl.ok();
   }
 
