@@ -4,15 +4,15 @@
       <div class="panel-heading">
         <h2 class="text-center">Login</h2>
       </div>
-      <form name="userLogin" ng-submit="ctrl.usersLogin()">
+      <form name="ctrl.userLogin" ng-submit="ctrl.usersLogin()">
         <div class="panel-body">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" autocomplete ="off" name="email" class="form-control"
              ng-model="ctrl.formData.email" placeholder="Enter email" ng-required="true">
             <span style="color:red" 
-            ng-show="userLogin.email.$touched && userLogin.email.$error.required">email required</span>
-            <span style="color:red" ng-show="userLogin.email.$error.email">Enter valid e-mail</span>
+            ng-show="ctrl.userLogin.email.$touched && ctrl.userLogin.email.$error.required">email required</span>
+            <span style="color:red" ng-show="ctrl.userLogin.email.$error.email">Enter valid e-mail</span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -20,12 +20,12 @@
              class="form-control" placeholder="Enter password"
               ng-required="true"></div>
           <span style="color:red"
-           ng-show="userLogin.password.$touched && userLogin.password.$error.required">Password required</span>
+           ng-show="ctrl.userLogin.password.$touched && ctrl.userLogin.password.$error.required">Password required</span>
         </div>
         <div class="panel-footer">
           <div class="buttonHolder">
             <div class="text-center">
-              <input type="submit" value="Sign In" ng-disabled="userLogin.$invalid" class="btn btn-primary">
+              <input type="submit" value="Sign In" ng-disabled="ctrl.userLogin.$invalid" class="btn btn-primary">
               <input type="button" value="Cancel" class="btn btn-warning" ng-click="ctrl.cancel()"></br></br>
               Not Registered?<a ui-sref="userRegistration" ng-click="ctrl.cancel()">Sign Up</a>
             </div>

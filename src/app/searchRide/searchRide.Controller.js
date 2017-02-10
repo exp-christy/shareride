@@ -42,14 +42,15 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
             fromPlace: place});
         }
       }
-      if (placeNotFound === 'true') {
-        ctrl.formData.place = "";
-        toastr.info('Sorry no rides were found!');
-        ctrl.frmSearchRide.$setUntouched();
+      if(placeNotFound === 'true')
+      {
+        toastr.info('Sorry no rides were found');
       }
     }
-    else {
-      toastr.info('Please type some place and search!');
+    else{
+        console.log(placeNotFound,angular.isDefined(place));
+        toastr.info('Please enter a place');
+        ctrl.frmSearchRide.$setUntouched();  
     }
   }
 }
