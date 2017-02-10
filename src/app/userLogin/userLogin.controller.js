@@ -2,12 +2,14 @@ angular
   .module('app')
   .controller("userLoginController", userLoginController);
 
-function userLoginController($state) {
+function userLoginController($state, $firebaseAuth) {
   var ctrl = this;
   ctrl.usersLogin = usersLogin;
   ctrl.userReg = userReg;
   ctrl.ok = ok;
   ctrl.cancel = cancel;
+  ctrl.authObjj = $firebaseAuth();
+  console.log(ctrl.authObj);
 
   function cancel() {
     ctrl.dismiss({
@@ -22,6 +24,11 @@ function userLoginController($state) {
   };
 
   function usersLogin() {
+    ctrl.authObj.$signInWithCustomToken("ctrl.authObjj").then(function (firebaseUser) {
+      console.log("Signed in as:", firebaseUser.uid);
+    }).catch(function (error) {
+      console.error("Authentication failed:", error);
+    });
     $state.go('userHome');
     ctrl.ok();
   }
