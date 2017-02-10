@@ -53,7 +53,7 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
   }
 
   function update() {
-    $state.go('rideList', {
+    $state.go('userRideList', {
       fromPlace: ctrl.result.from
     });
   }
