@@ -12,26 +12,22 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
   ctrl.userDetails = $firebaseArray(usersRef);
   ctrl.authObj = $firebaseAuth();
   ctrl.usernameNotValid = false;
-  ctrl.$onInit = init;
-  ctrl.formData = {userCategory : "driver", userGender: "Male"};
-  
-  function init(){
-    // ctrl.formData.userCategory ="driver";
-    // ctrl.formData.userGender ="Male";
-  }
+  ctrl.formData = {
+    userCategory: "driver",
+    userGender: "Male"
+  };
 
-  function checkUserName(){
-    ctrl.userDetails.$loaded().then( function (){
+  function checkUserName() {
+    ctrl.userDetails.$loaded().then(function () {
       // Finding the number of registered users
       var usersListLength = ctrl.userDetails.length;
       var i;
-      for(i = 0; i < usersListLength; i++){
+      for (i = 0; i < usersListLength; i++) {
         // Comparing the provided email id with existing email id
-        if(ctrl.formData.email === ctrl.userDetails[i].email){
+        if (ctrl.formData.email === ctrl.userDetails[i].email) {
           // Setting the email id as not valid as it already exist
           ctrl.usernameNotValid = true;
-        }
-        else{
+        } else {
           // Setting the email id as valid once it does not match with existing email id
           ctrl.usernameNotValid = false;
         }
@@ -40,7 +36,7 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
   }
 
   function checkPass() {
-    if(angular.isDefined(ctrl.formData.pass)&& angular.isDefined(ctrl.formData.password)){
+    if (angular.isDefined(ctrl.formData.pass) && angular.isDefined(ctrl.formData.password)) {
       var pass1 = ctrl.formData.pass;
       var pass2 = ctrl.formData.password;
       // Store the Confimation Message Object ...
@@ -50,30 +46,30 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
       // Compare the values in the password field and the confirmation field
       var match = pass1.localeCompare(pass2);
       if (match === 0) {
-      message.innerHTML = "";
+        message.innerHTML = "";
       } else {
-      // The passwords do not match.Set the color to the bad color andnotify the user.
-      message.style.color = badColor;
-      message.innerHTML = "Passwords Do Not Match!";
-    }
+        // The passwords do not match.Set the color to the bad color andnotify the user.
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!";
+      }
     }
   }
 
   function userRegister() {
-    if(angular.isDefined(ctrl.formData)){
+    if (angular.isDefined(ctrl.formData)) {
       ctrl.authObj.$createUserWithEmailAndPassword(ctrl.formData.email, ctrl.formData.pass)
-        .then(function(firebaseUser) {
+        .then(function (firebaseUser) {
           ctrl.formData.firebaseUserId = firebaseUser.uid;
           delete ctrl.formData.pass;
           ctrl.userDetails.$add(ctrl.formData);
           ctrl.formData = {};
           ctrl.registrationForm.$setUntouched();
-          $state.go('userHome',{userId: firebaseUser.uid});
+          $state.go('userHome', {
+            userId: firebaseUser.uid
+          });
           toastr.success('Registration Successfull!');
-          //console.log("User " + firebaseUser.uid + " created successfully!");
-        }).catch(function(error) {
-            toaster.danger("An unepected error has occured");
-            //console.error("Error: ", error);
+        }).catch(function (error) {
+          toastr.danger("An unepected error has occured");
         });
     }
   }
