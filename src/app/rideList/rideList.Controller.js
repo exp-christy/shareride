@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('RideListController', RideListController);
 
-function RideListController($http, $stateParams, $state, $timeout, $firebaseArray) {
+function RideListController($http, $stateParams, $state,toastr, $timeout, $firebaseArray) {
   var ctrl = this;
   ctrl.searchResult = [];
   ctrl.viewRideDetails = viewRideDetails;
@@ -26,7 +26,8 @@ function RideListController($http, $stateParams, $state, $timeout, $firebaseArra
   //  Function to go to viewride page
   function viewRideDetails(Id) {
     $state.go('viewride', {
-      ride: Id
-    });
+      //ride: Id
+   });
+   toastr.warning('You need to Sign In!');
   }
 }
