@@ -97,12 +97,12 @@
     <div class="form-group">
       <label for="email" class="control-label col-sm-4">E-mail</label>
       <div class="col-sm-4">
-        <input type="email" name="email" id="email" placeholder="E-mail" class="form-control" 
+        <input type="email" name="mail" id="email" placeholder="E-mail" class="form-control" 
           ng-model="ctrl.formData.email" required  ng-change="ctrl.checkUserName()"/>
       </div>
       <div class="col-sm-4">
-        <span style="color:red" ng-show="ctrl.registrationForm.email.$touched && ctrl.registrationForm.email.$error.required">E-mail required</span>
-        <span style="color:red" ng-show="ctrl.registrationForm.email.$error.pattern">Enter valid e-mail</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.mail.$touched && ctrl.registrationForm.mail.$error.required">E-mail required</span>
+        <span style="color:red" ng-show="ctrl.registrationForm.mail.$error.email">Enter valid e-mail</span>
       </div>
     </div>
     </br>
