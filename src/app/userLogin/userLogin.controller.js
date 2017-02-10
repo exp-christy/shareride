@@ -26,9 +26,7 @@ function userLoginController($state, $firebaseAuth) {
   function usersLogin() {
     ctrl.authObj.$signInWithEmailAndPassword(ctrl.formData.email, ctrl.formData.password).then(function (firebaseUser) {
       console.log("Signed in as:", firebaseUser.uid);
-      $state.go('userHome', {
-      userId: firebaseUser.uid
-    });
+      $state.go('userHome');
     }).catch(function (error) {
       console.error("Authentication failed:", error);
     });
