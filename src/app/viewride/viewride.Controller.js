@@ -32,7 +32,7 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
     ctrl.formData.firebaseUserId = ctrl.firebaseUserId;
     ctrl.bookDetail.$add(ctrl.formData);
     ctrl.result.vacantSeats = ctrl.result.vacantSeats - 1;
-    ctrl.result.$save();
+    ctrl.rideDetail.$save(ctrl.result);
   }
 
   function init() {
