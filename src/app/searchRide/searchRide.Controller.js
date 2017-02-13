@@ -14,7 +14,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
     var j;
     var placeListLength;
     var i;
-    ctrl.places = ["pala", "Piravom", "Kochi", "Kottayam", "Perumbavur"];
+    ctrl.places = ["pala", "Piravom", "Kochi", "Nettoor", "Kottayam", "Perumbavur"];
     placeListLength = ctrl.places.length;
     ctrl.rideDetailsList.$loaded().then(function () {
       var totalRides = ctrl.rideDetailsList.length; // Number of rides in ride table
