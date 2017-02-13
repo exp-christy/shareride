@@ -53,13 +53,13 @@
         <td>{{record.startDate}}</td>
         <td>{{record.endDate}}</td>
         <td>
-          {{record.startHour}}:{{record.startMinute}}
-          <span ng-show="record.startHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
+          <span ng-show="record.startHour < 12 ?ctrl.stime='AM' : ctrl.stime='PM'"
+          >{{record.startHour}}:{{record.startMinute}}&nbsp{{ctrl.stime}}</span>
           <span></span>
         </td>
         <td>
-          {{record.endHour}}:{{record.endMinute}}
-          <span ng-show="record.endHour <= 12 ?ctrl.ampm='PM' : ctrl.ampm='AM'">{{ctrl.ampm}}</span>
+          <span ng-show="record.endHour < 12 ?ctrl.etime='AM' : ctrl.etime='PM'"
+          >{{record.endHour}}:{{record.endMinute}}&nbsp{{ctrl.etime}}</span>
         </td>
         <td>{{record.vacantSeats}}</td>
         <td>{{record.fare}}</td>
