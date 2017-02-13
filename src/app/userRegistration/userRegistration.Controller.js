@@ -69,7 +69,7 @@ function userRegistrationController($timeout, $state, toastr, $firebaseArray, $f
           });
           toastr.success('Registration Successfull!');
         }).catch(function (error) {
-          toastr.danger("An unepected error has occured");
+          toastr.error(error);
         });
     }
   }

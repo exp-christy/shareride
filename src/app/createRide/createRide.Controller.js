@@ -33,6 +33,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
             ctrl.formDataDriver.contactNumber = ctrl.userList[i].contactNumber;
             ctrl.formDataDriver.driverName = ctrl.userList[i].firstName + ctrl.userList[i].lastName;
             ctrl.formDataDriver.licenseNumber = ctrl.userList[i].licenseNumber;
+            ctrl.formDataDriver.company = ctrl.userList[i].company;
           }
         }
       });
