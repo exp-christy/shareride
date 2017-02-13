@@ -33,7 +33,7 @@ function RideListController($http, $stateParams, $state,toastr, $timeout, $fireb
         ctrl.len = ctrl.rideDetailsList.length;
         ctrl.searchResult = [];
         for (var i = 0; i < ctrl.len; i++) {
-          if (ctrl.rideDetailsList[i].from.toUpperCase() === $stateParams.fromPlace.toUpperCase()) {
+          if ((ctrl.rideDetailsList[i].from.toUpperCase() === $stateParams.fromPlace.toUpperCase()) && (ctrl.rideDetailsList[i].vacantSeats > 0))  {
             ctrl.searchResult.push(angular.copy(ctrl.rideDetailsList[i]));
           }
         }
