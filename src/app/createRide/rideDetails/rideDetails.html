@@ -56,6 +56,14 @@
     <div class="col-sm-2">
         <input class="form-control" type="time" name="tmstartTime" placeholder="HH:MM:SS"
          ng-model="ctrl.formData.startTime" ng-required="true">
+         <div class="dropdown">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown trigger
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dLabel">
+                <a class="dropdown-item" href="#">Action</a>
+            </div>
+        </div>
     </div>
     <label class="col-sm-2" for="endTime">End Time</label>
     <div class="col-sm-2">

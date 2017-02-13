@@ -24,15 +24,19 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
     });
     modalInstance.result.then(function (formData) {
       $log.info(formData);
-    }).catch(function () {
-      $log.info('modal-component dismissed at: ' + new Date());
+      ctrl.formData.rideId = $stateParams.ride;
+        ctrl.formData.firebaseUserId = ctrl.firebaseUserId;
+        ctrl.bookDetail.$add(ctrl.formData);
+        ctrl.result.vacantSeats = ctrl.result.vacantSeats - 1;
+        ctrl.rideDetail.$save(ctrl.result);
+        toastr.info('Booking Succcesssful');
+        $state.go('userHome');
+    }).catch(function (response) {
+       // console.log(response);
+       $state.go('viewride');
+      //  $log.info('modal-component dismissed at: ' + new Date());
+      //  console.log(response);
     });
-
-    ctrl.formData.rideId = $stateParams.ride;
-    ctrl.formData.firebaseUserId = ctrl.firebaseUserId;
-    ctrl.bookDetail.$add(ctrl.formData);
-    ctrl.result.vacantSeats = ctrl.result.vacantSeats - 1;
-    ctrl.rideDetail.$save(ctrl.result);
   }
 
   function init() {
