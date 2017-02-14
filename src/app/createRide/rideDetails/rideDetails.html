@@ -30,10 +30,10 @@
       <input class="form-control" type="date" name="dtstartDate" ng-model="ctrl.formData.startDate" ng-required="true">
     </div>
     <label class="col-sm-2" for="endDate">End Date</label>
-    <div class="col-sm-2 text-center">
+    <div class="col-sm-3">
       <input class="form-control col-sm-2" type="date" name="dtendDate" ng-model="ctrl.formData.endDate" ng-required="true">
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-2">
       <span style="color:red" ng-show="frmrideDetails.dtstartDate.$touched && frmrideDetails.dtstartDate.$error.required ||
              frmrideDetails.dtendDate.$touched && frmrideDetails.dtendDate.$error.required">
         Start date and end date required
@@ -42,27 +42,20 @@
   </div>
   <div class="form-group col-sm-10">
     <label class="col-sm-2" for="startTime">Start Time</label>
-    <div class="col-sm-2">
-      <input class="form-control" type="time" name="tmstartTime" min="01:00:00" max="12:59:59" placeholder="HH:MM:SS" ng-model="ctrl.formData.startTime" ng-required="true">
+    <div class="col-sm-3">
+      <input class="form-control" type="time" name="tmstartTime"  placeholder="HH:MM:SS" ng-model="ctrl.formData.startTime" ng-required="true">
     </div>
-    <select class="form-control col-sm-2" id="sel1" name="amPmStart" style="width:8%" ng-model="ctrl.formData.amPmStart" ng-required="true">
-            <option>AM</option>
-            <option>PM</option>
-        </select>
     <label class="col-sm-2" for="endTime">End Time</label>
-    <div class="col-sm-2">
-      <input class="form-control" type="time" name="tmendTime" placeholder="HH:mm:ss" ng-model="ctrl.formData.endTime" ng-required="true">
+    <div class="col-sm-3">
+      <input class="form-control" type="time" name="tmendTime"  placeholder="HH:mm:ss" ng-model="ctrl.formData.endTime" ng-required="true">
     </div>
-    <select class="form-control col-sm-2" id="sel1" style="width:8%" name="amPmEnd" ng-model="ctrl.formData.amPmEnd" ng-required="true">
-            <option>AM</option>
-            <option>PM</option>
-        </select>
-  </div>
-  <div class="col-sm-2">
+    <div class="col-sm-2">
+      {{ctrl.formData.endTime.getMeridian()}}
     <span style="color:red" ng-show="frmrideDetails.tmstartTime.$touched && frmrideDetails.tmstartTime.$error.required
         || frmrideDetails.tmendTime.$touched && frmrideDetails.tmendTime.$error.required">
       Start time and End time required
       </span>
+    </div>
   </div>
   </div>
   </div>
