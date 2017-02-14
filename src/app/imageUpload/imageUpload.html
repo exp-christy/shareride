@@ -1,0 +1,18 @@
+<div class="container-fluid3 text-left">
+  </br>
+  <hr />
+  <div class="col-sm-7">
+    <form name="form" ng-submit="imagePressed()">
+      <input type="file" name="file" class="inputimg" id="nameImg" accept="image/*">
+      <br />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" >Upload DP
+          <span class="glyphicon glyphicon-send"></span>
+      </button>
+      </span>
+      <div ng-repeat="img in images">
+        <img ng-src="{{img}}">
+      </div>
+    </form>
+  </div>
+</div>

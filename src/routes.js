@@ -24,6 +24,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/userHome',
       component: 'userHome'
     })
+    .state('imageUpload', {
+      url: '/imageUpload',
+      component: 'imageUpload'
+    })
     // .state('userHeader', {
     //   url: '/userHeader',
     //   component: 'userHeader'
