@@ -11,6 +11,7 @@ function UserHomeController($state, $firebaseAuth, $firebaseArray) {
   function init() {
     ctrl.firebaseUser = ctrl.authObj.$getAuth();
     if (ctrl.firebaseUser) {
+       console.log("Signed in");
       ctrl.userList.$loaded().then(function () {
         var numberOfUsers = ctrl.userList.length;
         var i;
@@ -22,6 +23,9 @@ function UserHomeController($state, $firebaseAuth, $firebaseArray) {
           }
         }
       });
+    } else {
+      $state.go('myHome');
+      console.log("Signed out");
     }
   }
 }
