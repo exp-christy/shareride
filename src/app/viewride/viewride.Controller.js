@@ -32,54 +32,50 @@ function ViewRideController($uibModal, $log, $http, $state, $stateParams, $fireb
         toastr.info('Booking Succcesssful');
         $state.go('userHome');
     }).catch(function (response) {
-       // console.log(response);
        $state.go('viewride');
-      //  $log.info('modal-component dismissed at: ' + new Date());
-      //  console.log(response);
     });
   }
 
   function init() {
     ctrl.firebaseUser = ctrl.authObj.$getAuth();
-    if (ctrl.firebaseUser) {
-      ctrl.firebaseUserId = ctrl.firebaseUser.uid;
-      ctrl.rideDetail.$loaded().then(function () {
-        ctrl.ride = $stateParams.ride;
-        ctrl.vehicles.$loaded().then(function () {
-          ctrl.drivers.$loaded().then(function () {
-            ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+     if(!ctrl.firebaseUser){
+        ctrl.rideDetail.$loaded().then(function () {
+          ctrl.ride = $stateParams.ride;
+          ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+          toastr.warning('Only signed in users can view ride details');
+          ctrl.update();
+        });
+      }
+    ctrl.authObj.$onAuthStateChanged(function(firebaseUser) {
+      if (firebaseUser){
+        ctrl.firebaseUserId = firebaseUser.uid;
+        ctrl.rideDetail.$loaded().then(function () {
+          ctrl.ride = $stateParams.ride;
+          ctrl.vehicles.$loaded().then(function () {
+            ctrl.drivers.$loaded().then(function () {
+              ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
+              if (ctrl.result.startHour > 12) {
+                ctrl.s = ctrl.result.startHour - 12;
+              } else if (ctrl.result.startHour == 0) {
+                ctrl.s = 12;
+              } else {
+                ctrl.s = ctrl.result.startHour;
+              }
 
-            if (ctrl.result.startHour > 12) {
-              ctrl.s = ctrl.result.startHour - 12;
-            } else if (ctrl.result.startHour == 0) {
-              ctrl.s = 12;
-            } else {
-              ctrl.s = ctrl.result.startHour;
-            }
-
-            if (ctrl.result.endHour > 12) {
-              ctrl.e = ctrl.result.endHour - 12;
-            } else if (ctrl.result.endHour == 0) {
-              ctrl.e = 12;
-            } else {
-              ctrl.e = ctrl.result.endHour;
-            }
-
-            ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
-            ctrl.driver = ctrl.drivers.$getRecord(ctrl.result.driverId);
+              if (ctrl.result.endHour > 12) {
+                ctrl.e = ctrl.result.endHour - 12;
+              } else if (ctrl.result.endHour == 0) {
+                ctrl.e = 12;
+              } else {
+                ctrl.e = ctrl.result.endHour;
+              }
+              ctrl.vehicle = ctrl.vehicles.$getRecord(ctrl.result.vehicleId);
+              ctrl.driver = ctrl.drivers.$getRecord(ctrl.result.driverId);
+            });
           });
         });
-      });
-    } else {
-      ctrl.rideDetail.$loaded().then(function () {
-        ctrl.ride = $stateParams.ride;
-        ctrl.result = ctrl.rideDetail.$getRecord(ctrl.ride);
-        toastr.warning('Only signed in users can view ride details');
-        ctrl.update();
-      });
-    }
-
-
+      } 
+    });
   }
 
   function update() {
