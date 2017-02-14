@@ -45,6 +45,7 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
       if(placeNotFound === 'true')
       {
         toastr.info('Sorry no rides were found');
+        ctrl.formData.place = ""; 
       }
     }
     else{
