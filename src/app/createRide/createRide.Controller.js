@@ -23,13 +23,12 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
   ctrl.formDataRide = {};
 
   function init() {
-    ctrl.firebaseUser = ctrl.authObj.$getAuth();
-    if (ctrl.firebaseUser) {
+    ctrl.authObj.$onAuthStateChanged(function (firebaseUser){
       ctrl.userList.$loaded().then(function () {
         var numberOfUsers = ctrl.userList.length;
         var i;
         for (i = 0; i < numberOfUsers; i++) {
-          if (ctrl.firebaseUser.uid === ctrl.userList[i].firebaseUserId) {
+          if (firebaseUser.uid === ctrl.userList[i].firebaseUserId) {
             ctrl.formDataDriver.contactNumber = ctrl.userList[i].contactNumber;
             ctrl.formDataDriver.driverName = ctrl.userList[i].firstName + ctrl.userList[i].lastName;
             ctrl.formDataDriver.licenseNumber = ctrl.userList[i].licenseNumber;
@@ -37,12 +36,7 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
           }
         }
       });
-
-    } else {
-      $state.go('myHome');
-      toastr.warning('Only registered users can create ride');
-
-    }
+    });
   }
 
   function addRideDetails() {
