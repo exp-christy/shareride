@@ -57,6 +57,8 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
       ctrl.formData.endDate = ctrl.formDataRide.endDate.toLocaleDateString();
       ctrl.formData.startHour = ctrl.formDataRide.startTime.getHours();
       ctrl.formData.endHour = ctrl.formDataRide.endTime.getHours();
+      ctrl.formData.amPmStart = ctrl.formDataRide.startTime.toLocaleTimeString().slice(-2);
+      ctrl.formData.amPmEnd = ctrl.formDataRide.endTime.toLocaleTimeString().slice(-2);
       ctrl.formData.startMinute = ctrl.formDataRide.startTime.getMinutes();
       ctrl.formData.endMinute = ctrl.formDataRide.endTime.getMinutes();
       ctrl.formData.fare = ctrl.formDataRide.fare;
@@ -77,6 +79,5 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
     ctrl.formDataVehicle = {};
     ctrl.formDataRide = {};
     ctrl.frmCreateRide.$setUntouched();
-    ctrl.goHome();
   }
 }
