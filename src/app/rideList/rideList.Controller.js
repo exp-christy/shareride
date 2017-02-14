@@ -25,10 +25,10 @@ function RideListController($http, $stateParams, $state,toastr, $timeout, $fireb
       ctrl.showMyHeader = true;
       ctrl.showUserFooter = false;
       ctrl.showMyFooter = true;
-
     }
-    ctrl.fromPlace = $stateParams.fromPlace.toUpperCase();
+   
     if(angular.isDefined($stateParams.fromPlace)){
+       ctrl.fromPlace = $stateParams.fromPlace.toUpperCase();
       ctrl.rideDetailsList.$loaded().then(function () {
         ctrl.len = ctrl.rideDetailsList.length;
         ctrl.searchResult = [];
