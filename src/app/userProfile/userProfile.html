@@ -1,13 +1,34 @@
 <user-header></user-header>
-<div class="container">
+</br></br></br></br></br></br>
+<div ng-show="!ctrl.show"><h3>Sorry no rides have booked yet!!!</h3></div>
+<div class="container" ng-show="ctrl.show">
     <form name="ctrl.frmUserProfile" novalidate="true">
         <div class="col-sm-8">
-            <h2>{{ctrl.formData.firstName}}+{{ctrl.formData.lastName}}</h2>
+            <h3>BOOKED RIDES</h3>
         </div>
-        <table>
+        <table class="table table-bordered table-hover table-condensed">
             <thead>
-                <th>
+                <tr>
+                    <th class="text-center col-sm-2">Start Date</th>
+                    <th class="text-center col-sm-2">End Date </th>
+                    <th class="text-center col-sm-2">Start Time </th>
+                    <th class="text-center col-sm-2">End Time </th>
+                    <th class="text-center col-sm-2">from</th>
+                    <th class="text-center col-sm-2">Detail</th>
+                    <th class="text-center col-sm-2">Action</th>
+                </tr>
             </thead>
+            <tbody>
+                <tr ng-repeat="ride in ctrl.rideDetail">
+                    <td>{{ride.startDate}}</td>
+                    <td>{{ride.endDate}}</td>
+                    <td>{{ride.startHour}}:{{ride.startMinute}} {{ride.amPmStart}}</td>
+                    <td>{{ride.endHour}}:{{ride.endMinute}} {{ride.amPmEnd}}</td>
+                    <td>{{ride.from}}</td>
+                    <td>{{ride.genderRestriction}}</td>
+                    <td><button type="button" class="btn btn-danger" name="btnCancel" ng-click="ctrl.cancelBook(ride.bookId, ride.firebaseUserId, ride.rideId)">Cancel</button></td>
+                </tr>
+            </tbody>
         </table>
     </form>
 </div>
