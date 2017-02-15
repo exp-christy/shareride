@@ -131,13 +131,14 @@
         <span id="confirmMessage" class="confirmMessage"></span>
       </div>
     </div>
-    <div class="form-group">
-      <div class="col-sm-4">
-      <image-upload></image-upload>
+    </div>
+    <div class=" col-md-8 col-md-offset-2">
+    <div class="form-group container">
+      <label for="uploadDp" class=" control-label col-sm-4 col-md-offset-2">Upload DP</label>
+      <div class="col-sm-8 col-md-offset-2">
+        <input type="file" name="file" class="inputimg" id="nameImg" accept="image/*" >
       </div>
-      </div>
-    </br>
-    </br>
+    </div>
     </br>
     <div class="form-group">
       <div class="col-sm-4">
@@ -147,5 +148,6 @@
         <button type="button" class="btn btn-danger" ng-click="ctrl.cancel()">Cancel</button>
       </div>
     </div>
+    </div>
   </ng-form>
-</div>
+
