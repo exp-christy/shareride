@@ -24,6 +24,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/userHome',
       component: 'userHome'
     })
+    .state('userProfile', {
+      url: '/userProfile',
+      component: 'userProfile'
+    })
     // .state('userHeader', {
     //   url: '/userHeader',
     //   component: 'userHeader'
