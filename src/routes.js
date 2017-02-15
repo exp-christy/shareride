@@ -27,6 +27,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('userProfile', {
       url: '/userProfile',
       component: 'userProfile'
+    })
     .state('imageUpload', {
       url: '/imageUpload',
       component: 'imageUpload'
