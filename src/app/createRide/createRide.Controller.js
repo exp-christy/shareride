@@ -24,7 +24,8 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
 
   function init() {
     ctrl.authObj.$onAuthStateChanged(function (firebaseUser){
-      ctrl.userList.$loaded().then(function () {
+      if(firebaseUser){
+        ctrl.userList.$loaded().then(function () {
         var numberOfUsers = ctrl.userList.length;
         var i;
         for (i = 0; i < numberOfUsers; i++) {
@@ -36,6 +37,11 @@ function CreateRideController($state, $stateParams, $timeout, toastr, $firebaseA
           }
         }
       });
+    }
+    else {
+      $state.go('myHome');
+    }
+      
     });
   }
 

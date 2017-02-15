@@ -1,9 +1,18 @@
 angular.module("app")
   .controller("SignInController", SignInController);
 
-function SignInController($uibModal, $log) {
+function SignInController($state, $uibModal, $log, $firebaseAuth) {
   var ctrl = this;
+  ctrl.$onInit = init;
+  ctrl.authObj = $firebaseAuth();
   ctrl.openComponentModal = openComponentModal;
+
+  function init() {
+    ctrl.firebaseUser = ctrl.authObj.$getAuth();
+    if (!ctrl.firebaseUser) {
+      $state.go('myHome');
+    }
+  }
 
   function openComponentModal() {
     var modalInstance = $uibModal.open({
