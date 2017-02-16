@@ -5,7 +5,6 @@ angular
 function userRegistrationController($timeout, $scope, $state, toastr, $firebaseArray, $firebaseAuth) {
   var ctrl = this;
   ctrl.checkUserName = checkUserName;
-  ctrl.$onInit = init();
   ctrl.checkPass = checkPass;
   ctrl.userRegister = userRegister;
   ctrl.cancel = cancel;
@@ -18,38 +17,17 @@ function userRegistrationController($timeout, $scope, $state, toastr, $firebaseA
   ctrl.userDetails = $firebaseArray(usersRef);
   ctrl.authObj = $firebaseAuth();
   ctrl.usernameNotValid = false;
+  ctrl.formData = {
+    userCategory: "driver",
+    userGender: "Male",
+    url:null
+  };
   
 
   function onchange(event) {
     ctrl.file = event.originalEvent.currentTarget.files[0];
   }
-  function init(){
-    //ctrl.formData ={};
-    ctrl.formData = {
-    userCategory: "driver",
-    userGender: "Male",
-    url:null
-  };
-    $scope.$watch("ctrl.formData.url",function(val){
-      if(val){
-        //ctrl.userDetails.$add(ctrl.formData);
-        
-        ctrl.registrationForm.$setUntouched();
-        /*$state.go('userHome', {
-          userId: firebaseUser.uid
-        });*/
-        $state.go('myHome');
-        toastr.success('Registration Successfull!'); 
-      }
-});
-  }
-  function uploadFile(file) {
-    var uploadTask = storageRef.child(file.name).put(file);
-    uploadTask.on('state_changed', null, null, function() {
-      // When the image has successfully uploaded, we get its download URL
-      ctrl.formData.url = uploadTask.snapshot.downloadURL;            
-    });
-  }
+
   function checkUserName() {
     ctrl.userDetails.$loaded().then(function () {
       // Finding the number of registered users
@@ -97,15 +75,11 @@ function userRegistrationController($timeout, $scope, $state, toastr, $firebaseA
           uploadTask.on('state_changed', function(){},function(error) {
           }, function() {
             ctrl.formData.url = uploadTask.snapshot.downloadURL;
-            //ctrl.userDetails.$add(ctrl.formData);
-        
-        ctrl.registrationForm.$setUntouched();
-        /*$state.go('userHome', {
-          userId: firebaseUser.uid
-        });*/
-        $state.go('myHome');
-        toastr.success('Registration Successfull!');
-          });
+            ctrl.userDetails.$add(ctrl.formData);     
+            ctrl.registrationForm.$setUntouched();
+            $state.go('userHome', {userId: firebaseUser.uid});
+            toastr.success('Registration Successfull!');
+            });
       }).catch(function (error) {
           toastr.error(error);
          });
