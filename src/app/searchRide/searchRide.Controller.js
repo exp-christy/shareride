@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('SearchRideController', SearchRideController);
 
-function SearchRideController($http, toastr, $state, $firebaseArray) {
+function SearchRideController($http, toastr, $firebaseArray, $state) {
   var ctrl = this;
   ctrl.startLocations = [];
   ctrl.searchRideDetails = searchRideDetails;
@@ -14,8 +14,8 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
     var j;
     var placeListLength;
     var i;
-    ctrl.places = ["pala", "Piravom", "Kochi", "Nettoor", "Kottayam", "Perumbavur"];
-    placeListLength = ctrl.places.length;
+    ctrl.places = ["Pala", "Piravom", "Kochi", "Nettoor", "Kottayam", "Perumbavur"];
+    /*placeListLength = ctrl.places.length;
     ctrl.rideDetailsList.$loaded().then(function () {
       var totalRides = ctrl.rideDetailsList.length; // Number of rides in ride table
       for (i = 0; i < totalRides; i++) {
@@ -28,18 +28,19 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
           ctrl.places.push(ctrl.rideDetailsList[i].from);
         }
       }
-    });
+    });*/
   }
 
   function searchRideDetails(place) {
     if (angular.isDefined(place)) {
       var placeNotFound = 'true';
-      for (var i = 0; i < ctrl.places.length; i++) {
+      var numberOfPlaces = ctrl.places.length;
+      for (var i = 0; i < numberOfPlaces; i++) {
         var str = place.toUpperCase().localeCompare(ctrl.places[i].toUpperCase());
         if (str === 0) {
           placeNotFound = 'false';
-          $state.go('rideList', {
-            fromPlace: place});
+          $state.go('rideList', {fromPlace: place});
+          break;
         }
       }
       if(placeNotFound === 'true')
@@ -49,9 +50,9 @@ function SearchRideController($http, toastr, $state, $firebaseArray) {
       }
     }
     else{
-        console.log(placeNotFound,angular.isDefined(place));
-        toastr.info('Please enter a place');
-        ctrl.frmSearchRide.$setUntouched();  
+          console.log(placeNotFound,angular.isDefined(place));
+          toastr.info('Please enter a place');
+          ctrl.frmSearchRide.$setUntouched();  
     }
   }
 }
