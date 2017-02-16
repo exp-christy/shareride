@@ -9,22 +9,22 @@ function UserHomeController($state, $firebaseAuth, $firebaseArray) {
   ctrl.authObj = $firebaseAuth();
 
 
-  var storageRef = firebase.storage().ref();
-  var newRef = storageRef.child('login.jpg');
-  var newImagesRef = storageRef.child('images/login.jpg');
-  storageRef.child('images/login.jpg').getDownloadURL().then(function (url) {
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function (event) {
-      var blob = xhr.response;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-    var img = document.getElementById('myimg');
-    img.src = url;
+ // var storageRef = firebase.storage().ref();
+  //var newRef = storageRef.child('login.jpg');
+ // var newImagesRef = storageRef.child('images/login.jpg');
+  //storageRef.child('images/login.jpg').getDownloadURL().then(function (url) {
+   // var xhr = new XMLHttpRequest();
+   // xhr.responseType = 'blob';
+   // xhr.onload = function (event) {
+    //  var blob = xhr.response;
+   // };
+   // xhr.open('GET', url);
+    //xhr.send();
+   // var img = document.getElementById('myimg');
+   // img.src = url;
  // }).catch(function (error) {
 
-  });
+ // });
 
   function init() {
     ctrl.firebaseUser = ctrl.authObj.$getAuth();
@@ -35,6 +35,7 @@ function UserHomeController($state, $firebaseAuth, $firebaseArray) {
         var i;
         for (i = 0; i < numberOfUsers; i++) {
           if (ctrl.firebaseUser.uid === ctrl.userList[i].firebaseUserId) {
+            ctrl.userPic = ctrl.userList[i].url;
             ctrl.userName = ctrl.userList[i].firstName;
             ctrl.userName1 = ctrl.userList[i].lastName;
             ctrl.company = ctrl.userList[i].company;
